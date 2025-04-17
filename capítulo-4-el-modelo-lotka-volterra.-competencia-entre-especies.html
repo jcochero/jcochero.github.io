@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies | Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies</title>
+  <meta name="description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies | Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies | Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies" />
+  
+  <meta name="twitter:description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
+  
+
+<meta name="author" content="Joaquín Cochero" />
+
+
+<meta name="date" content="2025-04-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="capítulo-3-teoría-de-juegos-evolutiva.html"/>
+<link rel="next" href="competencia-entre-especies.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<div class="toc-title">Capítulos</div>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Contenidos</a></li>
+<li class="chapter" data-level="2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><i class="fa fa-check"></i><b>2</b> Capítulo 1: Introducción a la Teoría de Juegos y la Ecología</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#qué-es-la-teoría-de-juegos"><i class="fa fa-check"></i><b>2.1</b> ¿Qué es la Teoría de Juegos?</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#conceptos-fundamentales"><i class="fa fa-check"></i><b>2.1.1</b> Conceptos fundamentales</a></li>
+<li class="chapter" data-level="2.1.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#tipos-de-juegos"><i class="fa fa-check"></i><b>2.1.2</b> Tipos de juegos</a></li>
+<li class="chapter" data-level="2.1.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#cómo-se-estudian-los-juegos-matrices-de-pago-y-equilibrio-de-nash"><i class="fa fa-check"></i><b>2.1.3</b> Cómo se estudian los juegos: matrices de pago y equilibrio de Nash</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#principios-básicos-de-ecología-de-comunidades"><i class="fa fa-check"></i><b>2.2</b> Principios básicos de Ecología de Comunidades</a></li>
+<li class="chapter" data-level="2.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#por-qué-unir-teoría-de-juegos-y-ecología"><i class="fa fa-check"></i><b>2.3</b> Por qué unir Teoría de Juegos y Ecología</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#la-teoría-de-juegos-como-marco-analítico"><i class="fa fa-check"></i><b>2.3.1</b> La teoría de juegos como marco analítico</a></li>
+<li class="chapter" data-level="2.3.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#comparación-entre-teoría-de-juegos-y-modelos-tradicionales"><i class="fa fa-check"></i><b>2.3.2</b> Comparación entre teoría de juegos y modelos tradicionales</a></li>
+<li class="chapter" data-level="2.3.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#ventajas-de-integrar-teoría-de-juegos-y-ecología"><i class="fa fa-check"></i><b>2.3.3</b> Ventajas de integrar teoría de juegos y ecología</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><i class="fa fa-check"></i><b>3</b> Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#dinámica-replicadora-y-estabilidad-evolutiva"><i class="fa fa-check"></i><b>3.1</b> Dinámica Replicadora y Estabilidad Evolutiva</a></li>
+<li class="chapter" data-level="3.2" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-dilema-del-prisionero-y-el-equilibrio-de-nash"><i class="fa fa-check"></i><b>3.2</b> El Dilema del Prisionero y el Equilibrio de Nash</a></li>
+<li class="chapter" data-level="3.3" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#estrategias-puras-vs.-estrategias-mixtas"><i class="fa fa-check"></i><b>3.3</b> Estrategias puras vs. Estrategias mixtas</a></li>
+<li class="chapter" data-level="3.4" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-juego-del-ciervo-y-la-liebre-stag-hunt-y-un-poco-de-matemáticas"><i class="fa fa-check"></i><b>3.4</b> El juego del Ciervo y la Liebre (Stag Hunt) (y un poco de matemáticas!)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html"><i class="fa fa-check"></i><b>4</b> Capítulo 3: Teoría de Juegos Evolutiva</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#estrategias-evolutivamente-estables-ess"><i class="fa fa-check"></i><b>4.1</b> Estrategias Evolutivamente Estables (ESS)</a></li>
+<li class="chapter" data-level="4.2" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#el-juego-halcónpaloma-hawkdove-game"><i class="fa fa-check"></i><b>4.2</b> El juego Halcón/Paloma (Hawk/Dove game)</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#dinámica-del-juego-halcónpaloma"><i class="fa fa-check"></i><b>4.2.1</b> Dinámica del juego Halcón/Paloma</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#dinámicas-evolutivas-y-frecuencias-alélicas"><i class="fa fa-check"></i><b>4.3</b> Dinámicas Evolutivas y Frecuencias Alélicas</a></li>
+<li class="chapter" data-level="4.4" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#ejemplo-en-ecología-dinámica-de-dos-especies"><i class="fa fa-check"></i><b>4.4</b> Ejemplo en Ecología: Dinámica de Dos Especies</a></li>
+<li class="chapter" data-level="4.5" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#discusión"><i class="fa fa-check"></i><b>4.5</b> Discusión</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#a.-qué-desigualdades-son-necesarias-para-que-la-cooperación-sea-un-equilibrio-de-nash"><i class="fa fa-check"></i><b>4.5.1</b> A. ¿Qué desigualdades son necesarias para que la cooperación sea un Equilibrio de Nash?</a></li>
+<li class="chapter" data-level="4.5.2" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#qué-factores-no-incluidos-podrían-promover-la-cooperación"><i class="fa fa-check"></i><b>4.5.2</b> ¿Qué factores no incluidos podrían promover la cooperación?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><i class="fa fa-check"></i><b>5</b> Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies</a></li>
+<li class="chapter" data-level="6" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html"><i class="fa fa-check"></i><b>6</b> Competencia entre Especies</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#teoría-clásica-modelos-de-lotka-volterra"><i class="fa fa-check"></i><b>6.1</b> Teoría clásica: Modelos de Lotka-Volterra</a></li>
+<li class="chapter" data-level="6.2" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#juegos-de-competencia-dinámicas-temporales-basadas-en-una-matriz-de-pagos"><i class="fa fa-check"></i><b>6.2</b> Juegos de competencia: Dinámicas temporales basadas en una matriz de pagos</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#matriz-de-pagos"><i class="fa fa-check"></i><b>6.2.1</b> Matriz de pagos</a></li>
+<li class="chapter" data-level="6.2.2" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#dinámica-replicadora-modificada"><i class="fa fa-check"></i><b>6.2.2</b> Dinámica replicadora modificada</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#implementación-en-r"><i class="fa fa-check"></i><b>6.3</b> Implementación en R</a></li>
+<li class="chapter" data-level="6.4" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#equivalencia-entre-modelos-glv-y-dinámicas-replicadoras"><i class="fa fa-check"></i><b>6.4</b> Equivalencia entre modelos GLV y dinámicas replicadoras</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#equivalencias-conceptuales"><i class="fa fa-check"></i><b>6.4.1</b> Equivalencias conceptuales</a></li>
+<li class="chapter" data-level="6.4.2" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#equivalencias-matemáticas"><i class="fa fa-check"></i><b>6.4.2</b> Equivalencias matemáticas</a></li>
+<li class="chapter" data-level="6.4.3" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#conversiones-matemáticas-entre-los-modelos-glv-y-dinámicas-replicadoras"><i class="fa fa-check"></i><b>6.4.3</b> Conversiones matemáticas entre los modelos GLV y Dinámicas replicadoras</a></li>
+<li class="chapter" data-level="6.4.4" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#matemática-de-la-relación-para-un-cuadro-aparte"><i class="fa fa-check"></i><b>6.4.4</b> Matemática de la relación – para un cuadro aparte???</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#cálculo-del-equilibrio-en-ambos-modelos"><i class="fa fa-check"></i><b>6.5</b> Cálculo del equilibrio en ambos modelos</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#equilibrio-en-el-modelo-glv"><i class="fa fa-check"></i><b>6.5.1</b> Equilibrio en el modelo GLV</a></li>
+<li class="chapter" data-level="6.5.2" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#equilibrio-en-las-dinámicas-replicadoras"><i class="fa fa-check"></i><b>6.5.2</b> Equilibrio en las dinámicas replicadoras</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="competencia-entre-especies.html"><a href="competencia-entre-especies.html#discusión-1"><i class="fa fa-check"></i><b>6.6</b> 3.5. Discusión</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html"><i class="fa fa-check"></i><b>7</b> Capítulo 5: La relación predador-presa</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#modelos-clásicos"><i class="fa fa-check"></i><b>7.1</b> Modelos Clásicos</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#ecuaciones-básicas-del-modelo-lotka-volterra-esto-puede-repetirse-con-cap4"><i class="fa fa-check"></i><b>7.1.1</b> Ecuaciones Básicas del Modelo Lotka-Volterra (esto puede repetirse con Cap4)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#análisis-de-estabilidad-y-oscilaciones-neutrales"><i class="fa fa-check"></i><b>7.1.2</b> Análisis de Estabilidad y Oscilaciones Neutrales</a></li>
+<li class="chapter" data-level="7.1.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#análisis-gráfico-isoclinas-y-plano-fase"><i class="fa fa-check"></i><b>7.1.3</b> Análisis Gráfico: Isoclinas y Plano Fase</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#extensiones-al-modelo-clásico"><i class="fa fa-check"></i><b>7.2</b> Extensiones al Modelo Clásico</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#crecimiento-logístico-de-la-presa"><i class="fa fa-check"></i><b>7.2.1</b> Crecimiento Logístico de la Presa</a></li>
+<li class="chapter" data-level="7.2.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#efectos-allee"><i class="fa fa-check"></i><b>7.2.2</b> Efectos Allee</a></li>
+<li class="chapter" data-level="7.2.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#respuestas-funcionales-de-los-depredadores"><i class="fa fa-check"></i><b>7.2.3</b> Respuestas Funcionales de los Depredadores</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámicas-complejas"><i class="fa fa-check"></i><b>7.3</b> Dinámicas Complejas</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#introducción-de-ciclos-límite"><i class="fa fa-check"></i><b>7.3.1</b> Introducción de Ciclos Límite</a></li>
+<li class="chapter" data-level="7.3.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#condiciones-para-la-emergencia-de-caos"><i class="fa fa-check"></i><b>7.3.2</b> Condiciones para la Emergencia de Caos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#sistema-depredador-presa-en-r"><i class="fa fa-check"></i><b>7.4</b> Sistema Depredador-Presa en R</a></li>
+<li class="chapter" data-level="7.5" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#comparación-entre-lotka-volterra-y-modelos-de-teoría-de-juegos"><i class="fa fa-check"></i><b>7.5</b> Comparación entre Lotka-Volterra y modelos de Teoría de Juegos</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#comparación-de-modelos"><i class="fa fa-check"></i><b>7.5.1</b> Comparación de modelos</a></li>
+<li class="chapter" data-level="7.5.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema"><i class="fa fa-check"></i><b>7.5.2</b> Dinámica del sistema</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#visualización-de-dinámicas-en-glv-y-re"><i class="fa fa-check"></i><b>7.6</b> Visualización de Dinámicas en GLV y RE</a>
+<ul>
+<li class="chapter" data-level="7.6.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#equilibrio-en-glv"><i class="fa fa-check"></i><b>7.6.1</b> Equilibrio en GLV</a></li>
+<li class="chapter" data-level="7.6.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#equilibrio-en-re"><i class="fa fa-check"></i><b>7.6.2</b> Equilibrio en RE</a></li>
+<li class="chapter" data-level="7.6.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema-1"><i class="fa fa-check"></i><b>7.6.3</b> Dinámica del sistema</a></li>
+</ul></li>
+<li class="chapter" data-level="7.7" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#conexiones-con-otros-modelos"><i class="fa fa-check"></i><b>7.7</b> Conexiones con otros modelos</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#referencias"><i class="fa fa-check"></i><b>7.7.1</b> Referencias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html"><i class="fa fa-check"></i><b>8</b> Capítulo 6: Mutualismo y Redes Tróficas</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html#modelos-de-mutualismo-basados-en-juegos-evolutivos"><i class="fa fa-check"></i><b>8.1</b> Modelos de mutualismo basados en juegos evolutivos</a></li>
+<li class="chapter" data-level="8.2" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html#polinizadores-y-plantas-en-sistemas-tropicales"><i class="fa fa-check"></i><b>8.2</b> Polinizadores y plantas en sistemas tropicales</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html"><i class="fa fa-check"></i><b>9</b> Capítulo 7: Diversidad en Comunidades Ecológicas</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índices-de-diversidad"><i class="fa fa-check"></i><b>9.1</b> Índices de diversidad</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-shannon"><i class="fa fa-check"></i><b>9.1.1</b> Índice de Shannon</a></li>
+<li class="chapter" data-level="9.1.2" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-equitabilidad-de-pielou"><i class="fa fa-check"></i><b>9.1.2</b> Índice de equitabilidad de Pielou</a></li>
+<li class="chapter" data-level="9.1.3" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cálculo-en-r"><i class="fa fa-check"></i><b>9.1.3</b> Cálculo en R</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#comparación-entre-modelos-tradicionales-y-basados-en-teoría-de-juegos"><i class="fa fa-check"></i><b>9.2</b> Comparación entre modelos tradicionales y basados en Teoría de Juegos</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html"><i class="fa fa-check"></i><b>10</b> Capítulo 8: Sucesión Ecológica</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#sucesión-primaria-y-secundaria-modelos-clásicos"><i class="fa fa-check"></i><b>10.1</b> 8.1. Sucesión primaria y secundaria: modelos clásicos</a></li>
+<li class="chapter" data-level="10.2" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#modelado-de-la-sucesión-ecológica-tradicional"><i class="fa fa-check"></i><b>10.2</b> 8.2. Modelado de la sucesión ecológica tradicional</a></li>
+<li class="chapter" data-level="10.3" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#modelado-de-la-sucesión-ecológica-con-teoría-de-juegos"><i class="fa fa-check"></i><b>10.3</b> 8.3. Modelado de la sucesión ecológica con teoría de juegos</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#construcción-de-la-matriz-de-pagos"><i class="fa fa-check"></i><b>10.3.1</b> Construcción de la matriz de pagos</a></li>
+<li class="chapter" data-level="10.3.2" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#dinámica-replicadora"><i class="fa fa-check"></i><b>10.3.2</b> Dinámica replicadora</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#ejemplo-real-sucesión-en-dunas-costeras-tras-eventos-de-disturbio"><i class="fa fa-check"></i><b>10.4</b> 8.4. Ejemplo real: Sucesión en dunas costeras tras eventos de disturbio</a></li>
+<li class="chapter" data-level="10.5" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#preguntas-para-discusión"><i class="fa fa-check"></i><b>10.5</b> Preguntas para discusión</a></li>
+<li class="chapter" data-level="10.6" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#bibliografía"><i class="fa fa-check"></i><b>10.6</b> Bibliografía</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies<a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="capítulo-3-teoría-de-juegos-evolutiva.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="competencia-entre-especies.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": ["twitter", "facebook"],
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["teoria_juegos_ecologia.pdf", "teoria_juegos_ecologia.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

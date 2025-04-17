@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Capítulo 5: La relación predador-presa | Capítulo 5: La relación predador-presa</title>
+  <meta name="description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Capítulo 5: La relación predador-presa | Capítulo 5: La relación predador-presa" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Capítulo 5: La relación predador-presa | Capítulo 5: La relación predador-presa" />
+  
+  <meta name="twitter:description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
+  
+
+<meta name="author" content="Juaco" />
+
+
+<meta name="date" content="2025-04-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"/>
+<link rel="next" href="capítulo-6-mutualismo-y-redes-tróficas.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<div class="toc-title">Capítulos</div>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Contenidos</a></li>
+<li class="chapter" data-level="2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><i class="fa fa-check"></i><b>2</b> Capítulo 1: Introducción a la Teoría de Juegos y la Ecología</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#agregar-esto-en-algun-lado"><i class="fa fa-check"></i><b>2.1</b> AGREGAR ESTO EN ALGUN LADO?</a></li>
+<li class="chapter" data-level="2.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#fin-de-agregar"><i class="fa fa-check"></i><b>2.2</b> FIN DE AGREGAR</a></li>
+<li class="chapter" data-level="2.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#introducción"><i class="fa fa-check"></i><b>2.3</b> 1.1 Introducción</a></li>
+<li class="chapter" data-level="2.4" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#qué-es-la-teoría-de-juegos"><i class="fa fa-check"></i><b>2.4</b> 1.2 ¿Qué es la Teoría de Juegos?</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#conceptos-fundamentales"><i class="fa fa-check"></i><b>2.4.1</b> 1.2.1 Conceptos fundamentales</a></li>
+<li class="chapter" data-level="2.4.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#tipos-de-juegos"><i class="fa fa-check"></i><b>2.4.2</b> 1.2.2 Tipos de juegos</a></li>
+<li class="chapter" data-level="2.4.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#cómo-se-estudian-los-juegos-matrices-de-pago-y-equilibrio-de-nash"><i class="fa fa-check"></i><b>2.4.3</b> 1.2.3 Cómo se estudian los juegos: matrices de pago y equilibrio de Nash</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#principios-básicos-de-ecología-de-comunidades"><i class="fa fa-check"></i><b>2.5</b> 1.3 Principios básicos de Ecología de Comunidades</a></li>
+<li class="chapter" data-level="2.6" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#por-qué-unir-teoría-de-juegos-y-ecología"><i class="fa fa-check"></i><b>2.6</b> 1.4 Por qué unir Teoría de Juegos y Ecología</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#la-teoría-de-juegos-como-marco-analítico"><i class="fa fa-check"></i><b>2.6.1</b> La teoría de juegos como marco analítico</a></li>
+<li class="chapter" data-level="2.6.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#comparación-entre-teoría-de-juegos-y-modelos-tradicionales"><i class="fa fa-check"></i><b>2.6.2</b> Comparación entre teoría de juegos y modelos tradicionales</a></li>
+<li class="chapter" data-level="2.6.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#ventajas-de-integrar-teoría-de-juegos-y-ecología"><i class="fa fa-check"></i><b>2.6.3</b> Ventajas de integrar teoría de juegos y ecología</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#estructura-del-libro-y-uso-de-ejemplos-en-r"><i class="fa fa-check"></i><b>2.7</b> 1.5 Estructura del libro y uso de ejemplos en R</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><i class="fa fa-check"></i><b>3</b> Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#dinámica-replicadora-y-estabilidad-evolutiva"><i class="fa fa-check"></i><b>3.1</b> 2.1. Dinámica Replicadora y Estabilidad Evolutiva</a></li>
+<li class="chapter" data-level="3.2" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-dilema-del-prisionero-y-el-equilibrio-de-nash"><i class="fa fa-check"></i><b>3.2</b> 2.2. El Dilema del Prisionero y el Equilibrio de Nash</a></li>
+<li class="chapter" data-level="3.3" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#estrategias-puras-vs.-estrategias-mixtas"><i class="fa fa-check"></i><b>3.3</b> 2.3 Estrategias puras vs. Estrategias mixtas</a></li>
+<li class="chapter" data-level="3.4" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-juego-del-ciervo-y-la-liebre-stag-hunt-y-un-poco-de-matemáticas"><i class="fa fa-check"></i><b>3.4</b> 2.4 El juego del Ciervo y la Liebre (Stag Hunt) (y un poco de matemáticas!)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html"><i class="fa fa-check"></i><b>4</b> Capítulo 3: Teoría de Juegos Evolutiva</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#estrategias-evolutivamente-estables-ess"><i class="fa fa-check"></i><b>4.1</b> 3.5. Estrategias Evolutivamente Estables (ESS)</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#el-juego-halcónpaloma-hawkdove-game"><i class="fa fa-check"></i><b>4.1.1</b> El juego Halcón/Paloma (Hawk/Dove game)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#dinámica-del-juego-halcónpaloma"><i class="fa fa-check"></i><b>4.2</b> Dinámica del juego Halcón/Paloma</a></li>
+<li class="chapter" data-level="4.3" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#dinámicas-evolutivas-y-frecuencias-alélicas"><i class="fa fa-check"></i><b>4.3</b> 3.6. Dinámicas Evolutivas y Frecuencias Alélicas</a></li>
+<li class="chapter" data-level="4.4" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#ejemplo-en-ecología-dinámica-de-dos-especies"><i class="fa fa-check"></i><b>4.4</b> 3.7. Ejemplo en Ecología: Dinámica de Dos Especies</a></li>
+<li class="chapter" data-level="4.5" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#discusión"><i class="fa fa-check"></i><b>4.5</b> Discusión</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#a.-qué-desigualdades-son-necesarias-para-que-la-cooperación-sea-un-equilibrio-de-nash"><i class="fa fa-check"></i><b>4.5.1</b> A. ¿Qué desigualdades son necesarias para que la cooperación sea un Equilibrio de Nash?</a></li>
+<li class="chapter" data-level="4.5.2" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#b.qué-factores-no-incluidos-podrían-promover-la-cooperación"><i class="fa fa-check"></i><b>4.5.2</b> B.¿Qué factores no incluidos podrían promover la cooperación?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><i class="fa fa-check"></i><b>5</b> Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#teoría-clásica-modelos-de-lotka-volterra"><i class="fa fa-check"></i><b>5.1</b> 4.1. Teoría clásica: Modelos de Lotka-Volterra</a></li>
+<li class="chapter" data-level="5.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#juegos-de-competencia-dinámicas-temporales-basadas-en-una-matriz-de-pagos"><i class="fa fa-check"></i><b>5.2</b> 4.2. Juegos de competencia: Dinámicas temporales basadas en una matriz de pagos</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#matriz-de-pagos"><i class="fa fa-check"></i><b>5.2.1</b> Matriz de pagos</a></li>
+<li class="chapter" data-level="5.2.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#dinámica-replicadora-modificada"><i class="fa fa-check"></i><b>5.2.2</b> Dinámica replicadora modificada</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencia-entre-modelos-glv-y-dinámicas-replicadoras"><i class="fa fa-check"></i><b>5.3</b> 3.3. Equivalencia entre modelos GLV y dinámicas replicadoras</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencias-conceptuales"><i class="fa fa-check"></i><b>5.3.1</b> Equivalencias conceptuales</a></li>
+<li class="chapter" data-level="5.3.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencias-matemáticas"><i class="fa fa-check"></i><b>5.3.2</b> Equivalencias matemáticas</a></li>
+<li class="chapter" data-level="5.3.3" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#conversiones-matemáticas-entre-los-modelos-glv-y-dinámicas-replicadoras"><i class="fa fa-check"></i><b>5.3.3</b> Conversiones matemáticas entre los modelos GLV y Dinámicas replicadoras</a></li>
+<li class="chapter" data-level="5.3.4" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#matemática-de-la-relación-para-un-cuadro-aparte"><i class="fa fa-check"></i><b>5.3.4</b> Matemática de la relación – para un cuadro aparte???</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#cálculo-del-equilibrio-en-ambos-modelos"><i class="fa fa-check"></i><b>5.4</b> 3.4. Cálculo del equilibrio en ambos modelos</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equilibrio-en-el-modelo-glv"><i class="fa fa-check"></i><b>5.4.1</b> Equilibrio en el modelo GLV</a></li>
+<li class="chapter" data-level="5.4.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equilibrio-en-las-dinámicas-replicadoras"><i class="fa fa-check"></i><b>5.4.2</b> Equilibrio en las dinámicas replicadoras</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#discusión-1"><i class="fa fa-check"></i><b>5.5</b> 3.5. Discusión</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html"><i class="fa fa-check"></i><b>6</b> Capítulo 5: La relación predador-presa</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#modelos-clásicos"><i class="fa fa-check"></i><b>6.1</b> Modelos Clásicos</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#ecuaciones-básicas-del-modelo-lotka-volterra-esto-puede-repetirse-con-cap4"><i class="fa fa-check"></i><b>6.1.1</b> Ecuaciones Básicas del Modelo Lotka-Volterra (esto puede repetirse con Cap4)</a></li>
+<li class="chapter" data-level="6.1.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#análisis-de-estabilidad-y-oscilaciones-neutrales"><i class="fa fa-check"></i><b>6.1.2</b> Análisis de Estabilidad y Oscilaciones Neutrales</a></li>
+<li class="chapter" data-level="6.1.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#análisis-gráfico-isoclinas-y-plano-fase"><i class="fa fa-check"></i><b>6.1.3</b> Análisis Gráfico: Isoclinas y Plano Fase</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#extensiones-al-modelo-clásico"><i class="fa fa-check"></i><b>6.2</b> Extensiones al Modelo Clásico</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#crecimiento-logístico-de-la-presa"><i class="fa fa-check"></i><b>6.2.1</b> Crecimiento Logístico de la Presa</a></li>
+<li class="chapter" data-level="6.2.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#efectos-allee"><i class="fa fa-check"></i><b>6.2.2</b> Efectos Allee</a></li>
+<li class="chapter" data-level="6.2.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#respuestas-funcionales-de-los-depredadores"><i class="fa fa-check"></i><b>6.2.3</b> Respuestas Funcionales de los Depredadores</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámicas-complejas"><i class="fa fa-check"></i><b>6.3</b> Dinámicas Complejas</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#introducción-de-ciclos-límite"><i class="fa fa-check"></i><b>6.3.1</b> Introducción de Ciclos Límite</a></li>
+<li class="chapter" data-level="6.3.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#condiciones-para-la-emergencia-de-caos"><i class="fa fa-check"></i><b>6.3.2</b> Condiciones para la Emergencia de Caos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#sistema-depredador-presa-en-r"><i class="fa fa-check"></i><b>6.4</b> Sistema Depredador-Presa en R</a></li>
+<li class="chapter" data-level="6.5" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#comparación-entre-lotka-volterra-y-modelos-de-teoría-de-juegos"><i class="fa fa-check"></i><b>6.5</b> Comparación entre Lotka-Volterra y modelos de Teoría de Juegos</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#comparación-de-modelos"><i class="fa fa-check"></i><b>6.5.1</b> Comparación de modelos</a></li>
+<li class="chapter" data-level="6.5.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema"><i class="fa fa-check"></i><b>6.5.2</b> Dinámica del sistema</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#visualización-de-dinámicas-en-glv-y-re"><i class="fa fa-check"></i><b>6.6</b> Visualización de Dinámicas en GLV y RE</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#equilibrio-en-glv"><i class="fa fa-check"></i><b>6.6.1</b> Equilibrio en GLV</a></li>
+<li class="chapter" data-level="6.6.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#equilibrio-en-re"><i class="fa fa-check"></i><b>6.6.2</b> Equilibrio en RE</a></li>
+<li class="chapter" data-level="6.6.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema-1"><i class="fa fa-check"></i><b>6.6.3</b> Dinámica del sistema</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#conexiones-con-otros-modelos"><i class="fa fa-check"></i><b>6.7</b> Conexiones con otros modelos</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#referencias"><i class="fa fa-check"></i><b>6.7.1</b> Referencias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html"><i class="fa fa-check"></i><b>7</b> Capítulo 6: Mutualismo y Redes Tróficas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html#modelos-de-mutualismo-basados-en-juegos-evolutivos"><i class="fa fa-check"></i><b>7.1</b> Modelos de mutualismo basados en juegos evolutivos</a></li>
+<li class="chapter" data-level="7.2" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html#polinizadores-y-plantas-en-sistemas-tropicales"><i class="fa fa-check"></i><b>7.2</b> Polinizadores y plantas en sistemas tropicales</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html"><i class="fa fa-check"></i><b>8</b> Capítulo 7: Diversidad en Comunidades Ecológicas</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índices-de-diversidad"><i class="fa fa-check"></i><b>8.1</b> Índices de diversidad</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-shannon"><i class="fa fa-check"></i><b>8.1.1</b> Índice de Shannon</a></li>
+<li class="chapter" data-level="8.1.2" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-equitabilidad-de-pielou"><i class="fa fa-check"></i><b>8.1.2</b> Índice de equitabilidad de Pielou</a></li>
+<li class="chapter" data-level="8.1.3" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cálculo-en-r"><i class="fa fa-check"></i><b>8.1.3</b> Cálculo en R</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#comparación-entre-modelos-tradicionales-y-basados-en-teoría-de-juegos"><i class="fa fa-check"></i><b>8.2</b> Comparación entre modelos tradicionales y basados en Teoría de Juegos</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html"><i class="fa fa-check"></i><b>9</b> Capítulo 8: Sucesión Ecológica</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#sucesión-primaria-y-secundaria-modelos-clásicos"><i class="fa fa-check"></i><b>9.1</b> 8.1. Sucesión primaria y secundaria: modelos clásicos</a></li>
+<li class="chapter" data-level="9.2" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#modelado-de-la-sucesión-ecológica-tradicional"><i class="fa fa-check"></i><b>9.2</b> 8.2. Modelado de la sucesión ecológica tradicional</a></li>
+<li class="chapter" data-level="9.3" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#modelado-de-la-sucesión-ecológica-con-teoría-de-juegos"><i class="fa fa-check"></i><b>9.3</b> 8.3. Modelado de la sucesión ecológica con teoría de juegos</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#construcción-de-la-matriz-de-pagos"><i class="fa fa-check"></i><b>9.3.1</b> Construcción de la matriz de pagos</a></li>
+<li class="chapter" data-level="9.3.2" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#dinámica-replicadora"><i class="fa fa-check"></i><b>9.3.2</b> Dinámica replicadora</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#ejemplo-real-sucesión-en-dunas-costeras-tras-eventos-de-disturbio"><i class="fa fa-check"></i><b>9.4</b> 8.4. Ejemplo real: Sucesión en dunas costeras tras eventos de disturbio</a></li>
+<li class="chapter" data-level="9.5" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#preguntas-para-discusión"><i class="fa fa-check"></i><b>9.5</b> Preguntas para discusión</a></li>
+<li class="chapter" data-level="9.6" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#bibliografía"><i class="fa fa-check"></i><b>9.6</b> Bibliografía</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Capítulo 5: La relación predador-presa</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="capítulo-5-la-relación-predador-presa" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Capítulo 5: La relación predador-presa<a href="capítulo-5-la-relación-predador-presa.html#capítulo-5-la-relación-predador-presa" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Las interacciones predador-presa constituyen uno de los pilares fundamentales de la ecología de comunidades. Estas relaciones no solo determinan la estructura y dinámica de las poblaciones involucradas, sino que también impactan de manera profunda en la biodiversidad y en los procesos ecosistémicos. Comprender estas dinámicas es esencial para predecir la estabilidad de los ecosistemas, evaluar estrategias de conservación y gestionar recursos naturales de manera sostenible.</p>
+<p>Desde una perspectiva ecológica, la relación predador-presa es una fuerza motriz en la regulación de poblaciones, en la configuración de redes tróficas y en la promoción de la diversidad biológica. La interacción entre depredadores y presas genera patrones que afectan tanto a las comunidades locales como a las dinámicas de ecosistemas a escala global. Por ejemplo, los depredadores pueden actuar como controladores naturales de especies que, sin ellos, alcanzarían niveles de abundancia capaces de generar efectos negativos en el ambiente. De igual forma, las presas, al ser reguladas, influyen en la disponibilidad de recursos en niveles tróficos inferiores, creando un balance dinámico que es clave para la estabilidad del ecosistema.</p>
+<p>Históricamente, el estudio de la relación predador-presa ha estado dominado por el modelo clásico de Lotka-Volterra, desarrollado de manera independiente por Alfred Lotka y Vito Volterra a inicios del siglo XX. Este modelo, aunque sencillo, captura las oscilaciones periódicas que emergen cuando depredadores y presas interactúan. Sin embargo, las predicciones de Lotka-Volterra son neutrales y asumen condiciones ideales, por lo que han motivado el desarrollo de extensiones más realistas para capturar la complejidad del mundo natural.</p>
+<p>El modelo clásico, a pesar de sus limitaciones, sirvió como punto de partida para innumerables investigaciones que buscaban integrar factores adicionales como la capacidad de carga del ambiente, respuestas funcionales no lineales y los efectos de la densidad poblacional en la dinámica de las interacciones. Estos refinamientos han permitido una mejor comprensión de fenómenos como las cascadas tróficas, las fluctuaciones poblacionales y las condiciones bajo las cuales pueden emerger dinámicas complejas como el caos o los ciclos límite.</p>
+<div id="modelos-clásicos" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Modelos Clásicos<a href="capítulo-5-la-relación-predador-presa.html#modelos-clásicos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El modelo clásico de Lotka-Volterra es el punto de partida fundamental para entender las interacciones predador-presa. Este modelo se basa en un sistema de ecuaciones diferenciales que describen las tasas de cambio de las poblaciones de presas (‘x’) y depredadores (‘y’), capturando las oscilaciones generadas por sus interacciones.</p>
+<div id="ecuaciones-básicas-del-modelo-lotka-volterra-esto-puede-repetirse-con-cap4" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Ecuaciones Básicas del Modelo Lotka-Volterra (esto puede repetirse con Cap4)<a href="capítulo-5-la-relación-predador-presa.html#ecuaciones-básicas-del-modelo-lotka-volterra-esto-puede-repetirse-con-cap4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El modelo presenta las siguientes ecuaciones:</p>
+<p><span class="math display">\[
+\frac{dx}{dt} = r x - \alpha x y
+\]</span>
+<span class="math display">\[
+\frac{dy}{dt} = \beta x y - \\delta y
+\]</span></p>
+<p>Donde:</p>
+<ul>
+<li><span class="math inline">\(r\)</span>: Tasa de crecimiento intrínseco de las presas.</li>
+<li><span class="math inline">\(\alpha\)</span>: Tasa de captura de presas por los depredadores.</li>
+<li><span class="math inline">\(\beta\)</span>: Eficiencia de conversión de presas consumidas en biomasa de los depredadores.</li>
+<li><span class="math inline">\(\delta\)</span>: Tasa de mortalidad de los depredadores.</li>
+</ul>
+<p>En este modelo, las presas crecen de forma exponencial a una tasa <span class="math inline">\(r\)</span> Cuando <span class="math inline">\(y = 0\)</span>, y la población de depredadores decae exponencialmente debido a su tasa de mortalidad <span class="math inline">\(\delta\)</span>.</p>
+</div>
+<div id="análisis-de-estabilidad-y-oscilaciones-neutrales" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Análisis de Estabilidad y Oscilaciones Neutrales<a href="capítulo-5-la-relación-predador-presa.html#análisis-de-estabilidad-y-oscilaciones-neutrales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El modelo genera oscilaciones periódicas conocidas como “oscilaciones neutrales”. Estas oscilaciones surgen de la retroalimentación entre el crecimiento y declinación de ambas poblaciones. Sin embargo, estas fluctuaciones son neutrales, lo que significa que no convergen a un equilibrio estable ni divergen indefinidamente. Esto ocurre bajo las siguientes condiciones:</p>
+<ul>
+<li>Los depredadores aumentan cuando las presas son abundantes, alcanzando un pico.</li>
+<li>Una alta densidad de depredadores reduce la población de presas, causando una disminución en su abundancia.</li>
+<li>Con menos presas disponibles, los depredadores también comienzan a declinar.</li>
+<li>La reducción de depredadores permite que las presas se recuperen, reiniciando el ciclo.</li>
+</ul>
+</div>
+<div id="análisis-gráfico-isoclinas-y-plano-fase" class="section level3 hasAnchor" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Análisis Gráfico: Isoclinas y Plano Fase<a href="capítulo-5-la-relación-predador-presa.html#análisis-gráfico-isoclinas-y-plano-fase" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Una herramienta clave para entender el comportamiento del modelo es el análisis gráfico en el plano fase. En este contexto:</p>
+<ul>
+<li><strong>Isoclinas de crecimiento nulo:</strong> Representan las condiciones en las cuales <span class="math inline">\(dx/dt = 0\)</span> (presas) y <span class="math inline">\(dy/dt = 0\)</span> (depredadores).
+<ul>
+<li>Para las presas: <span class="math inline">\(y = r / \\alpha\)</span>.</li>
+<li>Para los depredadores: <span class="math inline">\(x = \\delta / \\beta\)</span>.</li>
+</ul></li>
+<li><strong>Trayectorias poblacionales:</strong> Las trayectorias en el plano fase muestran cómo las poblaciones de presas y depredadores evolucionan en el tiempo, describiendo ciclos cerrados alrededor del punto de equilibrio.</li>
+</ul>
+<p>Este análisis permite visualizar de manera intuitiva cómo las dinámicas predador-presa generan ciclos y cómo los parámetros del modelo afectan la amplitud y frecuencia de estas oscilaciones.</p>
+<p>Veamos el ejemplo en R:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="capítulo-5-la-relación-predador-presa.html#cb1-1" tabindex="-1"></a><span class="co"># Instalar y cargar los paquetes necesarios</span></span>
+<span id="cb1-2"><a href="capítulo-5-la-relación-predador-presa.html#cb1-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;ggplot2&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-3"><a href="capítulo-5-la-relación-predador-presa.html#cb1-3" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;deSolve&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;deSolve&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-4"><a href="capítulo-5-la-relación-predador-presa.html#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="capítulo-5-la-relación-predador-presa.html#cb1-5" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-6"><a href="capítulo-5-la-relación-predador-presa.html#cb1-6" tabindex="-1"></a><span class="fu">library</span>(deSolve)</span>
+<span id="cb1-7"><a href="capítulo-5-la-relación-predador-presa.html#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="capítulo-5-la-relación-predador-presa.html#cb1-8" tabindex="-1"></a><span class="co"># Definir los parámetros del modelo</span></span>
+<span id="cb1-9"><a href="capítulo-5-la-relación-predador-presa.html#cb1-9" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">r =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.02</span>, <span class="at">beta =</span> <span class="fl">0.01</span>, <span class="at">delta =</span> <span class="fl">0.1</span>)</span>
+<span id="cb1-10"><a href="capítulo-5-la-relación-predador-presa.html#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="capítulo-5-la-relación-predador-presa.html#cb1-11" tabindex="-1"></a><span class="co"># Definir las isoclinas</span></span>
+<span id="cb1-12"><a href="capítulo-5-la-relación-predador-presa.html#cb1-12" tabindex="-1"></a>isoclinas <span class="ot">&lt;-</span> <span class="cf">function</span>(x, parameters) {</span>
+<span id="cb1-13"><a href="capítulo-5-la-relación-predador-presa.html#cb1-13" tabindex="-1"></a>  presa_isoclina <span class="ot">&lt;-</span> parameters[<span class="st">&quot;r&quot;</span>] <span class="sc">/</span> parameters[<span class="st">&quot;alpha&quot;</span>]  <span class="co"># Línea constante</span></span>
+<span id="cb1-14"><a href="capítulo-5-la-relación-predador-presa.html#cb1-14" tabindex="-1"></a>  depredador_isoclina <span class="ot">&lt;-</span> parameters[<span class="st">&quot;delta&quot;</span>] <span class="sc">/</span> parameters[<span class="st">&quot;beta&quot;</span>]  <span class="co"># Línea constante</span></span>
+<span id="cb1-15"><a href="capítulo-5-la-relación-predador-presa.html#cb1-15" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">presa_isoclina =</span> presa_isoclina, <span class="at">depredador_isoclina =</span> depredador_isoclina)</span>
+<span id="cb1-16"><a href="capítulo-5-la-relación-predador-presa.html#cb1-16" tabindex="-1"></a>}</span>
+<span id="cb1-17"><a href="capítulo-5-la-relación-predador-presa.html#cb1-17" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="capítulo-5-la-relación-predador-presa.html#cb1-18" tabindex="-1"></a><span class="co"># Calcular las isoclinas</span></span>
+<span id="cb1-19"><a href="capítulo-5-la-relación-predador-presa.html#cb1-19" tabindex="-1"></a>isos <span class="ot">&lt;-</span> <span class="fu">isoclinas</span>(<span class="dv">0</span>, parameters)</span>
+<span id="cb1-20"><a href="capítulo-5-la-relación-predador-presa.html#cb1-20" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="capítulo-5-la-relación-predador-presa.html#cb1-21" tabindex="-1"></a><span class="co"># Definir el sistema Lotka-Volterra</span></span>
+<span id="cb1-22"><a href="capítulo-5-la-relación-predador-presa.html#cb1-22" tabindex="-1"></a>lotka_volterra <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parameters) {</span>
+<span id="cb1-23"><a href="capítulo-5-la-relación-predador-presa.html#cb1-23" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(state, parameters)), {</span>
+<span id="cb1-24"><a href="capítulo-5-la-relación-predador-presa.html#cb1-24" tabindex="-1"></a>    dx <span class="ot">&lt;-</span> r <span class="sc">*</span> x <span class="sc">-</span> alpha <span class="sc">*</span> x <span class="sc">*</span> y</span>
+<span id="cb1-25"><a href="capítulo-5-la-relación-predador-presa.html#cb1-25" tabindex="-1"></a>    dy <span class="ot">&lt;-</span> beta <span class="sc">*</span> x <span class="sc">*</span> y <span class="sc">-</span> delta <span class="sc">*</span> y</span>
+<span id="cb1-26"><a href="capítulo-5-la-relación-predador-presa.html#cb1-26" tabindex="-1"></a>    <span class="fu">list</span>(<span class="fu">c</span>(dx, dy))</span>
+<span id="cb1-27"><a href="capítulo-5-la-relación-predador-presa.html#cb1-27" tabindex="-1"></a>  })</span>
+<span id="cb1-28"><a href="capítulo-5-la-relación-predador-presa.html#cb1-28" tabindex="-1"></a>}</span>
+<span id="cb1-29"><a href="capítulo-5-la-relación-predador-presa.html#cb1-29" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="capítulo-5-la-relación-predador-presa.html#cb1-30" tabindex="-1"></a><span class="co"># Condiciones iniciales</span></span>
+<span id="cb1-31"><a href="capítulo-5-la-relación-predador-presa.html#cb1-31" tabindex="-1"></a>state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x =</span> <span class="dv">40</span>, <span class="at">y =</span> <span class="dv">10</span>)</span>
+<span id="cb1-32"><a href="capítulo-5-la-relación-predador-presa.html#cb1-32" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="capítulo-5-la-relación-predador-presa.html#cb1-33" tabindex="-1"></a><span class="co"># Tiempo de simulación</span></span>
+<span id="cb1-34"><a href="capítulo-5-la-relación-predador-presa.html#cb1-34" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">200</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb1-35"><a href="capítulo-5-la-relación-predador-presa.html#cb1-35" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="capítulo-5-la-relación-predador-presa.html#cb1-36" tabindex="-1"></a><span class="co"># Resolver el sistema</span></span>
+<span id="cb1-37"><a href="capítulo-5-la-relación-predador-presa.html#cb1-37" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> state, <span class="at">times =</span> time, <span class="at">func =</span> lotka_volterra, <span class="at">parms =</span> parameters)</span>
+<span id="cb1-38"><a href="capítulo-5-la-relación-predador-presa.html#cb1-38" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out)</span>
+<span id="cb1-39"><a href="capítulo-5-la-relación-predador-presa.html#cb1-39" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="capítulo-5-la-relación-predador-presa.html#cb1-40" tabindex="-1"></a><span class="co"># Crear la gráfica con ggplot2</span></span>
+<span id="cb1-41"><a href="capítulo-5-la-relación-predador-presa.html#cb1-41" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-42"><a href="capítulo-5-la-relación-predador-presa.html#cb1-42" tabindex="-1"></a>  <span class="co"># Trayectorias en el plano fase</span></span>
+<span id="cb1-43"><a href="capítulo-5-la-relación-predador-presa.html#cb1-43" tabindex="-1"></a>  <span class="fu">geom_path</span>(<span class="at">data =</span> out, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y), <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-44"><a href="capítulo-5-la-relación-predador-presa.html#cb1-44" tabindex="-1"></a>  <span class="co"># Isoclina de las presas</span></span>
+<span id="cb1-45"><a href="capítulo-5-la-relación-predador-presa.html#cb1-45" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> isos<span class="sc">$</span>presa_isoclina, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-46"><a href="capítulo-5-la-relación-predador-presa.html#cb1-46" tabindex="-1"></a>  <span class="co"># Isoclina de los depredadores</span></span>
+<span id="cb1-47"><a href="capítulo-5-la-relación-predador-presa.html#cb1-47" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> isos<span class="sc">$</span>depredador_isoclina, <span class="at">color =</span> <span class="st">&quot;green&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-48"><a href="capítulo-5-la-relación-predador-presa.html#cb1-48" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-49"><a href="capítulo-5-la-relación-predador-presa.html#cb1-49" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Plano fase con isoclinas de crecimiento nulo&quot;</span>,</span>
+<span id="cb1-50"><a href="capítulo-5-la-relación-predador-presa.html#cb1-50" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Población de presas (x)&quot;</span>,</span>
+<span id="cb1-51"><a href="capítulo-5-la-relación-predador-presa.html#cb1-51" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Población de depredadores (y)&quot;</span></span>
+<span id="cb1-52"><a href="capítulo-5-la-relación-predador-presa.html#cb1-52" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-53"><a href="capítulo-5-la-relación-predador-presa.html#cb1-53" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+</div>
+</div>
+<div id="extensiones-al-modelo-clásico" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Extensiones al Modelo Clásico<a href="capítulo-5-la-relación-predador-presa.html#extensiones-al-modelo-clásico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El modelo clásico de Lotka-Volterra, aunque es fundamental, no captura muchos aspectos de las interacciones predador-presa observadas en sistemas naturales. Para abordar estas limitaciones, se han desarrollado diversas extensiones que incorporan mayor realismo ecológico:</p>
+<div id="crecimiento-logístico-de-la-presa" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Crecimiento Logístico de la Presa<a href="capítulo-5-la-relación-predador-presa.html#crecimiento-logístico-de-la-presa" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En sistemas naturales, el crecimiento de las presas está limitado por la capacidad de carga del ambiente. Esto puede representarse mediante un término de crecimiento logístico:</p>
+<p><span class="math display">\[
+\frac{dx}{dt} = r x \left(1 - \frac{x}{K}\right) - \alpha x y
+\]</span></p>
+<p>Donde <span class="math inline">\(K\)</span> es la capacidad de carga del ambiente. Este término introduce una estabilización natural en el modelo al limitar el crecimiento exponencial de las presas, lo que puede llevar a un equilibrio estable entre presas y depredadores (Turchin, 2003).</p>
+</div>
+<div id="efectos-allee" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Efectos Allee<a href="capítulo-5-la-relación-predador-presa.html#efectos-allee" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En algunas poblaciones, las tasas de crecimiento de presas y depredadores dependen de alcanzar un tamaño poblacional mínimo. Este fenómeno, conocido como efecto Allee, puede incorporarse en el modelo mediante términos que reflejen umbrales críticos:</p>
+<p><span class="math display">\[
+\frac{dx}{dt} = r x \left(\frac{x}{x + A}\right) - \alpha x y
+\]</span>
+<span class="math display">\[
+\frac{dy}{dt} = \beta x y - \delta y \left(\frac{y}{y + B}\right)
+\]</span></p>
+<p>Donde <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> representan los umbrales de densidad para presas y depredadores, respectivamente. Este enfoque es útil para describir sistemas donde las poblaciones pequeñas tienen un mayor riesgo de extinción (Courchamp et al., 1999).</p>
+<p>Veamos un ejemplo en R:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="capítulo-5-la-relación-predador-presa.html#cb2-1" tabindex="-1"></a><span class="co"># Instalar y cargar paquetes necesarios</span></span>
+<span id="cb2-2"><a href="capítulo-5-la-relación-predador-presa.html#cb2-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;deSolve&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;deSolve&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-3"><a href="capítulo-5-la-relación-predador-presa.html#cb2-3" tabindex="-1"></a><span class="fu">library</span>(deSolve)</span>
+<span id="cb2-4"><a href="capítulo-5-la-relación-predador-presa.html#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="capítulo-5-la-relación-predador-presa.html#cb2-5" tabindex="-1"></a><span class="co"># Definir el modelo con efectos Allee</span></span>
+<span id="cb2-6"><a href="capítulo-5-la-relación-predador-presa.html#cb2-6" tabindex="-1"></a>allee_effect_model <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parameters) {</span>
+<span id="cb2-7"><a href="capítulo-5-la-relación-predador-presa.html#cb2-7" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(state, parameters)), {</span>
+<span id="cb2-8"><a href="capítulo-5-la-relación-predador-presa.html#cb2-8" tabindex="-1"></a>    dx <span class="ot">&lt;-</span> r <span class="sc">*</span> x <span class="sc">*</span> ((x <span class="sc">/</span> (x <span class="sc">+</span> A)) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">-</span> alpha <span class="sc">*</span> x <span class="sc">*</span> y</span>
+<span id="cb2-9"><a href="capítulo-5-la-relación-predador-presa.html#cb2-9" tabindex="-1"></a>    dy <span class="ot">&lt;-</span> beta <span class="sc">*</span> x <span class="sc">*</span> y <span class="sc">-</span> delta <span class="sc">*</span> y <span class="sc">*</span> ((y <span class="sc">/</span> (y <span class="sc">+</span> B)) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb2-10"><a href="capítulo-5-la-relación-predador-presa.html#cb2-10" tabindex="-1"></a>    <span class="fu">list</span>(<span class="fu">c</span>(dx, dy))</span>
+<span id="cb2-11"><a href="capítulo-5-la-relación-predador-presa.html#cb2-11" tabindex="-1"></a>  })</span>
+<span id="cb2-12"><a href="capítulo-5-la-relación-predador-presa.html#cb2-12" tabindex="-1"></a>}</span>
+<span id="cb2-13"><a href="capítulo-5-la-relación-predador-presa.html#cb2-13" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="capítulo-5-la-relación-predador-presa.html#cb2-14" tabindex="-1"></a><span class="co"># Parámetros del modelo</span></span>
+<span id="cb2-15"><a href="capítulo-5-la-relación-predador-presa.html#cb2-15" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-16"><a href="capítulo-5-la-relación-predador-presa.html#cb2-16" tabindex="-1"></a>  <span class="at">r =</span> <span class="fl">0.5</span>,    <span class="co"># Tasa de crecimiento de las presas</span></span>
+<span id="cb2-17"><a href="capítulo-5-la-relación-predador-presa.html#cb2-17" tabindex="-1"></a>  <span class="at">A =</span> <span class="dv">10</span>,     <span class="co"># Umbral Allee para presas</span></span>
+<span id="cb2-18"><a href="capítulo-5-la-relación-predador-presa.html#cb2-18" tabindex="-1"></a>  <span class="at">alpha =</span> <span class="fl">0.02</span>, <span class="co"># Tasa de captura por depredadores</span></span>
+<span id="cb2-19"><a href="capítulo-5-la-relación-predador-presa.html#cb2-19" tabindex="-1"></a>  <span class="at">beta =</span> <span class="fl">0.01</span>,  <span class="co"># Eficiencia de conversión de depredadores</span></span>
+<span id="cb2-20"><a href="capítulo-5-la-relación-predador-presa.html#cb2-20" tabindex="-1"></a>  <span class="at">delta =</span> <span class="fl">0.1</span>,  <span class="co"># Tasa de mortalidad de los depredadores</span></span>
+<span id="cb2-21"><a href="capítulo-5-la-relación-predador-presa.html#cb2-21" tabindex="-1"></a>  <span class="at">B =</span> <span class="dv">5</span>       <span class="co"># Umbral Allee para depredadores</span></span>
+<span id="cb2-22"><a href="capítulo-5-la-relación-predador-presa.html#cb2-22" tabindex="-1"></a>)</span>
+<span id="cb2-23"><a href="capítulo-5-la-relación-predador-presa.html#cb2-23" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="capítulo-5-la-relación-predador-presa.html#cb2-24" tabindex="-1"></a><span class="co"># Condiciones iniciales</span></span>
+<span id="cb2-25"><a href="capítulo-5-la-relación-predador-presa.html#cb2-25" tabindex="-1"></a>state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x =</span> <span class="dv">50</span>, <span class="at">y =</span> <span class="dv">20</span>)</span>
+<span id="cb2-26"><a href="capítulo-5-la-relación-predador-presa.html#cb2-26" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="capítulo-5-la-relación-predador-presa.html#cb2-27" tabindex="-1"></a><span class="co"># Tiempo de simulación</span></span>
+<span id="cb2-28"><a href="capítulo-5-la-relación-predador-presa.html#cb2-28" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">200</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb2-29"><a href="capítulo-5-la-relación-predador-presa.html#cb2-29" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="capítulo-5-la-relación-predador-presa.html#cb2-30" tabindex="-1"></a><span class="co"># Resolver el sistema</span></span>
+<span id="cb2-31"><a href="capítulo-5-la-relación-predador-presa.html#cb2-31" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> state, <span class="at">times =</span> time, <span class="at">func =</span> allee_effect_model, <span class="at">parms =</span> parameters)</span>
+<span id="cb2-32"><a href="capítulo-5-la-relación-predador-presa.html#cb2-32" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="capítulo-5-la-relación-predador-presa.html#cb2-33" tabindex="-1"></a><span class="co"># Convertir resultados a data frame</span></span>
+<span id="cb2-34"><a href="capítulo-5-la-relación-predador-presa.html#cb2-34" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out)</span>
+<span id="cb2-35"><a href="capítulo-5-la-relación-predador-presa.html#cb2-35" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="capítulo-5-la-relación-predador-presa.html#cb2-36" tabindex="-1"></a><span class="co"># Graficar resultados</span></span>
+<span id="cb2-37"><a href="capítulo-5-la-relación-predador-presa.html#cb2-37" tabindex="-1"></a><span class="fu">plot</span>(out<span class="sc">$</span>time, out<span class="sc">$</span>x, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(out<span class="sc">$</span>x, out<span class="sc">$</span>y)),</span>
+<span id="cb2-38"><a href="capítulo-5-la-relación-predador-presa.html#cb2-38" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Poblaciones&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Tiempo&quot;</span>)</span>
+<span id="cb2-39"><a href="capítulo-5-la-relación-predador-presa.html#cb2-39" tabindex="-1"></a><span class="fu">lines</span>(out<span class="sc">$</span>time, out<span class="sc">$</span>y, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb2-40"><a href="capítulo-5-la-relación-predador-presa.html#cb2-40" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Presas&quot;</span>, <span class="st">&quot;Depredadores&quot;</span>), <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb2-41"><a href="capítulo-5-la-relación-predador-presa.html#cb2-41" tabindex="-1"></a>       <span class="at">box.lty =</span> <span class="dv">0</span>)</span></code></pre></div>
+</div>
+<div id="respuestas-funcionales-de-los-depredadores" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Respuestas Funcionales de los Depredadores<a href="capítulo-5-la-relación-predador-presa.html#respuestas-funcionales-de-los-depredadores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La forma en que los depredadores responden a los cambios en la densidad de presas puede influir significativamente en las dinámicas del sistema. Las respuestas funcionales tipo II y tipo III de Holling son representaciones comunes:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Tipo I:</strong> Tasa de depredación líneal simple, en respuesta a la densidad de presas.</p></li>
+<li><p><strong>Tipo II:</strong> Tasa de depredación que se satura a altos niveles de presas:
+<span class="math display">\[
+\frac{dy}{dt} = \beta \frac{x}{1 + h x} y - \delta y
+\]</span>
+Donde <span class="math inline">\(h\)</span> es el tiempo de manejo de cada presa (Holling, 1959).</p></li>
+<li><p><strong>Tipo III:</strong> Tasa de depredación sigmoidea que aumenta a densidades intermedias de presas:
+<span class="math display">\[
+\frac{dy}{dt} = \beta \frac{x^2}{1 + h x^2} y - \delta y
+\]</span></p></li>
+</ol>
+<p>Estas respuestas permiten modelar comportamientos más complejos, como la búsqueda de presas menos comunes o la saturación en la captura. Ambos tipos de respuestas han sido fundamentales para comprender cómo los depredadores modulan las dinámicas poblacionales en sistemas naturales (Abrams &amp; Ginzburg, 2000).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="capítulo-5-la-relación-predador-presa.html#cb3-1" tabindex="-1"></a><span class="co"># Instalar y cargar paquetes necesarios</span></span>
+<span id="cb3-2"><a href="capítulo-5-la-relación-predador-presa.html#cb3-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;ggplot2&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-3"><a href="capítulo-5-la-relación-predador-presa.html#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="capítulo-5-la-relación-predador-presa.html#cb3-4" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-5"><a href="capítulo-5-la-relación-predador-presa.html#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="capítulo-5-la-relación-predador-presa.html#cb3-6" tabindex="-1"></a><span class="co"># Definir las funciones de las respuestas funcionales</span></span>
+<span id="cb3-7"><a href="capítulo-5-la-relación-predador-presa.html#cb3-7" tabindex="-1"></a>response_type_I <span class="ot">&lt;-</span> <span class="cf">function</span>(x, alpha) {</span>
+<span id="cb3-8"><a href="capítulo-5-la-relación-predador-presa.html#cb3-8" tabindex="-1"></a>  alpha <span class="sc">*</span> x</span>
+<span id="cb3-9"><a href="capítulo-5-la-relación-predador-presa.html#cb3-9" tabindex="-1"></a>}</span>
+<span id="cb3-10"><a href="capítulo-5-la-relación-predador-presa.html#cb3-10" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="capítulo-5-la-relación-predador-presa.html#cb3-11" tabindex="-1"></a>response_type_II <span class="ot">&lt;-</span> <span class="cf">function</span>(x, alpha, h) {</span>
+<span id="cb3-12"><a href="capítulo-5-la-relación-predador-presa.html#cb3-12" tabindex="-1"></a>  (alpha <span class="sc">*</span> x) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> h <span class="sc">*</span> x)</span>
+<span id="cb3-13"><a href="capítulo-5-la-relación-predador-presa.html#cb3-13" tabindex="-1"></a>}</span>
+<span id="cb3-14"><a href="capítulo-5-la-relación-predador-presa.html#cb3-14" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="capítulo-5-la-relación-predador-presa.html#cb3-15" tabindex="-1"></a>response_type_III <span class="ot">&lt;-</span> <span class="cf">function</span>(x, alpha, h) {</span>
+<span id="cb3-16"><a href="capítulo-5-la-relación-predador-presa.html#cb3-16" tabindex="-1"></a>  (alpha <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> h <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb3-17"><a href="capítulo-5-la-relación-predador-presa.html#cb3-17" tabindex="-1"></a>}</span>
+<span id="cb3-18"><a href="capítulo-5-la-relación-predador-presa.html#cb3-18" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="capítulo-5-la-relación-predador-presa.html#cb3-19" tabindex="-1"></a><span class="co"># Parámetros </span></span>
+<span id="cb3-20"><a href="capítulo-5-la-relación-predador-presa.html#cb3-20" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.5</span>  <span class="co"># Tasa de captura</span></span>
+<span id="cb3-21"><a href="capítulo-5-la-relación-predador-presa.html#cb3-21" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.3</span>  <span class="co"># Eficiencia de conversión</span></span>
+<span id="cb3-22"><a href="capítulo-5-la-relación-predador-presa.html#cb3-22" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fl">0.05</span>     <span class="co"># tiempo de manejo</span></span>
+<span id="cb3-23"><a href="capítulo-5-la-relación-predador-presa.html#cb3-23" tabindex="-1"></a>x_values <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="at">length.out =</span> <span class="dv">500</span>)  <span class="co"># Rango de densidad de presas</span></span>
+<span id="cb3-24"><a href="capítulo-5-la-relación-predador-presa.html#cb3-24" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="capítulo-5-la-relación-predador-presa.html#cb3-25" tabindex="-1"></a><span class="co"># Calcular las tasas de depredación ajustadas para cada tipo de respuesta funcional</span></span>
+<span id="cb3-26"><a href="capítulo-5-la-relación-predador-presa.html#cb3-26" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-27"><a href="capítulo-5-la-relación-predador-presa.html#cb3-27" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rep</span>(x_values, <span class="dv">3</span>),</span>
+<span id="cb3-28"><a href="capítulo-5-la-relación-predador-presa.html#cb3-28" tabindex="-1"></a>  <span class="at">depredation_rate =</span> <span class="fu">c</span>(</span>
+<span id="cb3-29"><a href="capítulo-5-la-relación-predador-presa.html#cb3-29" tabindex="-1"></a>    <span class="fu">response_type_I</span>(x_values, alpha),</span>
+<span id="cb3-30"><a href="capítulo-5-la-relación-predador-presa.html#cb3-30" tabindex="-1"></a>    <span class="fu">response_type_II</span>(x_values, alpha, h),</span>
+<span id="cb3-31"><a href="capítulo-5-la-relación-predador-presa.html#cb3-31" tabindex="-1"></a>    <span class="fu">response_type_III</span>(x_values, alpha, h)</span>
+<span id="cb3-32"><a href="capítulo-5-la-relación-predador-presa.html#cb3-32" tabindex="-1"></a>  ),</span>
+<span id="cb3-33"><a href="capítulo-5-la-relación-predador-presa.html#cb3-33" tabindex="-1"></a>  <span class="at">type =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Tipo I&quot;</span>, <span class="st">&quot;Tipo II&quot;</span>, <span class="st">&quot;Tipo III&quot;</span>), <span class="at">each =</span> <span class="fu">length</span>(x_values))</span>
+<span id="cb3-34"><a href="capítulo-5-la-relación-predador-presa.html#cb3-34" tabindex="-1"></a>)</span>
+<span id="cb3-35"><a href="capítulo-5-la-relación-predador-presa.html#cb3-35" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="capítulo-5-la-relación-predador-presa.html#cb3-36" tabindex="-1"></a><span class="co"># Graficar los resultados ajustados</span></span>
+<span id="cb3-37"><a href="capítulo-5-la-relación-predador-presa.html#cb3-37" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> depredation_rate, <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb3-38"><a href="capítulo-5-la-relación-predador-presa.html#cb3-38" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb3-39"><a href="capítulo-5-la-relación-predador-presa.html#cb3-39" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-40"><a href="capítulo-5-la-relación-predador-presa.html#cb3-40" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Respuestas Funcionales: Tipo I, II y III &quot;</span>,</span>
+<span id="cb3-41"><a href="capítulo-5-la-relación-predador-presa.html#cb3-41" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Densidad de Presas&quot;</span>,</span>
+<span id="cb3-42"><a href="capítulo-5-la-relación-predador-presa.html#cb3-42" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de Depredación&quot;</span>,</span>
+<span id="cb3-43"><a href="capítulo-5-la-relación-predador-presa.html#cb3-43" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Tipo de Respuesta&quot;</span>,</span>
+<span id="cb3-44"><a href="capítulo-5-la-relación-predador-presa.html#cb3-44" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">&quot;Tipo de Respuesta&quot;</span></span>
+<span id="cb3-45"><a href="capítulo-5-la-relación-predador-presa.html#cb3-45" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-46"><a href="capítulo-5-la-relación-predador-presa.html#cb3-46" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-47"><a href="capítulo-5-la-relación-predador-presa.html#cb3-47" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-48"><a href="capítulo-5-la-relación-predador-presa.html#cb3-48" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb3-49"><a href="capítulo-5-la-relación-predador-presa.html#cb3-49" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb3-50"><a href="capítulo-5-la-relación-predador-presa.html#cb3-50" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>)</span>
+<span id="cb3-51"><a href="capítulo-5-la-relación-predador-presa.html#cb3-51" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>)) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">20</span>))</span></code></pre></div>
+</div>
+</div>
+<div id="dinámicas-complejas" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Dinámicas Complejas<a href="capítulo-5-la-relación-predador-presa.html#dinámicas-complejas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Las interacciones predador-presa no siempre siguen dinámicas predecibles o simples. En muchos sistemas, la incorporación de no linealidades o complejidad adicional en los modelos genera comportamientos más ricos y dinámicos, como ciclos límite y caos.</p>
+<div id="introducción-de-ciclos-límite" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Introducción de Ciclos Límite<a href="capítulo-5-la-relación-predador-presa.html#introducción-de-ciclos-límite" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los ciclos límite son oscilaciones estables que ocurren alrededor de un punto de equilibrio inestable. En el contexto de modelos predador-presa, estos ciclos emergen cuando los efectos estabilizadores, como la capacidad de carga o la saturación de depredación, equilibran las tendencias oscilatorias del sistema. Matemáticamente, pueden visualizarse en sistemas extendidos donde las trayectorias convergen a un ciclo cerrado en el plano fase en lugar de un punto de equilibrio.</p>
+<p>Un ejemplo común ocurre cuando se introduce el crecimiento logístico para las presas:
+<span class="math display">\[
+\frac{dx}{dt} = r x \left(1 - \frac{x}{K}\right) - \alpha x y
+\]</span>
+<span class="math display">\[
+\frac{dy}{dt} = \beta x y - \delta y
+\]</span>
+En este caso, el sistema puede mostrar ciclos límite estables que dependen de los valores de <span class="math inline">\(r\)</span>, <span class="math inline">\(K\)</span>, <span class="math inline">\(\alpha\)</span>, y <span class="math inline">\(\beta\)</span>.</p>
+<div id="ejemplo-en-r" class="section level4 hasAnchor" number="6.3.1.1">
+<h4><span class="header-section-number">6.3.1.1</span> Ejemplo en R<a href="capítulo-5-la-relación-predador-presa.html#ejemplo-en-r" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="capítulo-5-la-relación-predador-presa.html#cb4-1" tabindex="-1"></a><span class="co"># Instalar el paquete si no está instalado</span></span>
+<span id="cb4-2"><a href="capítulo-5-la-relación-predador-presa.html#cb4-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;deSolve&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;deSolve&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-3"><a href="capítulo-5-la-relación-predador-presa.html#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="capítulo-5-la-relación-predador-presa.html#cb4-4" tabindex="-1"></a><span class="co"># Cargar el paquete</span></span>
+<span id="cb4-5"><a href="capítulo-5-la-relación-predador-presa.html#cb4-5" tabindex="-1"></a><span class="fu">library</span>(deSolve)</span>
+<span id="cb4-6"><a href="capítulo-5-la-relación-predador-presa.html#cb4-6" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="capítulo-5-la-relación-predador-presa.html#cb4-7" tabindex="-1"></a><span class="co"># Definir el modelo predador-presa con crecimiento logístico</span></span>
+<span id="cb4-8"><a href="capítulo-5-la-relación-predador-presa.html#cb4-8" tabindex="-1"></a>lotka_volterra <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parameters) {</span>
+<span id="cb4-9"><a href="capítulo-5-la-relación-predador-presa.html#cb4-9" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(state, parameters)), {</span>
+<span id="cb4-10"><a href="capítulo-5-la-relación-predador-presa.html#cb4-10" tabindex="-1"></a>    dx <span class="ot">&lt;-</span> r <span class="sc">*</span> x <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> x <span class="sc">/</span> K) <span class="sc">-</span> alpha <span class="sc">*</span> x <span class="sc">*</span> y</span>
+<span id="cb4-11"><a href="capítulo-5-la-relación-predador-presa.html#cb4-11" tabindex="-1"></a>    dy <span class="ot">&lt;-</span> beta <span class="sc">*</span> x <span class="sc">*</span> y <span class="sc">-</span> delta <span class="sc">*</span> y</span>
+<span id="cb4-12"><a href="capítulo-5-la-relación-predador-presa.html#cb4-12" tabindex="-1"></a>    <span class="fu">list</span>(<span class="fu">c</span>(dx, dy))</span>
+<span id="cb4-13"><a href="capítulo-5-la-relación-predador-presa.html#cb4-13" tabindex="-1"></a>  })</span>
+<span id="cb4-14"><a href="capítulo-5-la-relación-predador-presa.html#cb4-14" tabindex="-1"></a>}</span>
+<span id="cb4-15"><a href="capítulo-5-la-relación-predador-presa.html#cb4-15" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="capítulo-5-la-relación-predador-presa.html#cb4-16" tabindex="-1"></a><span class="co"># Parámetros del modelo</span></span>
+<span id="cb4-17"><a href="capítulo-5-la-relación-predador-presa.html#cb4-17" tabindex="-1"></a>parameters <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">r =</span> <span class="fl">0.5</span>, <span class="at">K =</span> <span class="dv">100</span>, <span class="at">alpha =</span> <span class="fl">0.02</span>, <span class="at">beta =</span> <span class="fl">0.01</span>, <span class="at">delta =</span> <span class="fl">0.1</span>)</span>
+<span id="cb4-18"><a href="capítulo-5-la-relación-predador-presa.html#cb4-18" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="capítulo-5-la-relación-predador-presa.html#cb4-19" tabindex="-1"></a><span class="co"># Condiciones iniciales</span></span>
+<span id="cb4-20"><a href="capítulo-5-la-relación-predador-presa.html#cb4-20" tabindex="-1"></a>state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x =</span> <span class="dv">40</span>, <span class="at">y =</span> <span class="dv">9</span>)</span>
+<span id="cb4-21"><a href="capítulo-5-la-relación-predador-presa.html#cb4-21" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="capítulo-5-la-relación-predador-presa.html#cb4-22" tabindex="-1"></a><span class="co"># Tiempo de simulación</span></span>
+<span id="cb4-23"><a href="capítulo-5-la-relación-predador-presa.html#cb4-23" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">200</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
+<span id="cb4-24"><a href="capítulo-5-la-relación-predador-presa.html#cb4-24" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="capítulo-5-la-relación-predador-presa.html#cb4-25" tabindex="-1"></a><span class="co"># Resolver el sistema de ecuaciones</span></span>
+<span id="cb4-26"><a href="capítulo-5-la-relación-predador-presa.html#cb4-26" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> state, <span class="at">times =</span> time, <span class="at">func =</span> lotka_volterra, <span class="at">parms =</span> parameters)</span>
+<span id="cb4-27"><a href="capítulo-5-la-relación-predador-presa.html#cb4-27" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="capítulo-5-la-relación-predador-presa.html#cb4-28" tabindex="-1"></a><span class="co"># Convertir a data frame para graficar</span></span>
+<span id="cb4-29"><a href="capítulo-5-la-relación-predador-presa.html#cb4-29" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out)</span>
+<span id="cb4-30"><a href="capítulo-5-la-relación-predador-presa.html#cb4-30" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="capítulo-5-la-relación-predador-presa.html#cb4-31" tabindex="-1"></a><span class="co"># Graficar los resultados</span></span>
+<span id="cb4-32"><a href="capítulo-5-la-relación-predador-presa.html#cb4-32" tabindex="-1"></a><span class="fu">plot</span>(out<span class="sc">$</span>time, out<span class="sc">$</span>x, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">ylab =</span> <span class="st">&quot;Poblaciones&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Tiempo&quot;</span>)</span>
+<span id="cb4-33"><a href="capítulo-5-la-relación-predador-presa.html#cb4-33" tabindex="-1"></a><span class="fu">lines</span>(out<span class="sc">$</span>time, out<span class="sc">$</span>y, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb4-34"><a href="capítulo-5-la-relación-predador-presa.html#cb4-34" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;Presas&quot;</span>, <span class="st">&quot;Depredadores&quot;</span>), <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="condiciones-para-la-emergencia-de-caos" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Condiciones para la Emergencia de Caos<a href="capítulo-5-la-relación-predador-presa.html#condiciones-para-la-emergencia-de-caos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El caos puede emerger en modelos predador-presa cuando los sistemas exhiben sensibilidad extrema a las condiciones iniciales y comportamientos impredecibles a largo plazo. Esto ocurre frecuentemente en modelos que incorporan:</p>
+<ul>
+<li>Respuestas funcionales no lineales (como las respuestas tipo III).</li>
+<li>Retrasos temporales en las interacciones, por ejemplo, en la reproducción de los depredadores o la regeneración de las presas.</li>
+<li>Altos valores de tasa de crecimiento intrínseca de las presas <span class="math inline">\(r\)</span>.</li>
+</ul>
+<p>Por ejemplo, el modelo de May (1976) demostró que la inclusión de retrasos en un sistema simple puede generar comportamientos caóticos. Estos sistemas no lineales son estudiados a menudo mediante herramientas numéricas y análisis de bifurcaciones para identificar los rangos de parámetros donde aparece el caos.</p>
+</div>
+</div>
+<div id="sistema-depredador-presa-en-r" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Sistema Depredador-Presa en R<a href="capítulo-5-la-relación-predador-presa.html#sistema-depredador-presa-en-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Transformamos una matriz replicadora para obtener un sistema GLV equivalente. Simulamos:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="capítulo-5-la-relación-predador-presa.html#cb5-1" tabindex="-1"></a><span class="co"># Función para el modelo GLV</span></span>
+<span id="cb5-2"><a href="capítulo-5-la-relación-predador-presa.html#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="capítulo-5-la-relación-predador-presa.html#cb5-3" tabindex="-1"></a>integrate_GLV <span class="ot">&lt;-</span> <span class="cf">function</span>(r, A, x0, <span class="at">maxtime =</span> <span class="dv">100</span>, <span class="at">steptime =</span> <span class="fl">0.5</span>) {</span>
+<span id="cb5-4"><a href="capítulo-5-la-relación-predador-presa.html#cb5-4" tabindex="-1"></a>  <span class="fu">library</span>(deSolve)</span>
+<span id="cb5-5"><a href="capítulo-5-la-relación-predador-presa.html#cb5-5" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="capítulo-5-la-relación-predador-presa.html#cb5-6" tabindex="-1"></a>  <span class="co"># Definir el sistema GLV</span></span>
+<span id="cb5-7"><a href="capítulo-5-la-relación-predador-presa.html#cb5-7" tabindex="-1"></a>  glv <span class="ot">&lt;-</span> <span class="cf">function</span>(t, x, parms) {</span>
+<span id="cb5-8"><a href="capítulo-5-la-relación-predador-presa.html#cb5-8" tabindex="-1"></a>    <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(x, parms)), {</span>
+<span id="cb5-9"><a href="capítulo-5-la-relación-predador-presa.html#cb5-9" tabindex="-1"></a>      dxdt <span class="ot">&lt;-</span> x <span class="sc">*</span> (r <span class="sc">+</span> A <span class="sc">%*%</span> x)</span>
+<span id="cb5-10"><a href="capítulo-5-la-relación-predador-presa.html#cb5-10" tabindex="-1"></a>      <span class="fu">list</span>(dxdt)</span>
+<span id="cb5-11"><a href="capítulo-5-la-relación-predador-presa.html#cb5-11" tabindex="-1"></a>    })</span>
+<span id="cb5-12"><a href="capítulo-5-la-relación-predador-presa.html#cb5-12" tabindex="-1"></a>  }</span>
+<span id="cb5-13"><a href="capítulo-5-la-relación-predador-presa.html#cb5-13" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="capítulo-5-la-relación-predador-presa.html#cb5-14" tabindex="-1"></a>  <span class="co"># Parámetros y tiempos</span></span>
+<span id="cb5-15"><a href="capítulo-5-la-relación-predador-presa.html#cb5-15" tabindex="-1"></a>  times <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, maxtime, <span class="at">by =</span> steptime)</span>
+<span id="cb5-16"><a href="capítulo-5-la-relación-predador-presa.html#cb5-16" tabindex="-1"></a>  parms <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">r =</span> r, <span class="at">A =</span> A)</span>
+<span id="cb5-17"><a href="capítulo-5-la-relación-predador-presa.html#cb5-17" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="capítulo-5-la-relación-predador-presa.html#cb5-18" tabindex="-1"></a>  <span class="co"># Resolver el sistema GLV</span></span>
+<span id="cb5-19"><a href="capítulo-5-la-relación-predador-presa.html#cb5-19" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> x0, <span class="at">times =</span> times, <span class="at">func =</span> glv, <span class="at">parms =</span> parms)</span>
+<span id="cb5-20"><a href="capítulo-5-la-relación-predador-presa.html#cb5-20" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="capítulo-5-la-relación-predador-presa.html#cb5-21" tabindex="-1"></a>  <span class="co"># Convertir a un data frame</span></span>
+<span id="cb5-22"><a href="capítulo-5-la-relación-predador-presa.html#cb5-22" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out)</span>
+<span id="cb5-23"><a href="capítulo-5-la-relación-predador-presa.html#cb5-23" tabindex="-1"></a>  <span class="fu">colnames</span>(out) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;time&quot;</span>, <span class="fu">paste0</span>(<span class="st">&quot;sp_&quot;</span>, <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(out) <span class="sc">-</span> <span class="dv">1</span>)))</span>
+<span id="cb5-24"><a href="capítulo-5-la-relación-predador-presa.html#cb5-24" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="capítulo-5-la-relación-predador-presa.html#cb5-25" tabindex="-1"></a>  <span class="co"># Reestructurar los datos</span></span>
+<span id="cb5-26"><a href="capítulo-5-la-relación-predador-presa.html#cb5-26" tabindex="-1"></a>  out_long <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(out, <span class="at">cols =</span> <span class="sc">-</span>time, <span class="at">names_to =</span> <span class="st">&quot;species&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;density&quot;</span>)</span>
+<span id="cb5-27"><a href="capítulo-5-la-relación-predador-presa.html#cb5-27" tabindex="-1"></a>  <span class="fu">return</span>(out_long)</span>
+<span id="cb5-28"><a href="capítulo-5-la-relación-predador-presa.html#cb5-28" tabindex="-1"></a>}</span>
+<span id="cb5-29"><a href="capítulo-5-la-relación-predador-presa.html#cb5-29" tabindex="-1"></a></span>
+<span id="cb5-30"><a href="capítulo-5-la-relación-predador-presa.html#cb5-30" tabindex="-1"></a><span class="co">#Ejemplo</span></span>
+<span id="cb5-31"><a href="capítulo-5-la-relación-predador-presa.html#cb5-31" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb5-32"><a href="capítulo-5-la-relación-predador-presa.html#cb5-32" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>,</span>
+<span id="cb5-33"><a href="capítulo-5-la-relación-predador-presa.html#cb5-33" tabindex="-1"></a>              <span class="sc">-</span><span class="dv">2</span>, <span class="dv">1</span>), <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-34"><a href="capítulo-5-la-relación-predador-presa.html#cb5-34" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">1.1</span>)</span>
+<span id="cb5-35"><a href="capítulo-5-la-relación-predador-presa.html#cb5-35" tabindex="-1"></a>glvex <span class="ot">&lt;-</span> <span class="fu">integrate_GLV</span>(r, A, x0, <span class="at">maxtime =</span> <span class="dv">15</span>, <span class="at">steptime =</span> <span class="fl">0.01</span>)</span>
+<span id="cb5-36"><a href="capítulo-5-la-relación-predador-presa.html#cb5-36" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="capítulo-5-la-relación-predador-presa.html#cb5-37" tabindex="-1"></a><span class="co"># Graficar resultados GLV de un modelo Predador-Presa</span></span>
+<span id="cb5-38"><a href="capítulo-5-la-relación-predador-presa.html#cb5-38" tabindex="-1"></a><span class="fu">ggplot</span>(glvex, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> density, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb5-39"><a href="capítulo-5-la-relación-predador-presa.html#cb5-39" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb5-40"><a href="capítulo-5-la-relación-predador-presa.html#cb5-40" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Dinámicas GLV&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-41"><a href="capítulo-5-la-relación-predador-presa.html#cb5-41" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Tiempo&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)</span></code></pre></div>
+<p>En este sistema, las especies oscilan alrededor de un equilibrio estable.</p>
+</div>
+<div id="comparación-entre-lotka-volterra-y-modelos-de-teoría-de-juegos" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Comparación entre Lotka-Volterra y modelos de Teoría de Juegos<a href="capítulo-5-la-relación-predador-presa.html#comparación-entre-lotka-volterra-y-modelos-de-teoría-de-juegos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para entender las diferencias entre los enfoques de Lotka-Volterra y la Teoría de Juegos, simularemos ambos modelos y compararemos sus resultados en términos de dinámicas poblacionales y estrategias óptimas.</p>
+<div id="comparación-de-modelos" class="section level3 hasAnchor" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> Comparación de modelos<a href="capítulo-5-la-relación-predador-presa.html#comparación-de-modelos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La relación entre los modelos de Lotka-Volterra generalizados (GLV) y la Teoría de Juegos se establece a través de las dinámicas replicadoras. Estas dinámicas describen cómo la proporción de individuos que adoptan ciertas estrategias cambia con el tiempo, basándose en su éxito relativo.
+En el modelo GLV, las interacciones entre especies afectan sus tasas de crecimiento, similar a cómo, en la Teoría de Juegos, el éxito relativo de una estrategia influye en su prevalencia en la población.
+Por lo tanto, las dinámicas replicadoras actúan como un puente conceptual entre la ecología matemática y la Teoría de Juegos evolutiva, proporcionando un marco unificado para analizar cómo las interacciones y competencias afectan la composición y evolución de las poblaciones.</p>
+</div>
+<div id="dinámica-del-sistema" class="section level3 hasAnchor" number="6.5.2">
+<h3><span class="header-section-number">6.5.2</span> Dinámica del sistema<a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Notamos que no solo los equilibrios son equivalentes, sino también las dinámicas una vez rescaladas correctamente.</p>
+</div>
+</div>
+<div id="visualización-de-dinámicas-en-glv-y-re" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Visualización de Dinámicas en GLV y RE<a href="capítulo-5-la-relación-predador-presa.html#visualización-de-dinámicas-en-glv-y-re" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para observar las variaciones de las especies en el tiempo tanto en GLV como en RE, se implementa el siguiente código:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="capítulo-5-la-relación-predador-presa.html#cb6-1" tabindex="-1"></a><span class="co"># Dinámicas GLV</span></span>
+<span id="cb6-2"><a href="capítulo-5-la-relación-predador-presa.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="capítulo-5-la-relación-predador-presa.html#cb6-3" tabindex="-1"></a>integrate_GLV <span class="ot">&lt;-</span> <span class="cf">function</span>(r, A, x0, <span class="at">maxtime =</span> <span class="dv">100</span>, <span class="at">steptime =</span> <span class="fl">0.5</span>) {</span>
+<span id="cb6-4"><a href="capítulo-5-la-relación-predador-presa.html#cb6-4" tabindex="-1"></a>  <span class="fu">library</span>(deSolve)</span>
+<span id="cb6-5"><a href="capítulo-5-la-relación-predador-presa.html#cb6-5" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="capítulo-5-la-relación-predador-presa.html#cb6-6" tabindex="-1"></a>  <span class="co"># Definir el sistema GLV</span></span>
+<span id="cb6-7"><a href="capítulo-5-la-relación-predador-presa.html#cb6-7" tabindex="-1"></a>  glv <span class="ot">&lt;-</span> <span class="cf">function</span>(t, x, parms) {</span>
+<span id="cb6-8"><a href="capítulo-5-la-relación-predador-presa.html#cb6-8" tabindex="-1"></a>    <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(x, parms)), {</span>
+<span id="cb6-9"><a href="capítulo-5-la-relación-predador-presa.html#cb6-9" tabindex="-1"></a>      dxdt <span class="ot">&lt;-</span> x <span class="sc">*</span> (r <span class="sc">+</span> A <span class="sc">%*%</span> x)</span>
+<span id="cb6-10"><a href="capítulo-5-la-relación-predador-presa.html#cb6-10" tabindex="-1"></a>      <span class="fu">list</span>(dxdt)</span>
+<span id="cb6-11"><a href="capítulo-5-la-relación-predador-presa.html#cb6-11" tabindex="-1"></a>    })</span>
+<span id="cb6-12"><a href="capítulo-5-la-relación-predador-presa.html#cb6-12" tabindex="-1"></a>  }</span>
+<span id="cb6-13"><a href="capítulo-5-la-relación-predador-presa.html#cb6-13" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="capítulo-5-la-relación-predador-presa.html#cb6-14" tabindex="-1"></a>  <span class="co"># Parámetros y tiempos</span></span>
+<span id="cb6-15"><a href="capítulo-5-la-relación-predador-presa.html#cb6-15" tabindex="-1"></a>  times <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, maxtime, <span class="at">by =</span> steptime)</span>
+<span id="cb6-16"><a href="capítulo-5-la-relación-predador-presa.html#cb6-16" tabindex="-1"></a>  parms <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">r =</span> r, <span class="at">A =</span> A)</span>
+<span id="cb6-17"><a href="capítulo-5-la-relación-predador-presa.html#cb6-17" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="capítulo-5-la-relación-predador-presa.html#cb6-18" tabindex="-1"></a>  <span class="co"># Resolver el sistema GLV</span></span>
+<span id="cb6-19"><a href="capítulo-5-la-relación-predador-presa.html#cb6-19" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> x0, <span class="at">times =</span> times, <span class="at">func =</span> glv, <span class="at">parms =</span> parms)</span>
+<span id="cb6-20"><a href="capítulo-5-la-relación-predador-presa.html#cb6-20" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="capítulo-5-la-relación-predador-presa.html#cb6-21" tabindex="-1"></a>  <span class="co"># Convertir a un data frame</span></span>
+<span id="cb6-22"><a href="capítulo-5-la-relación-predador-presa.html#cb6-22" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out)</span>
+<span id="cb6-23"><a href="capítulo-5-la-relación-predador-presa.html#cb6-23" tabindex="-1"></a>  <span class="fu">colnames</span>(out) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;time&quot;</span>, <span class="fu">paste0</span>(<span class="st">&quot;sp_&quot;</span>, <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(out) <span class="sc">-</span> <span class="dv">1</span>)))</span>
+<span id="cb6-24"><a href="capítulo-5-la-relación-predador-presa.html#cb6-24" tabindex="-1"></a></span>
+<span id="cb6-25"><a href="capítulo-5-la-relación-predador-presa.html#cb6-25" tabindex="-1"></a>  <span class="co"># Reestructurar los datos</span></span>
+<span id="cb6-26"><a href="capítulo-5-la-relación-predador-presa.html#cb6-26" tabindex="-1"></a>  out_long <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(out, <span class="at">cols =</span> <span class="sc">-</span>time, <span class="at">names_to =</span> <span class="st">&quot;species&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;density&quot;</span>)</span>
+<span id="cb6-27"><a href="capítulo-5-la-relación-predador-presa.html#cb6-27" tabindex="-1"></a>  <span class="fu">return</span>(out_long)</span>
+<span id="cb6-28"><a href="capítulo-5-la-relación-predador-presa.html#cb6-28" tabindex="-1"></a>}</span>
+<span id="cb6-29"><a href="capítulo-5-la-relación-predador-presa.html#cb6-29" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="capítulo-5-la-relación-predador-presa.html#cb6-30" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="capítulo-5-la-relación-predador-presa.html#cb6-31" tabindex="-1"></a><span class="co"># Ahora con una matriz distinta para comparar con RE:</span></span>
+<span id="cb6-32"><a href="capítulo-5-la-relación-predador-presa.html#cb6-32" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="capítulo-5-la-relación-predador-presa.html#cb6-33" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb6-34"><a href="capítulo-5-la-relación-predador-presa.html#cb6-34" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>,</span>
+<span id="cb6-35"><a href="capítulo-5-la-relación-predador-presa.html#cb6-35" tabindex="-1"></a>              <span class="sc">-</span><span class="fl">0.7</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">0</span>,</span>
+<span id="cb6-36"><a href="capítulo-5-la-relación-predador-presa.html#cb6-36" tabindex="-1"></a>              <span class="sc">-</span><span class="fl">0.3</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">5</span>), <span class="dv">3</span>, <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-37"><a href="capítulo-5-la-relación-predador-presa.html#cb6-37" tabindex="-1"></a>x0 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb6-38"><a href="capítulo-5-la-relación-predador-presa.html#cb6-38" tabindex="-1"></a>glvex <span class="ot">&lt;-</span> <span class="fu">integrate_GLV</span>(r, A, x0)</span>
+<span id="cb6-39"><a href="capítulo-5-la-relación-predador-presa.html#cb6-39" tabindex="-1"></a></span>
+<span id="cb6-40"><a href="capítulo-5-la-relación-predador-presa.html#cb6-40" tabindex="-1"></a><span class="co"># Graficar resultados GLV para comparar con RE</span></span>
+<span id="cb6-41"><a href="capítulo-5-la-relación-predador-presa.html#cb6-41" tabindex="-1"></a><span class="fu">ggplot</span>(glvex, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> density, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb6-42"><a href="capítulo-5-la-relación-predador-presa.html#cb6-42" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb6-43"><a href="capítulo-5-la-relación-predador-presa.html#cb6-43" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Dinámica GLV&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-44"><a href="capítulo-5-la-relación-predador-presa.html#cb6-44" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Tiempo&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)  <span class="sc">+</span></span>
+<span id="cb6-45"><a href="capítulo-5-la-relación-predador-presa.html#cb6-45" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb6-46"><a href="capítulo-5-la-relación-predador-presa.html#cb6-46" tabindex="-1"></a>  </span>
+<span id="cb6-47"><a href="capítulo-5-la-relación-predador-presa.html#cb6-47" tabindex="-1"></a></span>
+<span id="cb6-48"><a href="capítulo-5-la-relación-predador-presa.html#cb6-48" tabindex="-1"></a><span class="co"># Dinámicas RE</span></span>
+<span id="cb6-49"><a href="capítulo-5-la-relación-predador-presa.html#cb6-49" tabindex="-1"></a></span>
+<span id="cb6-50"><a href="capítulo-5-la-relación-predador-presa.html#cb6-50" tabindex="-1"></a>integrate_RE <span class="ot">&lt;-</span> <span class="cf">function</span>(Atilde, y0, <span class="at">maxtime =</span> <span class="dv">40</span>, <span class="at">steptime =</span> <span class="fl">0.05</span>) {</span>
+<span id="cb6-51"><a href="capítulo-5-la-relación-predador-presa.html#cb6-51" tabindex="-1"></a>  <span class="fu">library</span>(deSolve)</span>
+<span id="cb6-52"><a href="capítulo-5-la-relación-predador-presa.html#cb6-52" tabindex="-1"></a>  </span>
+<span id="cb6-53"><a href="capítulo-5-la-relación-predador-presa.html#cb6-53" tabindex="-1"></a>  <span class="co"># Definir el sistema replicador</span></span>
+<span id="cb6-54"><a href="capítulo-5-la-relación-predador-presa.html#cb6-54" tabindex="-1"></a>  replicator <span class="ot">&lt;-</span> <span class="cf">function</span>(t, y, parms) {</span>
+<span id="cb6-55"><a href="capítulo-5-la-relación-predador-presa.html#cb6-55" tabindex="-1"></a>    <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(y, parms)), {</span>
+<span id="cb6-56"><a href="capítulo-5-la-relación-predador-presa.html#cb6-56" tabindex="-1"></a>      fitness <span class="ot">&lt;-</span> Atilde <span class="sc">%*%</span> y</span>
+<span id="cb6-57"><a href="capítulo-5-la-relación-predador-presa.html#cb6-57" tabindex="-1"></a>      mean_fitness <span class="ot">&lt;-</span> <span class="fu">sum</span>(y <span class="sc">*</span> fitness)</span>
+<span id="cb6-58"><a href="capítulo-5-la-relación-predador-presa.html#cb6-58" tabindex="-1"></a>      dy <span class="ot">&lt;-</span> y <span class="sc">*</span> (fitness <span class="sc">-</span> mean_fitness)</span>
+<span id="cb6-59"><a href="capítulo-5-la-relación-predador-presa.html#cb6-59" tabindex="-1"></a>      <span class="fu">list</span>(dy)</span>
+<span id="cb6-60"><a href="capítulo-5-la-relación-predador-presa.html#cb6-60" tabindex="-1"></a>    })</span>
+<span id="cb6-61"><a href="capítulo-5-la-relación-predador-presa.html#cb6-61" tabindex="-1"></a>  }</span>
+<span id="cb6-62"><a href="capítulo-5-la-relación-predador-presa.html#cb6-62" tabindex="-1"></a>  </span>
+<span id="cb6-63"><a href="capítulo-5-la-relación-predador-presa.html#cb6-63" tabindex="-1"></a>  <span class="co"># Parámetros y tiempos</span></span>
+<span id="cb6-64"><a href="capítulo-5-la-relación-predador-presa.html#cb6-64" tabindex="-1"></a>  times <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, maxtime, <span class="at">by =</span> steptime)</span>
+<span id="cb6-65"><a href="capítulo-5-la-relación-predador-presa.html#cb6-65" tabindex="-1"></a>  parms <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">Atilde =</span> Atilde)</span>
+<span id="cb6-66"><a href="capítulo-5-la-relación-predador-presa.html#cb6-66" tabindex="-1"></a>  </span>
+<span id="cb6-67"><a href="capítulo-5-la-relación-predador-presa.html#cb6-67" tabindex="-1"></a>  <span class="co"># Resolver el sistema replicador</span></span>
+<span id="cb6-68"><a href="capítulo-5-la-relación-predador-presa.html#cb6-68" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> y0, <span class="at">times =</span> times, <span class="at">func =</span> replicator, <span class="at">parms =</span> parms)</span>
+<span id="cb6-69"><a href="capítulo-5-la-relación-predador-presa.html#cb6-69" tabindex="-1"></a>  </span>
+<span id="cb6-70"><a href="capítulo-5-la-relación-predador-presa.html#cb6-70" tabindex="-1"></a>  <span class="co"># Convertir a un data frame</span></span>
+<span id="cb6-71"><a href="capítulo-5-la-relación-predador-presa.html#cb6-71" tabindex="-1"></a>  out <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out)</span>
+<span id="cb6-72"><a href="capítulo-5-la-relación-predador-presa.html#cb6-72" tabindex="-1"></a>  <span class="fu">colnames</span>(out) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;time&quot;</span>, <span class="fu">paste0</span>(<span class="st">&quot;sp_&quot;</span>, <span class="dv">1</span><span class="sc">:</span>(<span class="fu">ncol</span>(out) <span class="sc">-</span> <span class="dv">1</span>)))</span>
+<span id="cb6-73"><a href="capítulo-5-la-relación-predador-presa.html#cb6-73" tabindex="-1"></a>  </span>
+<span id="cb6-74"><a href="capítulo-5-la-relación-predador-presa.html#cb6-74" tabindex="-1"></a>  <span class="co"># Reestructurar los datos para ggplot</span></span>
+<span id="cb6-75"><a href="capítulo-5-la-relación-predador-presa.html#cb6-75" tabindex="-1"></a>  out_long <span class="ot">&lt;-</span> tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(out, <span class="at">cols =</span> <span class="sc">-</span>time, <span class="at">names_to =</span> <span class="st">&quot;species&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;density&quot;</span>)</span>
+<span id="cb6-76"><a href="capítulo-5-la-relación-predador-presa.html#cb6-76" tabindex="-1"></a>  <span class="fu">return</span>(out_long)</span>
+<span id="cb6-77"><a href="capítulo-5-la-relación-predador-presa.html#cb6-77" tabindex="-1"></a>}</span>
+<span id="cb6-78"><a href="capítulo-5-la-relación-predador-presa.html#cb6-78" tabindex="-1"></a></span>
+<span id="cb6-79"><a href="capítulo-5-la-relación-predador-presa.html#cb6-79" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.1</span>,</span>
+<span id="cb6-80"><a href="capítulo-5-la-relación-predador-presa.html#cb6-80" tabindex="-1"></a>              <span class="sc">-</span><span class="fl">0.7</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">0</span>,</span>
+<span id="cb6-81"><a href="capítulo-5-la-relación-predador-presa.html#cb6-81" tabindex="-1"></a>              <span class="sc">-</span><span class="fl">0.3</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">5</span>), <span class="dv">3</span>, <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-82"><a href="capítulo-5-la-relación-predador-presa.html#cb6-82" tabindex="-1"></a>Atilde <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">4</span>)</span>
+<span id="cb6-83"><a href="capítulo-5-la-relación-predador-presa.html#cb6-83" tabindex="-1"></a>Atilde[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>] <span class="ot">&lt;-</span> A</span>
+<span id="cb6-84"><a href="capítulo-5-la-relación-predador-presa.html#cb6-84" tabindex="-1"></a>Atilde[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">4</span>] <span class="ot">&lt;-</span> r</span>
+<span id="cb6-85"><a href="capítulo-5-la-relación-predador-presa.html#cb6-85" tabindex="-1"></a></span>
+<span id="cb6-86"><a href="capítulo-5-la-relación-predador-presa.html#cb6-86" tabindex="-1"></a>y0 <span class="ot">&lt;-</span> <span class="fu">c</span>(x0, <span class="dv">1</span>) <span class="co"># add an extra &quot;species&quot;</span></span>
+<span id="cb6-87"><a href="capítulo-5-la-relación-predador-presa.html#cb6-87" tabindex="-1"></a>y0 <span class="ot">&lt;-</span> y0 <span class="sc">/</span> <span class="fu">sum</span>(y0) <span class="co"># project on the simplex</span></span>
+<span id="cb6-88"><a href="capítulo-5-la-relación-predador-presa.html#cb6-88" tabindex="-1"></a>reex <span class="ot">&lt;-</span> <span class="fu">integrate_RE</span>(Atilde, y0)</span>
+<span id="cb6-89"><a href="capítulo-5-la-relación-predador-presa.html#cb6-89" tabindex="-1"></a></span>
+<span id="cb6-90"><a href="capítulo-5-la-relación-predador-presa.html#cb6-90" tabindex="-1"></a></span>
+<span id="cb6-91"><a href="capítulo-5-la-relación-predador-presa.html#cb6-91" tabindex="-1"></a><span class="co"># Graficar resultados RE</span></span>
+<span id="cb6-92"><a href="capítulo-5-la-relación-predador-presa.html#cb6-92" tabindex="-1"></a><span class="fu">ggplot</span>(reex, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> density, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb6-93"><a href="capítulo-5-la-relación-predador-presa.html#cb6-93" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb6-94"><a href="capítulo-5-la-relación-predador-presa.html#cb6-94" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Dinámicas RE&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-95"><a href="capítulo-5-la-relación-predador-presa.html#cb6-95" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Tiempo&quot;</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)  <span class="sc">+</span></span>
+<span id="cb6-96"><a href="capítulo-5-la-relación-predador-presa.html#cb6-96" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb6-97"><a href="capítulo-5-la-relación-predador-presa.html#cb6-97" tabindex="-1"></a></span></code></pre></div>
+<div id="equilibrio-en-glv" class="section level3 hasAnchor" number="6.6.1">
+<h3><span class="header-section-number">6.6.1</span> Equilibrio en GLV<a href="capítulo-5-la-relación-predador-presa.html#equilibrio-en-glv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El equilibrio del modelo GLV se obtiene integrando el sistema hasta el tiempo final:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="capítulo-5-la-relación-predador-presa.html#cb7-1" tabindex="-1"></a>glvex[glvex<span class="sc">$</span>time <span class="sc">==</span> <span class="dv">100</span>,]</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">time</th>
+<th align="left">species</th>
+<th align="right">density</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">100</td>
+<td align="left">sp_1</td>
+<td align="right">1.3209145</td>
+</tr>
+<tr class="even">
+<td align="right">100</td>
+<td align="left">sp_2</td>
+<td align="right">0.5376799</td>
+</tr>
+<tr class="odd">
+<td align="right">100</td>
+<td align="left">sp_3</td>
+<td align="right">0.5207451</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="equilibrio-en-re" class="section level3 hasAnchor" number="6.6.2">
+<h3><span class="header-section-number">6.6.2</span> Equilibrio en RE<a href="capítulo-5-la-relación-predador-presa.html#equilibrio-en-re" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Recuperamos el equilibrio desde el sistema replicador dividiendo por la densidad de la especie ficticia:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="capítulo-5-la-relación-predador-presa.html#cb8-1" tabindex="-1"></a>reex[reex<span class="sc">$</span>time <span class="sc">==</span> <span class="dv">40</span>,]</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">time</th>
+<th align="left">species</th>
+<th align="right">density</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">40</td>
+<td align="left">sp_1</td>
+<td align="right">0.3908793</td>
+</tr>
+<tr class="even">
+<td align="right">40</td>
+<td align="left">sp_2</td>
+<td align="right">0.1591076</td>
+</tr>
+<tr class="odd">
+<td align="right">40</td>
+<td align="left">sp_3</td>
+<td align="right">0.1540969</td>
+</tr>
+<tr class="even">
+<td align="right">40</td>
+<td align="left">sp_4</td>
+<td align="right">0.2959162</td>
+</tr>
+</tbody>
+</table>
+<p>Ajustando las proporciones:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="capítulo-5-la-relación-predador-presa.html#cb9-1" tabindex="-1"></a><span class="fu">mutate</span>(reex[reex<span class="sc">$</span>time <span class="sc">==</span> <span class="dv">40</span>,], <span class="at">density =</span> density <span class="sc">/</span> <span class="fu">tail</span>(density,<span class="dv">1</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">time</th>
+<th align="left">species</th>
+<th align="right">density</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">40</td>
+<td align="left">sp_1</td>
+<td align="right">1.3209123</td>
+</tr>
+<tr class="even">
+<td align="right">40</td>
+<td align="left">sp_2</td>
+<td align="right">0.5376779</td>
+</tr>
+<tr class="odd">
+<td align="right">40</td>
+<td align="left">sp_3</td>
+<td align="right">0.5207453</td>
+</tr>
+<tr class="even">
+<td align="right">40</td>
+<td align="left">sp_4</td>
+<td align="right">1.0000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="dinámica-del-sistema-1" class="section level3 hasAnchor" number="6.6.3">
+<h3><span class="header-section-number">6.6.3</span> Dinámica del sistema<a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Notamos que no solo los equilibrios son equivalentes, sino también las dinámicas una vez rescaladas correctamente.</p>
+</div>
+</div>
+<div id="conexiones-con-otros-modelos" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Conexiones con otros modelos<a href="capítulo-5-la-relación-predador-presa.html#conexiones-con-otros-modelos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Artículo clave: Page y Nowak (2002)</strong></p>
+<p>Este artículo muestra cómo la ecuación replicadora-mutadora y la ecuación de Price rastrean dinámicas evolutivas generales, conectando GLV con dinámicas adaptativas.</p>
+<div id="referencias" class="section level3 hasAnchor" number="6.7.1">
+<h3><span class="header-section-number">6.7.1</span> Referencias<a href="capítulo-5-la-relación-predador-presa.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Abrams, P. A., &amp; Ginzburg, L. R. (2000). The nature of predation: prey dependent, ratio dependent or neither? <em>Trends in Ecology &amp; Evolution</em>, 15(8), 337-341.</li>
+<li>Courchamp, F., Clutton-Brock, T., &amp; Grenfell, B. (1999). Inverse density dependence and the Allee effect. <em>Trends in Ecology &amp; Evolution</em>, 14(10), 405-410.</li>
+<li>Holling, C. S. (1959). Some characteristics of simple types of predation and parasitism. <em>The Canadian Entomologist</em>, 91(7), 385-398.</li>
+<li>Turchin, P. (2003). <em>Complex population dynamics: a theoretical/empirical synthesis</em>. Princeton University Press.</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="capítulo-6-mutualismo-y-redes-tróficas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": ["twitter", "facebook"],
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["teoria_juegos_ecologia.pdf", "teoria_juegos_ecologia.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología | Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología</title>
+  <meta name="description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología | Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología | Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología" />
+  
+  <meta name="twitter:description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
+  
+
+<meta name="author" content="Joaquín Cochero" />
+
+
+<meta name="date" content="2024-12-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"/>
+<link rel="next" href="capítulo-3-teoría-de-juegos-evolutiva.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<div class="toc-title">Capítulos</div>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Contenidos</a></li>
+<li class="chapter" data-level="2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><i class="fa fa-check"></i><b>2</b> Capítulo 1: Introducción a la Teoría de Juegos y la Ecología</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#qué-es-la-teoría-de-juegos"><i class="fa fa-check"></i><b>2.1</b> ¿Qué es la Teoría de Juegos?</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#conceptos-fundamentales"><i class="fa fa-check"></i><b>2.1.1</b> Conceptos fundamentales</a></li>
+<li class="chapter" data-level="2.1.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#tipos-de-juegos"><i class="fa fa-check"></i><b>2.1.2</b> Tipos de juegos</a></li>
+<li class="chapter" data-level="2.1.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#cómo-se-estudian-los-juegos-matrices-de-pago-y-equilibrio-de-nash"><i class="fa fa-check"></i><b>2.1.3</b> Cómo se estudian los juegos: matrices de pago y equilibrio de Nash</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#principios-básicos-de-ecología-de-comunidades"><i class="fa fa-check"></i><b>2.2</b> Principios básicos de Ecología de Comunidades</a></li>
+<li class="chapter" data-level="2.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#por-qué-unir-teoría-de-juegos-y-ecología"><i class="fa fa-check"></i><b>2.3</b> Por qué unir Teoría de Juegos y Ecología</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#la-teoría-de-juegos-como-marco-analítico"><i class="fa fa-check"></i><b>2.3.1</b> La teoría de juegos como marco analítico</a></li>
+<li class="chapter" data-level="2.3.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#comparación-entre-teoría-de-juegos-y-modelos-tradicionales"><i class="fa fa-check"></i><b>2.3.2</b> Comparación entre teoría de juegos y modelos tradicionales</a></li>
+<li class="chapter" data-level="2.3.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#ventajas-de-integrar-teoría-de-juegos-y-ecología"><i class="fa fa-check"></i><b>2.3.3</b> Ventajas de integrar teoría de juegos y ecología</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><i class="fa fa-check"></i><b>3</b> Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#dinámica-replicadora-y-estabilidad-evolutiva"><i class="fa fa-check"></i><b>3.1</b> Dinámica Replicadora y Estabilidad Evolutiva</a></li>
+<li class="chapter" data-level="3.2" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-dilema-del-prisionero-y-el-equilibrio-de-nash"><i class="fa fa-check"></i><b>3.2</b> El Dilema del Prisionero y el Equilibrio de Nash</a></li>
+<li class="chapter" data-level="3.3" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#estrategias-puras-vs.-estrategias-mixtas"><i class="fa fa-check"></i><b>3.3</b> Estrategias puras vs. Estrategias mixtas</a></li>
+<li class="chapter" data-level="3.4" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-juego-del-ciervo-y-la-liebre-stag-hunt-y-un-poco-de-matemáticas"><i class="fa fa-check"></i><b>3.4</b> El juego del Ciervo y la Liebre (Stag Hunt) (y un poco de matemáticas!)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html"><i class="fa fa-check"></i><b>4</b> Capítulo 3: Teoría de Juegos Evolutiva</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#estrategias-evolutivamente-estables-ess"><i class="fa fa-check"></i><b>4.1</b> 3.5. Estrategias Evolutivamente Estables (ESS)</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#el-juego-halcónpaloma-hawkdove-game"><i class="fa fa-check"></i><b>4.1.1</b> El juego Halcón/Paloma (Hawk/Dove game)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#dinámica-del-juego-halcónpaloma"><i class="fa fa-check"></i><b>4.2</b> Dinámica del juego Halcón/Paloma</a></li>
+<li class="chapter" data-level="4.3" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#dinámicas-evolutivas-y-frecuencias-alélicas"><i class="fa fa-check"></i><b>4.3</b> 3.6. Dinámicas Evolutivas y Frecuencias Alélicas</a></li>
+<li class="chapter" data-level="4.4" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#ejemplo-en-ecología-dinámica-de-dos-especies"><i class="fa fa-check"></i><b>4.4</b> 3.7. Ejemplo en Ecología: Dinámica de Dos Especies</a></li>
+<li class="chapter" data-level="4.5" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#discusión"><i class="fa fa-check"></i><b>4.5</b> Discusión</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#a.-qué-desigualdades-son-necesarias-para-que-la-cooperación-sea-un-equilibrio-de-nash"><i class="fa fa-check"></i><b>4.5.1</b> A. ¿Qué desigualdades son necesarias para que la cooperación sea un Equilibrio de Nash?</a></li>
+<li class="chapter" data-level="4.5.2" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#b.qué-factores-no-incluidos-podrían-promover-la-cooperación"><i class="fa fa-check"></i><b>4.5.2</b> B.¿Qué factores no incluidos podrían promover la cooperación?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><i class="fa fa-check"></i><b>5</b> Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#teoría-clásica-modelos-de-lotka-volterra"><i class="fa fa-check"></i><b>5.1</b> 4.1. Teoría clásica: Modelos de Lotka-Volterra</a></li>
+<li class="chapter" data-level="5.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#juegos-de-competencia-dinámicas-temporales-basadas-en-una-matriz-de-pagos"><i class="fa fa-check"></i><b>5.2</b> 4.2. Juegos de competencia: Dinámicas temporales basadas en una matriz de pagos</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#matriz-de-pagos"><i class="fa fa-check"></i><b>5.2.1</b> Matriz de pagos</a></li>
+<li class="chapter" data-level="5.2.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#dinámica-replicadora-modificada"><i class="fa fa-check"></i><b>5.2.2</b> Dinámica replicadora modificada</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencia-entre-modelos-glv-y-dinámicas-replicadoras"><i class="fa fa-check"></i><b>5.3</b> 3.3. Equivalencia entre modelos GLV y dinámicas replicadoras</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencias-conceptuales"><i class="fa fa-check"></i><b>5.3.1</b> Equivalencias conceptuales</a></li>
+<li class="chapter" data-level="5.3.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencias-matemáticas"><i class="fa fa-check"></i><b>5.3.2</b> Equivalencias matemáticas</a></li>
+<li class="chapter" data-level="5.3.3" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#conversiones-matemáticas-entre-los-modelos-glv-y-dinámicas-replicadoras"><i class="fa fa-check"></i><b>5.3.3</b> Conversiones matemáticas entre los modelos GLV y Dinámicas replicadoras</a></li>
+<li class="chapter" data-level="5.3.4" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#matemática-de-la-relación-para-un-cuadro-aparte"><i class="fa fa-check"></i><b>5.3.4</b> Matemática de la relación – para un cuadro aparte???</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#cálculo-del-equilibrio-en-ambos-modelos"><i class="fa fa-check"></i><b>5.4</b> 3.4. Cálculo del equilibrio en ambos modelos</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equilibrio-en-el-modelo-glv"><i class="fa fa-check"></i><b>5.4.1</b> Equilibrio en el modelo GLV</a></li>
+<li class="chapter" data-level="5.4.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equilibrio-en-las-dinámicas-replicadoras"><i class="fa fa-check"></i><b>5.4.2</b> Equilibrio en las dinámicas replicadoras</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#discusión-1"><i class="fa fa-check"></i><b>5.5</b> 3.5. Discusión</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html"><i class="fa fa-check"></i><b>6</b> Capítulo 5: La relación predador-presa</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#modelos-clásicos"><i class="fa fa-check"></i><b>6.1</b> Modelos Clásicos</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#ecuaciones-básicas-del-modelo-lotka-volterra-esto-puede-repetirse-con-cap4"><i class="fa fa-check"></i><b>6.1.1</b> Ecuaciones Básicas del Modelo Lotka-Volterra (esto puede repetirse con Cap4)</a></li>
+<li class="chapter" data-level="6.1.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#análisis-de-estabilidad-y-oscilaciones-neutrales"><i class="fa fa-check"></i><b>6.1.2</b> Análisis de Estabilidad y Oscilaciones Neutrales</a></li>
+<li class="chapter" data-level="6.1.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#análisis-gráfico-isoclinas-y-plano-fase"><i class="fa fa-check"></i><b>6.1.3</b> Análisis Gráfico: Isoclinas y Plano Fase</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#extensiones-al-modelo-clásico"><i class="fa fa-check"></i><b>6.2</b> Extensiones al Modelo Clásico</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#crecimiento-logístico-de-la-presa"><i class="fa fa-check"></i><b>6.2.1</b> Crecimiento Logístico de la Presa</a></li>
+<li class="chapter" data-level="6.2.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#efectos-allee"><i class="fa fa-check"></i><b>6.2.2</b> Efectos Allee</a></li>
+<li class="chapter" data-level="6.2.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#respuestas-funcionales-de-los-depredadores"><i class="fa fa-check"></i><b>6.2.3</b> Respuestas Funcionales de los Depredadores</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámicas-complejas"><i class="fa fa-check"></i><b>6.3</b> Dinámicas Complejas</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#introducción-de-ciclos-límite"><i class="fa fa-check"></i><b>6.3.1</b> Introducción de Ciclos Límite</a></li>
+<li class="chapter" data-level="6.3.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#condiciones-para-la-emergencia-de-caos"><i class="fa fa-check"></i><b>6.3.2</b> Condiciones para la Emergencia de Caos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#sistema-depredador-presa-en-r"><i class="fa fa-check"></i><b>6.4</b> Sistema Depredador-Presa en R</a></li>
+<li class="chapter" data-level="6.5" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#comparación-entre-lotka-volterra-y-modelos-de-teoría-de-juegos"><i class="fa fa-check"></i><b>6.5</b> Comparación entre Lotka-Volterra y modelos de Teoría de Juegos</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#comparación-de-modelos"><i class="fa fa-check"></i><b>6.5.1</b> Comparación de modelos</a></li>
+<li class="chapter" data-level="6.5.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema"><i class="fa fa-check"></i><b>6.5.2</b> Dinámica del sistema</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#visualización-de-dinámicas-en-glv-y-re"><i class="fa fa-check"></i><b>6.6</b> Visualización de Dinámicas en GLV y RE</a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#equilibrio-en-glv"><i class="fa fa-check"></i><b>6.6.1</b> Equilibrio en GLV</a></li>
+<li class="chapter" data-level="6.6.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#equilibrio-en-re"><i class="fa fa-check"></i><b>6.6.2</b> Equilibrio en RE</a></li>
+<li class="chapter" data-level="6.6.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema-1"><i class="fa fa-check"></i><b>6.6.3</b> Dinámica del sistema</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#conexiones-con-otros-modelos"><i class="fa fa-check"></i><b>6.7</b> Conexiones con otros modelos</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#referencias"><i class="fa fa-check"></i><b>6.7.1</b> Referencias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html"><i class="fa fa-check"></i><b>7</b> Capítulo 6: Mutualismo y Redes Tróficas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html#modelos-de-mutualismo-basados-en-juegos-evolutivos"><i class="fa fa-check"></i><b>7.1</b> Modelos de mutualismo basados en juegos evolutivos</a></li>
+<li class="chapter" data-level="7.2" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html#polinizadores-y-plantas-en-sistemas-tropicales"><i class="fa fa-check"></i><b>7.2</b> Polinizadores y plantas en sistemas tropicales</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html"><i class="fa fa-check"></i><b>8</b> Capítulo 7: Diversidad en Comunidades Ecológicas</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índices-de-diversidad"><i class="fa fa-check"></i><b>8.1</b> Índices de diversidad</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-shannon"><i class="fa fa-check"></i><b>8.1.1</b> Índice de Shannon</a></li>
+<li class="chapter" data-level="8.1.2" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-equitabilidad-de-pielou"><i class="fa fa-check"></i><b>8.1.2</b> Índice de equitabilidad de Pielou</a></li>
+<li class="chapter" data-level="8.1.3" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cálculo-en-r"><i class="fa fa-check"></i><b>8.1.3</b> Cálculo en R</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#comparación-entre-modelos-tradicionales-y-basados-en-teoría-de-juegos"><i class="fa fa-check"></i><b>8.2</b> Comparación entre modelos tradicionales y basados en Teoría de Juegos</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html"><i class="fa fa-check"></i><b>9</b> Capítulo 8: Sucesión Ecológica</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#sucesión-primaria-y-secundaria-modelos-clásicos"><i class="fa fa-check"></i><b>9.1</b> 8.1. Sucesión primaria y secundaria: modelos clásicos</a></li>
+<li class="chapter" data-level="9.2" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#modelado-de-la-sucesión-ecológica-tradicional"><i class="fa fa-check"></i><b>9.2</b> 8.2. Modelado de la sucesión ecológica tradicional</a></li>
+<li class="chapter" data-level="9.3" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#modelado-de-la-sucesión-ecológica-con-teoría-de-juegos"><i class="fa fa-check"></i><b>9.3</b> 8.3. Modelado de la sucesión ecológica con teoría de juegos</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#construcción-de-la-matriz-de-pagos"><i class="fa fa-check"></i><b>9.3.1</b> Construcción de la matriz de pagos</a></li>
+<li class="chapter" data-level="9.3.2" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#dinámica-replicadora"><i class="fa fa-check"></i><b>9.3.2</b> Dinámica replicadora</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#ejemplo-real-sucesión-en-dunas-costeras-tras-eventos-de-disturbio"><i class="fa fa-check"></i><b>9.4</b> 8.4. Ejemplo real: Sucesión en dunas costeras tras eventos de disturbio</a></li>
+<li class="chapter" data-level="9.5" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#preguntas-para-discusión"><i class="fa fa-check"></i><b>9.5</b> Preguntas para discusión</a></li>
+<li class="chapter" data-level="9.6" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#bibliografía"><i class="fa fa-check"></i><b>9.6</b> Bibliografía</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología<a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Un juego, en el contexto de la Teoría de Juegos, es una situación de interacción estratégica donde dos o más participantes toman decisiones con el objetivo de maximizar sus beneficios, y el resultado para cada uno depende de las decisiones de los demás. Los elementos básicos de un juego incluyen los jugadores, las estrategias disponibles para cada jugador y las recompensas o pagos asociados a cada combinación de estrategias. En ecología, los juegos se utilizan para modelar interacciones como competencia, mutualismo o depredación.</p>
+<p>Existen dos grandes categorías de juegos que son especialmente útiles para entender los sistemas ecológicos:</p>
+<p>En los <strong>juegos cooperativos</strong>, los participantes pueden formar coaliciones y coordinar sus estrategias con el fin de maximizar un beneficio compartido. Este tipo de juegos es relevante para modelar interacciones mutualistas, como la relación entre polinizadores y plantas, donde ambas partes obtienen ventajas claras de la colaboración. Por ejemplo, en una red trófica, las especies pueden desarrollar comportamientos cooperativos que optimicen la eficiencia en la transferencia de energía o recursos.</p>
+<p>Por otro lado, los <strong>juegos no cooperativos</strong> se caracterizan porque los individuos toman decisiones de manera independiente, buscando maximizar exclusivamente su propio beneficio. Este tipo de juegos es común para modelar escenarios de competencia y conflicto, como la lucha entre depredadores por una presa o la competencia por recursos limitados entre especies. Estas situaciones generan un conflicto de intereses que puede resolverse mediante la adopción de estrategias óptimas individuales.</p>
+<p>Ambos enfoques proporcionan herramientas poderosas para interpretar las interacciones complejas que ocurren en los ecosistemas, ya sea que los organismos cooperen o compitan por recursos y sobrevivencia.</p>
+<p>VER P140 DEL LIBRO</p>
+<hr />
+<div id="dinámica-replicadora-y-estabilidad-evolutiva" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Dinámica Replicadora y Estabilidad Evolutiva<a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#dinámica-replicadora-y-estabilidad-evolutiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La dinámica replicadora es un modelo matemático utilizado para describir cómo cambian las frecuencias de estrategias en una población a lo largo del tiempo, bajo la influencia de la selección natural. En este enfoque, la frecuencia de cada estrategia aumenta o disminuye dependiendo de su éxito relativo en comparación con la media de la población. Matemáticamente, para una estrategia <span class="math inline">\(i\)</span> con frecuencia <span class="math inline">\(x_i\)</span>, la ecuación de la dinámica replicadora se expresa como:</p>
+<p><span class="math display">\[
+\frac{dx_i}{dt} = x_i (f_i - \bar{f}),
+\]</span></p>
+<p>donde:
+- <span class="math inline">\(f_i\)</span> es la aptitud de la estrategia <span class="math inline">\(i\)</span>, es decir, su éxito relativo.
+- <span class="math inline">\(\bar{f}\)</span> es la aptitud media de la población, calculada como:</p>
+<p><span class="math display">\[
+\bar{f} = \sum_{j} x_j f_j.
+\]</span></p>
+<p>En contextos ecológicos, esta dinámica explica cómo las estrategias como “halcones” y “palomas” (ver más abajo) evolucionan en una población. Si los halcones tienen mayor aptitud que las palomas en cierto momento, su frecuencia <span class="math inline">\(x_H\)</span> aumentará, mientras que <span class="math inline">\(x_P\)</span> disminuirá, y viceversa. El equilibrio se alcanza cuando las frecuencias se estabilizan, de modo que ninguna estrategia tiene una ventaja selectiva significativa.</p>
+<p>Este modelo no solo describe la competencia entre estrategias, sino también cómo estas pueden coexistir en proporciones que reflejan un balance evolutivo.</p>
+<hr />
+</div>
+<div id="el-dilema-del-prisionero-y-el-equilibrio-de-nash" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> El Dilema del Prisionero y el Equilibrio de Nash<a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-dilema-del-prisionero-y-el-equilibrio-de-nash" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El Equilibrio de Nash es un concepto fundamental en la Teoría de Juegos que describe <strong>un estado en el cual ningún participante puede mejorar su resultado individual cambiando unilateralmente su estrategia</strong>, dado que las estrategias de los demás permanecen constantes. Este concepto proporciona una manera de entender cómo las decisiones de los individuos interactúan y convergen hacia una estabilidad en sistemas complejos.</p>
+<p>Sea un juego definido por <span class="math inline">\(N\)</span> jugadores, cada uno con un conjunto de estrategias <span class="math inline">\(S_i\)</span> y una función de pago <span class="math inline">\(u_i: S \to \mathbb{R}\)</span>, donde <span class="math inline">\(S = S_1 \times S_2 \times \ldots \times S_N\)</span> es el espacio de estrategias conjuntas.</p>
+<p>El <strong>Equilibrio de Nash</strong> describe una situación en la que ningún jugador puede mejorar su resultado al cambiar unilateralmente su estrategia, suponiendo que las estrategias de los demás jugadores se mantienen constantes.</p>
+<p>Formalmente, un perfil de estrategias <span class="math inline">\(s^* = (s_1^*, s_2^*, \ldots, s_N^*)\)</span> es un <strong>Equilibrio de Nash</strong> si:</p>
+<p><span class="math display">\[
+u_i(s_i^*, s_{-i}^*) \geq u_i(s_i, s_{-i}^*), \quad \forall s_i \in S_i, \; \forall i \in \{1, \ldots, N\}.
+\]</span></p>
+<p>Aquí, <span class="math inline">\(s_{-i}^*\)</span> representa las estrategias de todos los jugadores excepto el jugador <span class="math inline">\(i\)</span>.</p>
+<p>Veamos un ejemplo clásico que ilustra el Equilibrio de Nash: el <strong>Dilema del Prisionero</strong>, un juego que pone de manifiesto el conflicto entre los intereses individuales y el beneficio colectivo. En este escenario, dos participantes son arrestados por un crimen y se les ofrece un trato por separado: pueden cooperar (permanecer en silencio) o traicionar al otro (confesar el crimen). La matriz de pagos, que muestra las recompensas o pérdidas para cada combinación de decisiones, es la siguiente:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Cooperar (C)</th>
+<th>Traicionar (T)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Cooperar (C)</strong></td>
+<td>(2, 2)</td>
+<td>(0, 3)</td>
+</tr>
+<tr class="even">
+<td><strong>Traicionar (T)</strong></td>
+<td>(3, 0)</td>
+<td>(1, 1)</td>
+</tr>
+</tbody>
+</table>
+<p>Aquí, los números representan los años de condena: cuanto menor es el número, mejor es el resultado para el jugador. Si ambos cooperan, reciben una sentencia moderada (2 años). Si uno traiciona y el otro coopera, el traidor queda libre (0 años) mientras el cooperador enfrenta la pena máxima (3 años). Si ambos traicionan, ambos reciben una sentencia intermedia (1 año). El equilibrio de Nash surge cuando ambos eligen traicionar, ya que cualquier cambio unilateral empeoraría el resultado del jugador que decide cambiar.</p>
+<p>Y aquí podemos definir la <strong>estrategia dominante</strong>, que es aquella que, para un jugador, proporciona el mayor beneficio posible sin importar lo que hagan los demás jugadores. Es decir, una estrategia dominante es aquella que garantiza un mejor resultado comparado con cualquier otra estrategia del jugador, independientemente de las decisiones de sus oponentes. En el Dilema del Prisionero, la estrategia dominante es “traicionar”, porque independientemente de lo que haga el otro prisionero, ofrece la mayor recompensa independientemente de la decisión de su compañero. No todos los juegos tienen estrategias dominantes.</p>
+<p>La eliminación por iteraciones de la estrategias dominadas (o “IESDS”, Iterated Elimination of Strictly Dominated Strategies) consiste en eliminar aquellas estrategias inferiores en sus recompensas, para quedar solamente las dominantes, en una “Estrategia de Equilibrio Dominante” (traición/traición, en nuestro ejemplo).</p>
+<p>Este juego refleja cómo, incluso en situaciones donde la cooperación sería mutuamente beneficiosa, los intereses individuales pueden llevar a resultados subóptimos. En ecología, el Dilema del Prisionero tiene aplicaciones en conflictos por recursos compartidos, como el uso de un espacio común por diferentes especies, donde los incentivos individuales pueden llevar a la sobreexplotación y, en última instancia, a la pérdida de recursos para todos.</p>
+<p>No todos los juegos tienen un Equilibrio de Nash. El típico juego de piedra-papel-tijera, por ejemplo, no tiene un Equilibrio de Nash.</p>
+<p>En contextos ecológicos, el Equilibrio de Nash se aplica para analizar diversas interacciones entre especies. Por ejemplo, en escenarios de competencia por recursos limitados, las especies ajustan su consumo hasta alcanzar un punto en el que ninguna puede mejorar su acceso al recurso sin afectar negativamente a las otras. En sistemas de depredación, los depredadores optimizan sus estrategias de caza mientras las presas desarrollan comportamientos defensivos que minimizan su riesgo. En mutualismos, como el caso de polinizadores y plantas, el equilibrio se alcanza cuando el costo-beneficio de la relación es proporcional para ambas especies, garantizando la estabilidad de la interacción.</p>
+<p>La aplicación del concepto de Equilibrio de Nash en ecología permite explorar cómo surgen patrones de comportamiento estables en comunidades biológicas, destacando las implicaciones de decisiones estratégicas en la evolución y sostenibilidad de las especies.</p>
+</div>
+<div id="estrategias-puras-vs.-estrategias-mixtas" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Estrategias puras vs. Estrategias mixtas<a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#estrategias-puras-vs.-estrategias-mixtas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los conceptos de juegos de estrategias puras y juegos de estrategias mixtas se refieren a las formas en que los jugadores pueden tomar decisiones estratégicas en un juego.</p>
+<p>En un juego de <strong>estrategias puras</strong>, cada jugador elige una única estrategia de su conjunto de opciones y la sigue de manera determinista. No hay elementos de probabilidad ni incertidumbre en la elección. Por ejemplo, en el Dilema del Prisionero, los jugadores pueden elegir entre cooperar o traicionar. Si un jugador decide siempre cooperar, está jugando una estrategia pura.
+Los equilibrios de Nash pueden o no existir en estrategias puras.</p>
+<p>Juegos de Estrategias Mixtas
+En un juego de <strong>estrategias mixtas</strong>, los jugadores asignan probabilidades a sus estrategias puras y eligen entre ellas según estas probabilidades. Esto introduce incertidumbre y permite mayor flexibilidad estratégica.
+Por ejemplo, en un juego como piedra, papel o tijera, un jugador puede asignar probabilidades iguales (1/3) a cada opción, jugando una estrategia mixta para evitar ser predecible. Los equilibrios de Nash siempre existen en estrategias mixtas, incluso si no existen en estrategias puras (por ejemplo, en juegos como piedra, papel o tijera).
+La recompensa para un jugador de una estrategia mixta es un <em>promedio ponderado</em> de las recompensas de sus estrategias puras.</p>
+<p>Por ejemplo, si un jugador de fútbol siempre patea los penales al lado derecho del arquero, puede decirse que está utilizando una estrategia pura. Pero si en proporción patea un 70% a la derecha del arquero, y un 30% a la izquierda del arquero, es una estrategia mixta. Llamemos <span class="math display">\[\sigma_A1\]</span> a la probabilidad de que el jugador (A) patee a la derecha, y <span class="math display">\[\sigma_A2\]</span> a la probabilidad de que el jugador patee a la izquierda. Y llamemos <span class="math display">\[\sigma_B1\]</span> a la probabilidad de que el arquero (B) elija ir hacia la derecha, y <span class="math display">\[\sigma_B2\]</span> a la probabilidad de tirarse hacia la izquierda.</p>
+<p>Entonces <span class="math display">\[\sigma_A = (0.3, 0.7)\]</span> y, por ejemplo, el arquero elije un palo con 50% de probabilidad siempre <span class="math display">\[\sigma_B = (0.5,0.5)\]</span></p>
+</div>
+<div id="el-juego-del-ciervo-y-la-liebre-stag-hunt-y-un-poco-de-matemáticas" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> El juego del Ciervo y la Liebre (Stag Hunt) (y un poco de matemáticas!)<a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-juego-del-ciervo-y-la-liebre-stag-hunt-y-un-poco-de-matemáticas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El juego de ciervo y liebre (Stag Hunt) es un juego clásico en teoría de juegos que ilustra el conflicto entre la cooperación y la seguridad individual. Fue propuesto por Jean-Jaques Russeau en su libro “Discourse on Inequality”</p>
+<p>En este juego, dos cazadores deben decidir si colaborar para cazar un ciervo (que proporciona un gran beneficio pero requiere cooperación) o cazar una liebre (que da un beneficio menor pero puede cazarse solo).</p>
+<p>La clave del juego está en que a) Si ambos cazan el ciervo, obtienen la mayor recompensa; b) Si un jugador caza una liebre mientras el otro intenta cazar el ciervo, el que elige la liebre obtiene una recompensa segura, mientras que el que intenta cazar el ciervo no obtiene nada. 3) Si ambos cazan liebres, obtienen recompensas moderadas, pero menores que si colaboraran.</p>
+<p>Matriz de Pagos:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Ciervo (C)</th>
+<th>Liebre (L)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ciervo (C)</strong></td>
+<td>(2, 2)</td>
+<td>(0, 1)</td>
+</tr>
+<tr class="even">
+<td><strong>Liebre (L)</strong></td>
+<td>(1, 0)</td>
+<td>(1, 1)</td>
+</tr>
+</tbody>
+</table>
+<p>Este juego no tiene una Estrategia de Equilibrio Dominante. Si el otro jugador elije cazar Ciervo, la <strong>mejor respuesta</strong> es cazar ciervo también (2 &gt; 1). Si el otro jugador elije cazar liebre, la <strong>mejor respuesta</strong> será cazar liebre también (1 &gt; 0). Es decir, las decisiones de cada jugador están <em>condicionadas</em> por lo que espera que haga el otro jugador, y no hay estrategias dominantes.</p>
+<p>Pero si es un juego que tiene dos equilibrios de Nash. Si ambos jugadores cazan ciervo (C, C) = (2,2), y si ambos jugadores cazan liebre (L, L) = (1,1).</p>
+<p>Si lo consideramos un juego de estrategias mixtas, podemos llamar <span class="math inline">\(\sigma_A1\)</span> a la probabilidad de que el primer cazador (A) elija la estrategia de cazar Ciervo, y <span class="math inline">\(\sigma_A2\)</span> a la probabilidad de que el cazador elija cazar liebre. Y llamemos <span class="math inline">\(\sigma_B1\)</span> a la probabilidad de que el segundo cazador (B) elija cazar Ciervo, y <span class="math inline">\(\sigma_B2\)</span> a la probabilidad de que elija cazar libre.</p>
+<p>El símbolo <span class="math inline">\(\pi\)</span> generalmente representa una recompensa. <span class="math inline">\(\pi_A(Ciervo,Ciervo)\)</span> representa la recompensa del cazador A cuando elije cazar Ciervo y el cazador B hace lo mismo.
+Y <span class="math inline">\(\\u_A\)</span> denota la recompensa total del cazador. Así, <span class="math inline">\(\\u_A(\sigma_A, \sigma_B)\)</span> nos informa sobre la recompensa del cazador A cuando usa la estrategia mixta <span class="math inline">\(\sigma_A\)</span> y el cazador B usa la estrategia mixta <span class="math inline">\(\sigma_B\)</span>.</p>
+<p>La recompensa para un jugador de una estrategia mixta es un <em>promedio ponderado</em> de las recompensas de sus estrategias puras.</p>
+<p><span class="math display">\[\begin{align*} \\u_A(\sigma_A, \sigma_B) = \sigma_A,_{ciervo} [\sigma_B,_{ciervo}\pi_A)(Ciervo,Ciervo) + \sigma_B,_{liebre}\pi_A(Ciervo,Liebre)] + \\ \sigma_A,_{liebre} [\sigma_B,_{ciervo}\pi_A)(Liebre,Ciervo) + \sigma_B,_{liebre}\pi_A(Liebre,Liebre)] \end{align*}\]</span></p>
+<p>O:</p>
+<p><span class="math display">\[\begin{align*} \\u_A(\sigma_A, \sigma_B) = \sigma_A,_{ciervo}\sigma_B,_{ciervo}\pi_A(Ciervo,Ciervo) + \\ \sigma_A,_{ciervo}\sigma_B,_{liebre}\pi_A(Ciervo,Liebre) + \\
+\sigma_A,_{liebre}\sigma_B,_{ciervo}\pi_A(Liebre,Ciervo) + \\
+\sigma_A,_{liebre}\sigma_B,_{liebre}\pi_A(Liebre,Liebre) \end{align*}\]</span></p>
+<p>Cuando el cazador A elije cazar un ciervo y el cazador B también, multiplicamos la recompensa del cazador A por la probabilidad de que cada cazador elija cazar un ciervo. Supongamos que el cazador A elije cazar ciervos con un 70% de probabilidad y una liebre con 30% de probabilidad, mientras que el cazador B elije cazar un ciervo con un 30% de probabilidad y liebre con 70% de probabilidad. Es decir: <span class="math inline">\(\sigma_A = (0.7, 0.3)\)</span>$ y $<span class="math inline">\(\sigma_B = (0.3,0.7)\)</span></p>
+<p>Entonces para la matriz</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Ciervo (C)</th>
+<th>Liebre (L)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ciervo (C)</strong></td>
+<td>(2, 2)</td>
+<td>(0, 1)</td>
+</tr>
+<tr class="even">
+<td><strong>Liebre (L)</strong></td>
+<td>(1, 0)</td>
+<td>(1, 1)</td>
+</tr>
+</tbody>
+</table>
+<p>Nuestra recompensa para el cazador A cuando usa la estrategia mixta <span class="math inline">\(\sigma_A\)</span> y el cazador B usa la estrategia mixta <span class="math inline">\(\sigma_B\)</span> será:</p>
+<p><span class="math display">\[\begin{align*}
+\\u_A(\sigma_A, \sigma_B) = \sigma_A1[\sigma_B1\pi_A(1,2) + \sigma_B2\pi_A(1,1)] + \sigma_A2[\sigma_B1\pi_A(2,1) + \sigma_B2\pi_A(2,2)] \\
+= \sigma_A,_{ciervo}[\sigma_B,_{ciervo}\pi_A(Ciervo,Ciervo) +  \sigma_B,_{liebre}\pi_A(Ciervo,Liebre)] + \\
+\sigma_A,_{liebre}[\sigma_B,_{ciervo}\pi_A(Liebre,Ciervo) + \sigma_B,_{liebre}\pi_A(Liebre,Liebre)] \\
+= 0.7* [0.3*2+0.7*0] + 0.3* [0.3*1 + 0.7*1] \\
+= 0.72
+\end{align*}\]</span></p>
+<p>El equilibrio de Nash se derivan utilizando estrategias puras. En vez de decir que una estrategia es pura, digamos lo mismo de otra manera: <span class="math display">\[h_1\]</span> es una estrategia mixta que utiliza la estrategia 1 con el 100% de probabilidad. Por ejemplo, <span class="math display">\[h_1\]</span> será cazar un Ciervo; la recompensa para el cazador A cuando sólo caza ciervos, puede ser calculado de la misma manera que antes:</p>
+<p><span class="math display">\[\begin{align*}
+\\u_A(h_1, \sigma_B) = \sigma_A,_{ciervo}[\sigma_B,_{ciervo}\pi_A(Ciervo,Ciervo) +  \sigma_B,_{liebre}\pi_A(Ciervo,Liebre)] + \\
+\sigma_A,_{liebre}[\sigma_B,_{ciervo}\pi_A(Liebre,Ciervo) + \sigma_B,_{liebre}\pi_A(Liebre,Liebre)] \\
+= \sigma_B,{ciervo}\pi_A(Ciervo,Ciervo) + \sigma_B,{liebre}\pi_A(Ciervo,Liebre)
+\end{align*}\]</span></p>
+<p>Y la recompensa cuando el cazador A sólo caza liebres sería:</p>
+<p><span class="math display">\[\begin{align*}
+\\u_A(h_2, \sigma_B) = \sigma_B,{ciervo} \pi_A(Liebre,Ciervo) + \sigma_B,{liebre}\pi_A(Liebre,Liebre)
+\end{align*}\]</span></p>
+<p>Como este juego sólo tiene dos estrategias, la estrategia mixta para el Cazador B puede ser expresada como:</p>
+<p><span class="math display">\[\sigma_B = (\sigma_B,_{ciervo}, \sigma_B,_{liebre}) = (\sigma_B,_{ciervo}, 1- \sigma_B,_{liebre})\]</span></p>
+<p>Y la recompensa del cazador A por sólo cazar ciervos y por sólo cazar liebres serían:</p>
+<p><span class="math display">\[\\u_A(h_{ciervo},\sigma_B) = \sigma_B,_{ciervo} * 2 + (1 - \sigma_B,_{ciervo}) * 0 = 2\sigma_B,{ciervo}\]</span></p>
+<p><span class="math display">\[\\u_A(h_{liebre},\sigma_B) = \sigma_B,_{ciervo} * 1 + (1 - \sigma_B,_{ciervo}) * 1 = 1\]</span>
+Si <span class="math inline">\(\\u_A(h_{ciervo},\sigma_B) &gt; \\u_A(h_{liebre},\sigma_B)\)</span> el cazador siempre va a cazar ciervos. Como <span class="math inline">\(\begin{align*} 2\sigma_B,{ciervo} &gt; 1 \\ \sigma_B,_{ciervo} &gt; \frac{1}{2} \end{align*}\)</span>, siempre que <span class="math inline">\(\sigma_B,_{ciervo}\)</span> sea mayor a <span class="math inline">\(\frac{1}{2}\)</span>, el cazador A va a cazar ciervo. Si es menor a <span class="math inline">\(\frac{1}{2}\)</span>, el cazador A va a cazar liebre.</p>
+<p>¿Y si <span class="math inline">\(\sigma_B,_{ciervo} = \frac{1}{2}\)</span>? ¿Debería el cazador A decidir que hacer con una probabilidad de 50/50%, o mantener el 70/30% que venía utilizando?</p>
+<p>La respuesta es que no importa. Cualquier proporción de estrategia mixta va a ser la mejor respuesta para el cazador A si <span class="math inline">\(\sigma_B,_{ciervo} = \frac{1}{2}\)</span>.</p>
+<p><img src="stag_stag.png" alt="Algo así" />
+Podemos reconocer dos puntos (verdes), son los equilibrios de Nash si fueran estrategias puras. Pero además se suma un tercer punto de unión (gris) cuando <span class="math inline">\(\sigma_A,_{ciervo} = 0.5\)</span> y <span class="math inline">\(\sigma_B,_{ciervo} = 0.5\)</span>, un equilibrio de estrategia mixta.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="capítulo-3-teoría-de-juegos-evolutiva.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": ["twitter", "facebook"],
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["teoria_juegos_ecologia.pdf", "teoria_juegos_ecologia.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

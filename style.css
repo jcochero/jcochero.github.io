@@ -1,0 +1,62 @@
+/* Portada */
+.cover-page {
+  text-align: center;
+  padding: 3em 2em;
+  background: #f7f9fb;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 2em;
+}
+
+.title-block h1 {
+  font-size: 2.8em;
+  margin-bottom: 0.2em;
+  color: #203040;
+}
+
+.title-block h3 {
+  font-weight: 300;
+  color: #4a627a;
+}
+
+.author {
+  font-size: 1.2em;
+  color: #444;
+  margin-top: 1em;
+}
+
+.date {
+  font-size: 1em;
+  color: #888;
+}
+
+.intro-paragraph p {
+  font-size: 1.1em;
+  max-width: 700px;
+  margin: 2em auto 0;
+  color: #333;
+  line-height: 1.6em;
+}
+
+/* Sidebar personalizado (opcional) */
+.book .book-summary .toc-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #2b3e50;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4em;
+}
+
+.draft-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  padding: 1em;
+  margin: 1em auto 2em;
+  max-width: 800px;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
