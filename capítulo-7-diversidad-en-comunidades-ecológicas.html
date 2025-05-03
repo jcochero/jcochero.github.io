@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Capítulo 7: Diversidad en Comunidades Ecológicas | Diversidad en Comunidades Ecológicas</title>
+  <title>7 Capítulo 7: Diversidad en Comunidades Ecológicas | Capítulo 8: Sucesión Ecológica</title>
   <meta name="description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Capítulo 7: Diversidad en Comunidades Ecológicas | Diversidad en Comunidades Ecológicas" />
+  <meta property="og:title" content="7 Capítulo 7: Diversidad en Comunidades Ecológicas | Capítulo 8: Sucesión Ecológica" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Capítulo 7: Diversidad en Comunidades Ecológicas | Diversidad en Comunidades Ecológicas" />
+  <meta name="twitter:title" content="7 Capítulo 7: Diversidad en Comunidades Ecológicas | Capítulo 8: Sucesión Ecológica" />
   
   <meta name="twitter:description" content="Una introducción integradora a la aplicación de la Teoría de Juegos en la Ecología de Comunidades, con fundamentos teóricos, aplicaciones ecológicas y ejemplos prácticos en R." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Joaquín Cochero" />
 
 
-<meta name="date" content="2025-04-17" />
+<meta name="date" content="2025-01-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,23 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<div class="cover-page">
+
+  <div class="title-block">
+    <h1>Teoría de Juegos y Ecología de Comunidades</h1>
+    <h3>Un enfoque integrador con fundamentos teóricos y aplicaciones en R</h3>
+    <p class="author">por Joaquín Cochero</p>
+  </div>
+
+  <div class="intro-paragraph">
+    <p>Este libro propone una visión interdisciplinaria entre la <strong>ecología de comunidades</strong> y la <strong>teoría de juegos</strong>. Se presentan herramientas conceptuales y modelos prácticos para entender la competencia, cooperación, depredación y otros fenómenos ecológicos clave desde una perspectiva estratégica.</p>
+  </div>
+
+<div class="draft-warning">
+  <strong>⚠ Este libro está en desarrollo.</strong><br>
+  Se encuentra en etapa de revisión. Algunos capítulos están incompletos o pendientes de corrección.
+</div>
+</div>
 
 
 <style type="text/css">
@@ -140,135 +157,139 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="toc-title">Capítulos</div>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Contenidos</a></li>
-<li class="chapter" data-level="2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><i class="fa fa-check"></i><b>2</b> Capítulo 1: Introducción a la Teoría de Juegos y la Ecología</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducción</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#qué-es-la-teoría-de-juegos"><i class="fa fa-check"></i><b>2.1</b> ¿Qué es la Teoría de Juegos?</a>
-<ul>
-<li class="chapter" data-level="2.1.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#conceptos-fundamentales"><i class="fa fa-check"></i><b>2.1.1</b> Conceptos fundamentales</a></li>
-<li class="chapter" data-level="2.1.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#tipos-de-juegos"><i class="fa fa-check"></i><b>2.1.2</b> Tipos de juegos</a></li>
-<li class="chapter" data-level="2.1.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#cómo-se-estudian-los-juegos-matrices-de-pago-y-equilibrio-de-nash"><i class="fa fa-check"></i><b>2.1.3</b> Cómo se estudian los juegos: matrices de pago y equilibrio de Nash</a></li>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#contenidos"><i class="fa fa-check"></i><b>0.1</b> Contenidos</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#cómo-navegar-este-libro"><i class="fa fa-check"></i><b>0.2</b> ¿Cómo navegar este libro?</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#estructura-del-libro-y-uso-de-ejemplos-en-r"><i class="fa fa-check"></i><b>0.3</b> Estructura del libro y uso de ejemplos en R</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#principios-básicos-de-ecología-de-comunidades"><i class="fa fa-check"></i><b>2.2</b> Principios básicos de Ecología de Comunidades</a></li>
-<li class="chapter" data-level="2.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#por-qué-unir-teoría-de-juegos-y-ecología"><i class="fa fa-check"></i><b>2.3</b> Por qué unir Teoría de Juegos y Ecología</a>
+<li class="chapter" data-level="1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><i class="fa fa-check"></i><b>1</b> Capítulo 1: Introducción a la Teoría de Juegos y la Ecología</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#la-teoría-de-juegos-como-marco-analítico"><i class="fa fa-check"></i><b>2.3.1</b> La teoría de juegos como marco analítico</a></li>
-<li class="chapter" data-level="2.3.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#comparación-entre-teoría-de-juegos-y-modelos-tradicionales"><i class="fa fa-check"></i><b>2.3.2</b> Comparación entre teoría de juegos y modelos tradicionales</a></li>
-<li class="chapter" data-level="2.3.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#ventajas-de-integrar-teoría-de-juegos-y-ecología"><i class="fa fa-check"></i><b>2.3.3</b> Ventajas de integrar teoría de juegos y ecología</a></li>
+<li class="chapter" data-level="1.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#qué-es-la-teoría-de-juegos"><i class="fa fa-check"></i><b>1.1</b> ¿Qué es la Teoría de Juegos?</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#conceptos-fundamentales"><i class="fa fa-check"></i><b>1.1.1</b> Conceptos fundamentales</a></li>
+<li class="chapter" data-level="1.1.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#tipos-de-juegos"><i class="fa fa-check"></i><b>1.1.2</b> Tipos de juegos</a></li>
+<li class="chapter" data-level="1.1.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#cómo-se-estudian-los-juegos-matrices-de-pago-y-equilibrio-de-nash"><i class="fa fa-check"></i><b>1.1.3</b> Cómo se estudian los juegos: matrices de pago y equilibrio de Nash</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><i class="fa fa-check"></i><b>3</b> Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología</a>
+<li class="chapter" data-level="1.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#principios-básicos-de-ecología-de-comunidades"><i class="fa fa-check"></i><b>1.2</b> Principios básicos de Ecología de Comunidades</a></li>
+<li class="chapter" data-level="1.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#por-qué-unir-teoría-de-juegos-y-ecología"><i class="fa fa-check"></i><b>1.3</b> Por qué unir Teoría de Juegos y Ecología</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#dinámica-replicadora-y-estabilidad-evolutiva"><i class="fa fa-check"></i><b>3.1</b> Dinámica Replicadora y Estabilidad Evolutiva</a></li>
-<li class="chapter" data-level="3.2" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-dilema-del-prisionero-y-el-equilibrio-de-nash"><i class="fa fa-check"></i><b>3.2</b> El Dilema del Prisionero y el Equilibrio de Nash</a></li>
-<li class="chapter" data-level="3.3" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#estrategias-puras-vs.-estrategias-mixtas"><i class="fa fa-check"></i><b>3.3</b> Estrategias puras vs. Estrategias mixtas</a></li>
-<li class="chapter" data-level="3.4" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-juego-del-ciervo-y-la-liebre-stag-hunt-y-un-poco-de-matemáticas"><i class="fa fa-check"></i><b>3.4</b> El juego del Ciervo y la Liebre (Stag Hunt) (y un poco de matemáticas!)</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html"><i class="fa fa-check"></i><b>4</b> Capítulo 3: Teoría de Juegos Evolutiva</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#estrategias-evolutivamente-estables-ess"><i class="fa fa-check"></i><b>4.1</b> Estrategias Evolutivamente Estables (ESS)</a></li>
-<li class="chapter" data-level="4.2" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#el-juego-halcónpaloma-hawkdove-game"><i class="fa fa-check"></i><b>4.2</b> El juego Halcón/Paloma (Hawk/Dove game)</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#dinámica-del-juego-halcónpaloma"><i class="fa fa-check"></i><b>4.2.1</b> Dinámica del juego Halcón/Paloma</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#dinámicas-evolutivas-y-frecuencias-alélicas"><i class="fa fa-check"></i><b>4.3</b> Dinámicas Evolutivas y Frecuencias Alélicas</a></li>
-<li class="chapter" data-level="4.4" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#ejemplo-en-ecología-dinámica-de-dos-especies"><i class="fa fa-check"></i><b>4.4</b> Ejemplo en Ecología: Dinámica de Dos Especies</a></li>
-<li class="chapter" data-level="4.5" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#discusión"><i class="fa fa-check"></i><b>4.5</b> Discusión</a>
-<ul>
-<li class="chapter" data-level="4.5.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#a.-qué-desigualdades-son-necesarias-para-que-la-cooperación-sea-un-equilibrio-de-nash"><i class="fa fa-check"></i><b>4.5.1</b> A. ¿Qué desigualdades son necesarias para que la cooperación sea un Equilibrio de Nash?</a></li>
-<li class="chapter" data-level="4.5.2" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#qué-factores-no-incluidos-podrían-promover-la-cooperación"><i class="fa fa-check"></i><b>4.5.2</b> ¿Qué factores no incluidos podrían promover la cooperación?</a></li>
+<li class="chapter" data-level="1.3.1" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#la-teoría-de-juegos-como-marco-analítico"><i class="fa fa-check"></i><b>1.3.1</b> La teoría de juegos como marco analítico</a></li>
+<li class="chapter" data-level="1.3.2" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#comparación-entre-teoría-de-juegos-y-modelos-tradicionales"><i class="fa fa-check"></i><b>1.3.2</b> Comparación entre teoría de juegos y modelos tradicionales</a></li>
+<li class="chapter" data-level="1.3.3" data-path="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html"><a href="capítulo-1-introducción-a-la-teoría-de-juegos-y-la-ecología.html#ventajas-de-integrar-teoría-de-juegos-y-ecología"><i class="fa fa-check"></i><b>1.3.3</b> Ventajas de integrar teoría de juegos y ecología</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><i class="fa fa-check"></i><b>5</b> Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies</a>
+<li class="chapter" data-level="2" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><i class="fa fa-check"></i><b>2</b> Capítulo 2: Fundamentos de la Teoría de Juegos y su Aplicación en Ecología</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#teoría-clásica-modelos-de-lotka-volterra"><i class="fa fa-check"></i><b>5.1</b> Teoría clásica: Modelos de Lotka-Volterra</a></li>
-<li class="chapter" data-level="5.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#juegos-de-competencia-dinámicas-temporales-basadas-en-una-matriz-de-pagos"><i class="fa fa-check"></i><b>5.2</b> Juegos de competencia: Dinámicas temporales basadas en una matriz de pagos</a>
-<ul>
-<li class="chapter" data-level="5.2.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#matriz-de-pagos"><i class="fa fa-check"></i><b>5.2.1</b> Matriz de pagos</a></li>
-<li class="chapter" data-level="5.2.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#dinámica-replicadora-modificada"><i class="fa fa-check"></i><b>5.2.2</b> Dinámica replicadora modificada</a></li>
+<li class="chapter" data-level="2.1" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#dinámica-replicadora-y-estabilidad-evolutiva"><i class="fa fa-check"></i><b>2.1</b> Dinámica Replicadora y Estabilidad Evolutiva</a></li>
+<li class="chapter" data-level="2.2" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-dilema-del-prisionero-y-el-equilibrio-de-nash"><i class="fa fa-check"></i><b>2.2</b> El Dilema del Prisionero y el Equilibrio de Nash</a></li>
+<li class="chapter" data-level="2.3" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#estrategias-puras-vs.-estrategias-mixtas"><i class="fa fa-check"></i><b>2.3</b> Estrategias puras vs. Estrategias mixtas</a></li>
+<li class="chapter" data-level="2.4" data-path="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html"><a href="capítulo-2-fundamentos-de-la-teoría-de-juegos-y-su-aplicación-en-ecología.html#el-juego-del-ciervo-y-la-liebre-stag-hunt-y-un-poco-de-matemáticas"><i class="fa fa-check"></i><b>2.4</b> El juego del Ciervo y la Liebre (Stag Hunt) (y un poco de matemáticas!)</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#implementación-en-r"><i class="fa fa-check"></i><b>5.3</b> Implementación en R</a></li>
-<li class="chapter" data-level="5.4" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencia-entre-modelos-glv-y-dinámicas-replicadoras"><i class="fa fa-check"></i><b>5.4</b> Equivalencia entre modelos GLV y dinámicas replicadoras</a>
+<li class="chapter" data-level="3" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html"><i class="fa fa-check"></i><b>3</b> Capítulo 3: Teoría de Juegos Evolutiva</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencias-conceptuales"><i class="fa fa-check"></i><b>5.4.1</b> Equivalencias conceptuales</a></li>
-<li class="chapter" data-level="5.4.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencias-matemáticas"><i class="fa fa-check"></i><b>5.4.2</b> Equivalencias matemáticas</a></li>
-<li class="chapter" data-level="5.4.3" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#conversiones-matemáticas-entre-los-modelos-glv-y-dinámicas-replicadoras"><i class="fa fa-check"></i><b>5.4.3</b> Conversiones matemáticas entre los modelos GLV y Dinámicas replicadoras</a></li>
-<li class="chapter" data-level="5.4.4" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#matemática-de-la-relación-para-un-cuadro-aparte"><i class="fa fa-check"></i><b>5.4.4</b> Matemática de la relación – para un cuadro aparte???</a></li>
+<li class="chapter" data-level="3.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#estrategias-evolutivamente-estables-ess"><i class="fa fa-check"></i><b>3.1</b> Estrategias Evolutivamente Estables (ESS)</a></li>
+<li class="chapter" data-level="3.2" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#el-juego-halcónpaloma-hawkdove-game"><i class="fa fa-check"></i><b>3.2</b> El juego Halcón/Paloma (Hawk/Dove game)</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#dinámica-del-juego-halcónpaloma"><i class="fa fa-check"></i><b>3.2.1</b> Dinámica del juego Halcón/Paloma</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#cálculo-del-equilibrio-en-ambos-modelos"><i class="fa fa-check"></i><b>5.5</b> Cálculo del equilibrio en ambos modelos</a>
+<li class="chapter" data-level="3.3" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#dinámicas-evolutivas-y-frecuencias-alélicas"><i class="fa fa-check"></i><b>3.3</b> Dinámicas Evolutivas y Frecuencias Alélicas</a></li>
+<li class="chapter" data-level="3.4" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#ejemplo-en-ecología-dinámica-de-dos-especies"><i class="fa fa-check"></i><b>3.4</b> Ejemplo en Ecología: Dinámica de Dos Especies</a></li>
+<li class="chapter" data-level="3.5" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#discusión"><i class="fa fa-check"></i><b>3.5</b> Discusión</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equilibrio-en-el-modelo-glv"><i class="fa fa-check"></i><b>5.5.1</b> Equilibrio en el modelo GLV</a></li>
-<li class="chapter" data-level="5.5.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equilibrio-en-las-dinámicas-replicadoras"><i class="fa fa-check"></i><b>5.5.2</b> Equilibrio en las dinámicas replicadoras</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#discusión-1"><i class="fa fa-check"></i><b>5.6</b> 3.5. Discusión</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html"><i class="fa fa-check"></i><b>6</b> Capítulo 5: La relación predador-presa</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#modelos-clásicos"><i class="fa fa-check"></i><b>6.1</b> Modelos Clásicos</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#ecuaciones-básicas-del-modelo-lotka-volterra-esto-puede-repetirse-con-cap4"><i class="fa fa-check"></i><b>6.1.1</b> Ecuaciones Básicas del Modelo Lotka-Volterra (esto puede repetirse con Cap4)</a></li>
-<li class="chapter" data-level="6.1.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#análisis-de-estabilidad-y-oscilaciones-neutrales"><i class="fa fa-check"></i><b>6.1.2</b> Análisis de Estabilidad y Oscilaciones Neutrales</a></li>
-<li class="chapter" data-level="6.1.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#análisis-gráfico-isoclinas-y-plano-fase"><i class="fa fa-check"></i><b>6.1.3</b> Análisis Gráfico: Isoclinas y Plano Fase</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#extensiones-al-modelo-clásico"><i class="fa fa-check"></i><b>6.2</b> Extensiones al Modelo Clásico</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#crecimiento-logístico-de-la-presa"><i class="fa fa-check"></i><b>6.2.1</b> Crecimiento Logístico de la Presa</a></li>
-<li class="chapter" data-level="6.2.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#efectos-allee"><i class="fa fa-check"></i><b>6.2.2</b> Efectos Allee</a></li>
-<li class="chapter" data-level="6.2.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#respuestas-funcionales-de-los-depredadores"><i class="fa fa-check"></i><b>6.2.3</b> Respuestas Funcionales de los Depredadores</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámicas-complejas"><i class="fa fa-check"></i><b>6.3</b> Dinámicas Complejas</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#introducción-de-ciclos-límite"><i class="fa fa-check"></i><b>6.3.1</b> Introducción de Ciclos Límite</a></li>
-<li class="chapter" data-level="6.3.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#condiciones-para-la-emergencia-de-caos"><i class="fa fa-check"></i><b>6.3.2</b> Condiciones para la Emergencia de Caos</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#sistema-depredador-presa-en-r"><i class="fa fa-check"></i><b>6.4</b> Sistema Depredador-Presa en R</a></li>
-<li class="chapter" data-level="6.5" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#comparación-entre-lotka-volterra-y-modelos-de-teoría-de-juegos"><i class="fa fa-check"></i><b>6.5</b> Comparación entre Lotka-Volterra y modelos de Teoría de Juegos</a>
-<ul>
-<li class="chapter" data-level="6.5.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#comparación-de-modelos"><i class="fa fa-check"></i><b>6.5.1</b> Comparación de modelos</a></li>
-<li class="chapter" data-level="6.5.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema"><i class="fa fa-check"></i><b>6.5.2</b> Dinámica del sistema</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#visualización-de-dinámicas-en-glv-y-re"><i class="fa fa-check"></i><b>6.6</b> Visualización de Dinámicas en GLV y RE</a>
-<ul>
-<li class="chapter" data-level="6.6.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#equilibrio-en-glv"><i class="fa fa-check"></i><b>6.6.1</b> Equilibrio en GLV</a></li>
-<li class="chapter" data-level="6.6.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#equilibrio-en-re"><i class="fa fa-check"></i><b>6.6.2</b> Equilibrio en RE</a></li>
-<li class="chapter" data-level="6.6.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema-1"><i class="fa fa-check"></i><b>6.6.3</b> Dinámica del sistema</a></li>
-</ul></li>
-<li class="chapter" data-level="6.7" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#conexiones-con-otros-modelos"><i class="fa fa-check"></i><b>6.7</b> Conexiones con otros modelos</a>
-<ul>
-<li class="chapter" data-level="6.7.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#referencias"><i class="fa fa-check"></i><b>6.7.1</b> Referencias</a></li>
+<li class="chapter" data-level="3.5.1" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#a.-qué-desigualdades-son-necesarias-para-que-la-cooperación-sea-un-equilibrio-de-nash"><i class="fa fa-check"></i><b>3.5.1</b> A. ¿Qué desigualdades son necesarias para que la cooperación sea un Equilibrio de Nash?</a></li>
+<li class="chapter" data-level="3.5.2" data-path="capítulo-3-teoría-de-juegos-evolutiva.html"><a href="capítulo-3-teoría-de-juegos-evolutiva.html#qué-factores-no-incluidos-podrían-promover-la-cooperación"><i class="fa fa-check"></i><b>3.5.2</b> ¿Qué factores no incluidos podrían promover la cooperación?</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html"><i class="fa fa-check"></i><b>7</b> Capítulo 6: Mutualismo y Redes Tróficas</a>
+<li class="chapter" data-level="4" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><i class="fa fa-check"></i><b>4</b> Capítulo 4: El modelo Lotka-Volterra. Competencia entre Especies</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html#modelos-de-mutualismo-basados-en-juegos-evolutivos"><i class="fa fa-check"></i><b>7.1</b> Modelos de mutualismo basados en juegos evolutivos</a></li>
-<li class="chapter" data-level="7.2" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html#polinizadores-y-plantas-en-sistemas-tropicales"><i class="fa fa-check"></i><b>7.2</b> Polinizadores y plantas en sistemas tropicales</a></li>
+<li class="chapter" data-level="4.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#teoría-clásica-modelos-de-lotka-volterra"><i class="fa fa-check"></i><b>4.1</b> Teoría clásica: Modelos de Lotka-Volterra</a></li>
+<li class="chapter" data-level="4.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#juegos-de-competencia-dinámicas-temporales-basadas-en-una-matriz-de-pagos"><i class="fa fa-check"></i><b>4.2</b> Juegos de competencia: Dinámicas temporales basadas en una matriz de pagos</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#matriz-de-pagos"><i class="fa fa-check"></i><b>4.2.1</b> Matriz de pagos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#dinámica-replicadora-modificada"><i class="fa fa-check"></i><b>4.2.2</b> Dinámica replicadora modificada</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html"><i class="fa fa-check"></i><b>8</b> Capítulo 7: Diversidad en Comunidades Ecológicas</a>
+<li class="chapter" data-level="4.3" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#implementación-en-r"><i class="fa fa-check"></i><b>4.3</b> Implementación en R</a></li>
+<li class="chapter" data-level="4.4" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencia-entre-modelos-glv-y-dinámicas-replicadoras"><i class="fa fa-check"></i><b>4.4</b> Equivalencia entre modelos GLV y dinámicas replicadoras</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#qué-es-la-diversidad-desde-la-teoría-clásica-a-la-estratégica"><i class="fa fa-check"></i><b>8.1</b> ¿Qué es la diversidad? Desde la teoría clásica a la estratégica</a></li>
-<li class="chapter" data-level="8.2" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índices-de-diversidad"><i class="fa fa-check"></i><b>8.2</b> Índices de diversidad</a>
-<ul>
-<li class="chapter" data-level="8.2.1" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-shannon"><i class="fa fa-check"></i><b>8.2.1</b> Índice de Shannon</a></li>
-<li class="chapter" data-level="8.2.2" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-equitabilidad-de-pielou"><i class="fa fa-check"></i><b>8.2.2</b> Índice de equitabilidad de Pielou</a></li>
-<li class="chapter" data-level="8.2.3" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cálculo-en-r"><i class="fa fa-check"></i><b>8.2.3</b> Cálculo en R</a></li>
+<li class="chapter" data-level="4.4.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencias-conceptuales"><i class="fa fa-check"></i><b>4.4.1</b> Equivalencias conceptuales</a></li>
+<li class="chapter" data-level="4.4.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equivalencias-matemáticas"><i class="fa fa-check"></i><b>4.4.2</b> Equivalencias matemáticas</a></li>
+<li class="chapter" data-level="4.4.3" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#conversiones-matemáticas-entre-los-modelos-glv-y-dinámicas-replicadoras"><i class="fa fa-check"></i><b>4.4.3</b> Conversiones matemáticas entre los modelos GLV y Dinámicas replicadoras</a></li>
+<li class="chapter" data-level="4.4.4" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#matemática-de-la-relación-para-un-cuadro-aparte"><i class="fa fa-check"></i><b>4.4.4</b> Matemática de la relación – para un cuadro aparte???</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#juegos-evolutivos-y-diversidad-coexistencia-y-partición-de-nichos"><i class="fa fa-check"></i><b>8.3</b> Juegos evolutivos y diversidad: coexistencia y partición de nichos</a></li>
-<li class="chapter" data-level="8.4" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#ejemplo-en-r-modelos-de-coexistencia-bajo-presión-competitiva"><i class="fa fa-check"></i><b>8.4</b> Ejemplo en R: Modelos de coexistencia bajo presión competitiva</a></li>
-<li class="chapter" data-level="8.5" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#comparación-entre-modelos-tradicionales-y-basados-en-teoría-de-juegos"><i class="fa fa-check"></i><b>8.5</b> Comparación entre modelos tradicionales y basados en Teoría de Juegos</a></li>
-<li class="chapter" data-level="8.6" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#ejemplo-real-diversidad-de-aves-en-paisajes-fragmentados"><i class="fa fa-check"></i><b>8.6</b> Ejemplo real: Diversidad de aves en paisajes fragmentados</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html"><i class="fa fa-check"></i><b>9</b> Capítulo 8: Sucesión Ecológica</a>
+<li class="chapter" data-level="4.5" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#cálculo-del-equilibrio-en-ambos-modelos"><i class="fa fa-check"></i><b>4.5</b> Cálculo del equilibrio en ambos modelos</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#sucesión-primaria-y-secundaria-modelos-clásicos"><i class="fa fa-check"></i><b>9.1</b> Sucesión primaria y secundaria: modelos clásicos</a></li>
-<li class="chapter" data-level="9.2" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#modelado-de-la-sucesión-ecológica-tradicional"><i class="fa fa-check"></i><b>9.2</b> Modelado de la sucesión ecológica tradicional</a></li>
-<li class="chapter" data-level="9.3" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#modelado-de-la-sucesión-ecológica-con-teoría-de-juegos"><i class="fa fa-check"></i><b>9.3</b> Modelado de la sucesión ecológica con teoría de juegos</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#construcción-de-la-matriz-de-pagos"><i class="fa fa-check"></i><b>9.3.1</b> Construcción de la matriz de pagos</a></li>
-<li class="chapter" data-level="9.3.2" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#dinámica-replicadora"><i class="fa fa-check"></i><b>9.3.2</b> Dinámica replicadora</a></li>
+<li class="chapter" data-level="4.5.1" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equilibrio-en-el-modelo-glv"><i class="fa fa-check"></i><b>4.5.1</b> Equilibrio en el modelo GLV</a></li>
+<li class="chapter" data-level="4.5.2" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#equilibrio-en-las-dinámicas-replicadoras"><i class="fa fa-check"></i><b>4.5.2</b> Equilibrio en las dinámicas replicadoras</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#ejemplo-real-sucesión-en-dunas-costeras-tras-eventos-de-disturbio"><i class="fa fa-check"></i><b>9.4</b> Ejemplo real: Sucesión en dunas costeras tras eventos de disturbio</a></li>
-<li class="chapter" data-level="9.5" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#preguntas-para-discusión"><i class="fa fa-check"></i><b>9.5</b> Preguntas para discusión</a></li>
-<li class="chapter" data-level="9.6" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#bibliografía"><i class="fa fa-check"></i><b>9.6</b> Bibliografía</a></li>
+<li class="chapter" data-level="4.6" data-path="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html"><a href="capítulo-4-el-modelo-lotka-volterra.-competencia-entre-especies.html#discusión-1"><i class="fa fa-check"></i><b>4.6</b> 3.5. Discusión</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html"><i class="fa fa-check"></i><b>5</b> Capítulo 5: La relación predador-presa</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#modelos-clásicos"><i class="fa fa-check"></i><b>5.1</b> Modelos Clásicos</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#ecuaciones-básicas-del-modelo-lotka-volterra-esto-puede-repetirse-con-cap4"><i class="fa fa-check"></i><b>5.1.1</b> Ecuaciones Básicas del Modelo Lotka-Volterra (esto puede repetirse con Cap4)</a></li>
+<li class="chapter" data-level="5.1.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#análisis-de-estabilidad-y-oscilaciones-neutrales"><i class="fa fa-check"></i><b>5.1.2</b> Análisis de Estabilidad y Oscilaciones Neutrales</a></li>
+<li class="chapter" data-level="5.1.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#análisis-gráfico-isoclinas-y-plano-fase"><i class="fa fa-check"></i><b>5.1.3</b> Análisis Gráfico: Isoclinas y Plano Fase</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#extensiones-al-modelo-clásico"><i class="fa fa-check"></i><b>5.2</b> Extensiones al Modelo Clásico</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#crecimiento-logístico-de-la-presa"><i class="fa fa-check"></i><b>5.2.1</b> Crecimiento Logístico de la Presa</a></li>
+<li class="chapter" data-level="5.2.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#efectos-allee"><i class="fa fa-check"></i><b>5.2.2</b> Efectos Allee</a></li>
+<li class="chapter" data-level="5.2.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#respuestas-funcionales-de-los-depredadores"><i class="fa fa-check"></i><b>5.2.3</b> Respuestas Funcionales de los Depredadores</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámicas-complejas"><i class="fa fa-check"></i><b>5.3</b> Dinámicas Complejas</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#introducción-de-ciclos-límite"><i class="fa fa-check"></i><b>5.3.1</b> Introducción de Ciclos Límite</a></li>
+<li class="chapter" data-level="5.3.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#condiciones-para-la-emergencia-de-caos"><i class="fa fa-check"></i><b>5.3.2</b> Condiciones para la Emergencia de Caos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#sistema-depredador-presa-en-r"><i class="fa fa-check"></i><b>5.4</b> Sistema Depredador-Presa en R</a></li>
+<li class="chapter" data-level="5.5" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#comparación-entre-lotka-volterra-y-modelos-de-teoría-de-juegos"><i class="fa fa-check"></i><b>5.5</b> Comparación entre Lotka-Volterra y modelos de Teoría de Juegos</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#comparación-de-modelos"><i class="fa fa-check"></i><b>5.5.1</b> Comparación de modelos</a></li>
+<li class="chapter" data-level="5.5.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema"><i class="fa fa-check"></i><b>5.5.2</b> Dinámica del sistema</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#visualización-de-dinámicas-en-glv-y-re"><i class="fa fa-check"></i><b>5.6</b> Visualización de Dinámicas en GLV y RE</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#equilibrio-en-re"><i class="fa fa-check"></i><b>5.6.1</b> Equilibrio en RE</a></li>
+<li class="chapter" data-level="5.6.2" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#dinámica-del-sistema-1"><i class="fa fa-check"></i><b>5.6.2</b> Dinámica del sistema</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#conexiones-con-otros-modelos"><i class="fa fa-check"></i><b>5.7</b> Conexiones con otros modelos</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="capítulo-5-la-relación-predador-presa.html"><a href="capítulo-5-la-relación-predador-presa.html#referencias"><i class="fa fa-check"></i><b>5.7.1</b> Referencias</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html"><i class="fa fa-check"></i><b>6</b> Capítulo 6: Mutualismo y Redes Tróficas</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html#modelos-de-mutualismo-basados-en-juegos-evolutivos"><i class="fa fa-check"></i><b>6.1</b> Modelos de mutualismo basados en juegos evolutivos</a></li>
+<li class="chapter" data-level="6.2" data-path="capítulo-6-mutualismo-y-redes-tróficas.html"><a href="capítulo-6-mutualismo-y-redes-tróficas.html#polinizadores-y-plantas-en-sistemas-tropicales"><i class="fa fa-check"></i><b>6.2</b> Polinizadores y plantas en sistemas tropicales</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html"><i class="fa fa-check"></i><b>7</b> Capítulo 7: Diversidad en Comunidades Ecológicas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#qué-es-la-diversidad-desde-la-teoría-clásica-a-la-estratégica"><i class="fa fa-check"></i><b>7.1</b> ¿Qué es la diversidad? Desde la teoría clásica a la estratégica</a></li>
+<li class="chapter" data-level="7.2" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índices-de-diversidad"><i class="fa fa-check"></i><b>7.2</b> Índices de diversidad</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-shannon"><i class="fa fa-check"></i><b>7.2.1</b> Índice de Shannon</a></li>
+<li class="chapter" data-level="7.2.2" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-equitabilidad-de-pielou"><i class="fa fa-check"></i><b>7.2.2</b> Índice de equitabilidad de Pielou</a></li>
+<li class="chapter" data-level="7.2.3" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cálculo-en-r"><i class="fa fa-check"></i><b>7.2.3</b> Cálculo en R</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#juegos-evolutivos-y-diversidad-coexistencia-y-partición-de-nichos"><i class="fa fa-check"></i><b>7.3</b> Juegos evolutivos y diversidad: coexistencia y partición de nichos</a></li>
+<li class="chapter" data-level="7.4" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#ejemplo-en-r-modelos-de-coexistencia-bajo-presión-competitiva"><i class="fa fa-check"></i><b>7.4</b> Ejemplo en R: Modelos de coexistencia bajo presión competitiva</a></li>
+<li class="chapter" data-level="7.5" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#comparación-entre-modelos-tradicionales-y-basados-en-teoría-de-juegos"><i class="fa fa-check"></i><b>7.5</b> Comparación entre modelos tradicionales y basados en Teoría de Juegos</a></li>
+<li class="chapter" data-level="7.6" data-path="capítulo-7-diversidad-en-comunidades-ecológicas.html"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#ejemplo-real-diversidad-de-aves-en-paisajes-fragmentados"><i class="fa fa-check"></i><b>7.6</b> Ejemplo real: Diversidad de aves en paisajes fragmentados</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html"><i class="fa fa-check"></i><b>8</b> Capítulo 8: Sucesión Ecológica</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#sucesión-primaria-y-secundaria-modelos-clásicos"><i class="fa fa-check"></i><b>8.1</b> Sucesión primaria y secundaria: modelos clásicos</a></li>
+<li class="chapter" data-level="8.2" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#modelado-de-la-sucesión-ecológica-tradicional"><i class="fa fa-check"></i><b>8.2</b> Modelado de la sucesión ecológica tradicional</a></li>
+<li class="chapter" data-level="8.3" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#modelado-de-la-sucesión-ecológica-con-teoría-de-juegos"><i class="fa fa-check"></i><b>8.3</b> Modelado de la sucesión ecológica con teoría de juegos</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#construcción-de-la-matriz-de-pagos"><i class="fa fa-check"></i><b>8.3.1</b> Construcción de la matriz de pagos</a></li>
+<li class="chapter" data-level="8.3.2" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#dinámica-replicadora"><i class="fa fa-check"></i><b>8.3.2</b> Dinámica replicadora</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#ejemplo-real-sucesión-en-dunas-costeras-tras-eventos-de-disturbio"><i class="fa fa-check"></i><b>8.4</b> Ejemplo real: Sucesión en dunas costeras tras eventos de disturbio</a></li>
+<li class="chapter" data-level="8.5" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#preguntas-para-discusión"><i class="fa fa-check"></i><b>8.5</b> Preguntas para discusión</a></li>
+<li class="chapter" data-level="8.6" data-path="capítulo-8-sucesión-ecológica.html"><a href="capítulo-8-sucesión-ecológica.html#bibliografía"><i class="fa fa-check"></i><b>8.6</b> Bibliografía</a></li>
 </ul></li>
 </ul>
 
@@ -279,7 +300,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Diversidad en Comunidades Ecológicas</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Capítulo 8: Sucesión Ecológica</a>
           </h1>
         </div>
 
@@ -287,62 +308,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="capítulo-7-diversidad-en-comunidades-ecológicas" class="section level1 hasAnchor" number="8">
-<h1><span class="header-section-number">8</span> Capítulo 7: Diversidad en Comunidades Ecológicas<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#capítulo-7-diversidad-en-comunidades-ecológicas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="qué-es-la-diversidad-desde-la-teoría-clásica-a-la-estratégica" class="section level2 hasAnchor" number="8.1">
-<h2><span class="header-section-number">8.1</span> ¿Qué es la diversidad? Desde la teoría clásica a la estratégica<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#qué-es-la-diversidad-desde-la-teoría-clásica-a-la-estratégica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="capítulo-7-diversidad-en-comunidades-ecológicas" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Capítulo 7: Diversidad en Comunidades Ecológicas<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#capítulo-7-diversidad-en-comunidades-ecológicas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="qué-es-la-diversidad-desde-la-teoría-clásica-a-la-estratégica" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> ¿Qué es la diversidad? Desde la teoría clásica a la estratégica<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#qué-es-la-diversidad-desde-la-teoría-clásica-a-la-estratégica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La diversidad ecológica puede ser descrita a través de métricas que capturan diferentes aspectos:</p>
-<p>La <strong>riqueza de especies</strong> representa el número de especies presentes en un ecosistema, mientras que la <strong>Equitabilidad</strong> indica cómo se
-distribuyen las abundancias entre las especies.</p>
+<p>La <strong>riqueza de especies</strong> representa el número de especies presentes en un ecosistema, mientras que la <strong>Equitabilidad</strong> indica cómo se distribuyen las abundancias entre las especies.</p>
 </div>
-<div id="índices-de-diversidad" class="section level2 hasAnchor" number="8.2">
-<h2><span class="header-section-number">8.2</span> Índices de diversidad<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índices-de-diversidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="índice-de-shannon" class="section level3 hasAnchor" number="8.2.1">
-<h3><span class="header-section-number">8.2.1</span> Índice de Shannon<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-shannon" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>El índice de Shannon captura tanto la riqueza como la equidad de una comunidad: $$
-H’ = - _{i=1}^S p_i (p_i)</p>
+<div id="índices-de-diversidad" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Índices de diversidad<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índices-de-diversidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="índice-de-shannon" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Índice de Shannon<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-shannon" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El índice de Shannon captura tanto la riqueza como la equidad de una comunidad: $$ H’ = - _{i=1}^S p_i (p_i)</p>
 <p>$$ donde <span class="math inline">\(p_i\)</span> es la proporción de la abundancia de la especie <span class="math inline">\(i\)</span> respecto al total.</p>
 </div>
-<div id="índice-de-equitabilidad-de-pielou" class="section level3 hasAnchor" number="8.2.2">
-<h3><span class="header-section-number">8.2.2</span> Índice de equitabilidad de Pielou<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-equitabilidad-de-pielou" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Este índice mide qué tan equitativa es una comunidad, normalizando el índice de Shannon por la riqueza máxima posible: $$
-J’ = </p>
+<div id="índice-de-equitabilidad-de-pielou" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Índice de equitabilidad de Pielou<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#índice-de-equitabilidad-de-pielou" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Este índice mide qué tan equitativa es una comunidad, normalizando el índice de Shannon por la riqueza máxima posible: $$ J’ = </p>
 <p>$$ donde <span class="math inline">\(S\)</span> es la riqueza de especies.</p>
 </div>
-<div id="cálculo-en-r" class="section level3 hasAnchor" number="8.2.3">
-<h3><span class="header-section-number">8.2.3</span> Cálculo en R<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cálculo-en-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="cálculo-en-r" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Cálculo en R<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cálculo-en-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Ejemplo con una comunidad ficticia:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(vegan) <span class="co"># Para cálculos de diversidad</span></span>
-<span id="cb1-2"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-2" tabindex="-1"></a><span class="co"># Datos de ejemplo</span></span>
-<span id="cb1-3"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-3" tabindex="-1"></a>comunidad <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">A =</span> <span class="dv">40</span>, <span class="at">B =</span> <span class="dv">30</span>, <span class="at">C =</span> <span class="dv">20</span>, <span class="at">D =</span> <span class="dv">10</span>) <span class="co"># Abundancias por especie</span></span>
-<span id="cb1-4"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-4" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-5" tabindex="-1"></a><span class="co"># Índice de Shannon</span></span>
-<span id="cb1-6"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-6" tabindex="-1"></a>shannon <span class="ot">&lt;-</span> vegan<span class="sc">::</span><span class="fu">diversity</span>(comunidad, <span class="at">index =</span> <span class="st">&quot;shannon&quot;</span>)</span>
-<span id="cb1-7"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-7" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-8" tabindex="-1"></a><span class="co"># Índice de Pielou</span></span>
-<span id="cb1-9"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-9" tabindex="-1"></a>pielou <span class="ot">&lt;-</span> shannon <span class="sc">/</span> <span class="fu">log</span>(<span class="fu">length</span>(comunidad))</span>
-<span id="cb1-10"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-10" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-11" tabindex="-1"></a><span class="co"># Resultados</span></span>
-<span id="cb1-12"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb1-12" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Índice de Shannon:&quot;</span>, shannon, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-1" tabindex="-1"></a><span class="fu">library</span>(vegan) <span class="co"># Para cálculos de diversidad</span></span>
+<span id="cb30-2"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-2" tabindex="-1"></a><span class="co"># Datos de ejemplo</span></span>
+<span id="cb30-3"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-3" tabindex="-1"></a>comunidad <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">A =</span> <span class="dv">40</span>, <span class="at">B =</span> <span class="dv">30</span>, <span class="at">C =</span> <span class="dv">20</span>, <span class="at">D =</span> <span class="dv">10</span>) <span class="co"># Abundancias por especie</span></span>
+<span id="cb30-4"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-4" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-5" tabindex="-1"></a><span class="co"># Índice de Shannon</span></span>
+<span id="cb30-6"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-6" tabindex="-1"></a>shannon <span class="ot">&lt;-</span> vegan<span class="sc">::</span><span class="fu">diversity</span>(comunidad, <span class="at">index =</span> <span class="st">&quot;shannon&quot;</span>)</span>
+<span id="cb30-7"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-7" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-8" tabindex="-1"></a><span class="co"># Índice de Pielou</span></span>
+<span id="cb30-9"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-9" tabindex="-1"></a>pielou <span class="ot">&lt;-</span> shannon <span class="sc">/</span> <span class="fu">log</span>(<span class="fu">length</span>(comunidad))</span>
+<span id="cb30-10"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-10" tabindex="-1"></a></span>
+<span id="cb30-11"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-11" tabindex="-1"></a><span class="co"># Resultados</span></span>
+<span id="cb30-12"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb30-12" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Índice de Shannon:&quot;</span>, shannon, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Índice de Shannon: 1.279854</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb3-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Índice de Pielou:&quot;</span>, pielou, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb32-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Índice de Pielou:&quot;</span>, pielou, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Índice de Pielou: 0.9232197</code></pre>
 <p>Visualización de la comunidad:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb5-1" tabindex="-1"></a>comunidad_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb5-2"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb5-2" tabindex="-1"></a>  <span class="at">especie =</span> <span class="fu">names</span>(comunidad),</span>
-<span id="cb5-3"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb5-3" tabindex="-1"></a>  <span class="at">abundancia =</span> comunidad</span>
-<span id="cb5-4"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb5-4" tabindex="-1"></a>)</span>
-<span id="cb5-5"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb5-5" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb5-6" tabindex="-1"></a><span class="fu">ggplot</span>(comunidad_df, <span class="fu">aes</span>(<span class="at">x =</span> especie, <span class="at">y =</span> abundancia, <span class="at">fill =</span> especie)) <span class="sc">+</span></span>
-<span id="cb5-7"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb5-7" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
-<span id="cb5-8"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb5-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribución de abundancias en una comunidad&quot;</span>, </span>
-<span id="cb5-9"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb5-9" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Especies&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Abundancia&quot;</span>) <span class="sc">+</span></span>
-<span id="cb5-10"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb5-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb34-1" tabindex="-1"></a>comunidad_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb34-2"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb34-2" tabindex="-1"></a>  <span class="at">especie =</span> <span class="fu">names</span>(comunidad),</span>
+<span id="cb34-3"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb34-3" tabindex="-1"></a>  <span class="at">abundancia =</span> comunidad</span>
+<span id="cb34-4"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb34-4" tabindex="-1"></a>)</span>
+<span id="cb34-5"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb34-5" tabindex="-1"></a></span>
+<span id="cb34-6"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb34-6" tabindex="-1"></a><span class="fu">ggplot</span>(comunidad_df, <span class="fu">aes</span>(<span class="at">x =</span> especie, <span class="at">y =</span> abundancia, <span class="at">fill =</span> especie)) <span class="sc">+</span></span>
+<span id="cb34-7"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb34-7" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb34-8"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb34-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribución de abundancias en una comunidad&quot;</span>, </span>
+<span id="cb34-9"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb34-9" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Especies&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Abundancia&quot;</span>) <span class="sc">+</span></span>
+<span id="cb34-10"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb34-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="teoria_juegos_ecologia_files/figure-html/visualizacion_comunidad-1.png" width="672" /></p>
 </div>
 </div>
-<div id="juegos-evolutivos-y-diversidad-coexistencia-y-partición-de-nichos" class="section level2 hasAnchor" number="8.3">
-<h2><span class="header-section-number">8.3</span> Juegos evolutivos y diversidad: coexistencia y partición de nichos<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#juegos-evolutivos-y-diversidad-coexistencia-y-partición-de-nichos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="juegos-evolutivos-y-diversidad-coexistencia-y-partición-de-nichos" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Juegos evolutivos y diversidad: coexistencia y partición de nichos<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#juegos-evolutivos-y-diversidad-coexistencia-y-partición-de-nichos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La coexistencia de especies está influenciada por cómo comparten los recursos y particionan nichos. Usando el modelo de Lotka-Volterra Generalizado, podemos modelar interacciones competitivas y cómo estas afectan la diversidad.</p>
 <p>Las ecuaciones básicas son:</p>
 <p><span class="math display">\[
@@ -350,117 +368,117 @@ J’ = </p>
 \]</span></p>
 <p>donde: - <span class="math inline">\(x_i\)</span>: abundancia de la especie <span class="math inline">\(i\)</span>. - <span class="math inline">\(r_i\)</span>: tasa intrínseca de crecimiento. - <span class="math inline">\(A_{ij}\)</span>: matriz de interacciones entre especies.</p>
 </div>
-<div id="ejemplo-en-r-modelos-de-coexistencia-bajo-presión-competitiva" class="section level2 hasAnchor" number="8.4">
-<h2><span class="header-section-number">8.4</span> Ejemplo en R: Modelos de coexistencia bajo presión competitiva<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#ejemplo-en-r-modelos-de-coexistencia-bajo-presión-competitiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ejemplo-en-r-modelos-de-coexistencia-bajo-presión-competitiva" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Ejemplo en R: Modelos de coexistencia bajo presión competitiva<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#ejemplo-en-r-modelos-de-coexistencia-bajo-presión-competitiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En este ejemplo, simulamos una comunidad con 3 especies que compiten por recursos:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-1" tabindex="-1"></a><span class="co"># Parámetros</span></span>
-<span id="cb6-2"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-2" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>) <span class="co"># Tasa de crecimiento</span></span>
-<span id="cb6-3"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-3" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.3</span>,</span>
-<span id="cb6-4"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-4" tabindex="-1"></a>              <span class="fl">0.4</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.2</span>,</span>
-<span id="cb6-5"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-5" tabindex="-1"></a>              <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="sc">-</span><span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># Matriz de interacción</span></span>
-<span id="cb6-6"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-6" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-7" tabindex="-1"></a><span class="co"># Modelo de Lotka-Volterra</span></span>
-<span id="cb6-8"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-8" tabindex="-1"></a>glv_model <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parameters) {</span>
-<span id="cb6-9"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-9" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(state, parameters)), {</span>
-<span id="cb6-10"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-10" tabindex="-1"></a>    dx1 <span class="ot">&lt;-</span> x1 <span class="sc">*</span> (r[<span class="dv">1</span>] <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
-<span id="cb6-11"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-11" tabindex="-1"></a>    dx2 <span class="ot">&lt;-</span> x2 <span class="sc">*</span> (r[<span class="dv">2</span>] <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
-<span id="cb6-12"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-12" tabindex="-1"></a>    dx3 <span class="ot">&lt;-</span> x3 <span class="sc">*</span> (r[<span class="dv">3</span>] <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
-<span id="cb6-13"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-13" tabindex="-1"></a>    <span class="fu">list</span>(<span class="fu">c</span>(dx1, dx2, dx3))</span>
-<span id="cb6-14"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-14" tabindex="-1"></a>  })</span>
-<span id="cb6-15"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-15" tabindex="-1"></a>}</span>
-<span id="cb6-16"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-16" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-17" tabindex="-1"></a><span class="co"># Condiciones iniciales</span></span>
-<span id="cb6-18"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-18" tabindex="-1"></a>state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x1 =</span> <span class="dv">10</span>, <span class="at">x2 =</span> <span class="dv">5</span>, <span class="at">x3 =</span> <span class="dv">15</span>)</span>
-<span id="cb6-19"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-19" tabindex="-1"></a></span>
-<span id="cb6-20"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-20" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb6-21"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-21" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-22" tabindex="-1"></a><span class="co"># Solución</span></span>
-<span id="cb6-23"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-23" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> state, <span class="at">times =</span> time, <span class="at">func =</span> glv_model, <span class="at">parms =</span> <span class="fu">list</span>(<span class="at">r =</span> r, <span class="at">A =</span> A))</span>
-<span id="cb6-24"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-24" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out)</span>
-<span id="cb6-25"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-25" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-26" tabindex="-1"></a><span class="co"># Visualización</span></span>
-<span id="cb6-27"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-27" tabindex="-1"></a>out_long <span class="ot">&lt;-</span> out <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>time, <span class="at">names_to =</span> <span class="st">&quot;Especie&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Abundancia&quot;</span>)</span>
-<span id="cb6-28"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-28" tabindex="-1"></a></span>
-<span id="cb6-29"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-29" tabindex="-1"></a><span class="fu">ggplot</span>(out_long, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Abundancia, <span class="at">color =</span> Especie)) <span class="sc">+</span></span>
-<span id="cb6-30"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-30" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb6-31"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-31" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Dinámica de coexistencia bajo presión competitiva&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Tiempo&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Abundancia&quot;</span>) <span class="sc">+</span></span>
-<span id="cb6-32"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb6-32" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-1" tabindex="-1"></a><span class="co"># Parámetros</span></span>
+<span id="cb35-2"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-2" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>) <span class="co"># Tasa de crecimiento</span></span>
+<span id="cb35-3"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-3" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.3</span>,</span>
+<span id="cb35-4"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-4" tabindex="-1"></a>              <span class="fl">0.4</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.2</span>,</span>
+<span id="cb35-5"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-5" tabindex="-1"></a>              <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="sc">-</span><span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># Matriz de interacción</span></span>
+<span id="cb35-6"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-6" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-7" tabindex="-1"></a><span class="co"># Modelo de Lotka-Volterra</span></span>
+<span id="cb35-8"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-8" tabindex="-1"></a>glv_model <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parameters) {</span>
+<span id="cb35-9"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-9" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(state, parameters)), {</span>
+<span id="cb35-10"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-10" tabindex="-1"></a>    dx1 <span class="ot">&lt;-</span> x1 <span class="sc">*</span> (r[<span class="dv">1</span>] <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
+<span id="cb35-11"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-11" tabindex="-1"></a>    dx2 <span class="ot">&lt;-</span> x2 <span class="sc">*</span> (r[<span class="dv">2</span>] <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
+<span id="cb35-12"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-12" tabindex="-1"></a>    dx3 <span class="ot">&lt;-</span> x3 <span class="sc">*</span> (r[<span class="dv">3</span>] <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
+<span id="cb35-13"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-13" tabindex="-1"></a>    <span class="fu">list</span>(<span class="fu">c</span>(dx1, dx2, dx3))</span>
+<span id="cb35-14"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-14" tabindex="-1"></a>  })</span>
+<span id="cb35-15"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-15" tabindex="-1"></a>}</span>
+<span id="cb35-16"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-16" tabindex="-1"></a></span>
+<span id="cb35-17"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-17" tabindex="-1"></a><span class="co"># Condiciones iniciales</span></span>
+<span id="cb35-18"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-18" tabindex="-1"></a>state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x1 =</span> <span class="dv">10</span>, <span class="at">x2 =</span> <span class="dv">5</span>, <span class="at">x3 =</span> <span class="dv">15</span>)</span>
+<span id="cb35-19"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-19" tabindex="-1"></a></span>
+<span id="cb35-20"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-20" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
+<span id="cb35-21"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-21" tabindex="-1"></a></span>
+<span id="cb35-22"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-22" tabindex="-1"></a><span class="co"># Solución</span></span>
+<span id="cb35-23"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-23" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> state, <span class="at">times =</span> time, <span class="at">func =</span> glv_model, <span class="at">parms =</span> <span class="fu">list</span>(<span class="at">r =</span> r, <span class="at">A =</span> A))</span>
+<span id="cb35-24"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-24" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out)</span>
+<span id="cb35-25"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-25" tabindex="-1"></a></span>
+<span id="cb35-26"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-26" tabindex="-1"></a><span class="co"># Visualización</span></span>
+<span id="cb35-27"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-27" tabindex="-1"></a>out_long <span class="ot">&lt;-</span> out <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>time, <span class="at">names_to =</span> <span class="st">&quot;Especie&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Abundancia&quot;</span>)</span>
+<span id="cb35-28"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-28" tabindex="-1"></a></span>
+<span id="cb35-29"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-29" tabindex="-1"></a><span class="fu">ggplot</span>(out_long, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Abundancia, <span class="at">color =</span> Especie)) <span class="sc">+</span></span>
+<span id="cb35-30"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-30" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb35-31"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-31" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Dinámica de coexistencia bajo presión competitiva&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Tiempo&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Abundancia&quot;</span>) <span class="sc">+</span></span>
+<span id="cb35-32"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb35-32" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="teoria_juegos_ecologia_files/figure-html/modelo_lotka_volterra-1.png" width="672" /></p>
 </div>
-<div id="comparación-entre-modelos-tradicionales-y-basados-en-teoría-de-juegos" class="section level2 hasAnchor" number="8.5">
-<h2><span class="header-section-number">8.5</span> Comparación entre modelos tradicionales y basados en Teoría de Juegos<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#comparación-entre-modelos-tradicionales-y-basados-en-teoría-de-juegos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="comparación-entre-modelos-tradicionales-y-basados-en-teoría-de-juegos" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Comparación entre modelos tradicionales y basados en Teoría de Juegos<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#comparación-entre-modelos-tradicionales-y-basados-en-teoría-de-juegos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>ESTO NO ESTA BIEN JUACO,REVISAR</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-1" tabindex="-1"></a><span class="co"># Parámetros comunes</span></span>
-<span id="cb7-2"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-2" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>) <span class="co"># Tasa intrínseca de crecimiento</span></span>
-<span id="cb7-3"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-3" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.3</span>,</span>
-<span id="cb7-4"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-4" tabindex="-1"></a>              <span class="fl">0.4</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.2</span>,</span>
-<span id="cb7-5"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-5" tabindex="-1"></a>              <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="sc">-</span><span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># Matriz de interacción</span></span>
-<span id="cb7-6"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-6" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-7" tabindex="-1"></a><span class="co"># Modelo basado en Lotka-Volterra</span></span>
-<span id="cb7-8"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-8" tabindex="-1"></a>glv_model <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parameters) {</span>
-<span id="cb7-9"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-9" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(state, parameters)), {</span>
-<span id="cb7-10"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-10" tabindex="-1"></a>    dx1 <span class="ot">&lt;-</span> x1 <span class="sc">*</span> (r[<span class="dv">1</span>] <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
-<span id="cb7-11"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-11" tabindex="-1"></a>    dx2 <span class="ot">&lt;-</span> x2 <span class="sc">*</span> (r[<span class="dv">2</span>] <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
-<span id="cb7-12"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-12" tabindex="-1"></a>    dx3 <span class="ot">&lt;-</span> x3 <span class="sc">*</span> (r[<span class="dv">3</span>] <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
-<span id="cb7-13"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-13" tabindex="-1"></a>    <span class="fu">list</span>(<span class="fu">c</span>(dx1, dx2, dx3))</span>
-<span id="cb7-14"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-14" tabindex="-1"></a>  })</span>
-<span id="cb7-15"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-15" tabindex="-1"></a>}</span>
-<span id="cb7-16"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-16" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-17" tabindex="-1"></a><span class="co"># Modelo basado en teoría de juegos</span></span>
-<span id="cb7-18"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-18" tabindex="-1"></a>game_theory_model <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parameters) {</span>
-<span id="cb7-19"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-19" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(state, parameters)), {</span>
-<span id="cb7-20"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-20" tabindex="-1"></a>    dx1 <span class="ot">&lt;-</span> x1 <span class="sc">*</span> (r[<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">sum</span>(A[<span class="dv">1</span>,] <span class="sc">*</span> x1 <span class="sc">/</span> (x1 <span class="sc">+</span> x2 <span class="sc">+</span> x3)))</span>
-<span id="cb7-21"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-21" tabindex="-1"></a>    dx2 <span class="ot">&lt;-</span> x2 <span class="sc">*</span> (r[<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">sum</span>(A[<span class="dv">2</span>,] <span class="sc">*</span> x2 <span class="sc">/</span> (x1 <span class="sc">+</span> x2 <span class="sc">+</span> x3)))</span>
-<span id="cb7-22"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-22" tabindex="-1"></a>    dx3 <span class="ot">&lt;-</span> x3 <span class="sc">*</span> (r[<span class="dv">3</span>] <span class="sc">-</span> <span class="fu">sum</span>(A[<span class="dv">3</span>,] <span class="sc">*</span> x3 <span class="sc">/</span> (x1 <span class="sc">+</span> x2 <span class="sc">+</span> x3)))</span>
-<span id="cb7-23"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-23" tabindex="-1"></a>    <span class="fu">list</span>(<span class="fu">c</span>(dx1, dx2, dx3))</span>
-<span id="cb7-24"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-24" tabindex="-1"></a>  })</span>
-<span id="cb7-25"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-25" tabindex="-1"></a>}</span>
-<span id="cb7-26"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-26" tabindex="-1"></a></span>
-<span id="cb7-27"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-27" tabindex="-1"></a><span class="co"># Condiciones iniciales</span></span>
-<span id="cb7-28"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-28" tabindex="-1"></a>state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x1 =</span> <span class="dv">10</span>, <span class="at">x2 =</span> <span class="dv">5</span>, <span class="at">x3 =</span> <span class="dv">15</span>)</span>
-<span id="cb7-29"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-29" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
-<span id="cb7-30"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-30" tabindex="-1"></a></span>
-<span id="cb7-31"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-31" tabindex="-1"></a><span class="co"># Solución de Lotka-Volterra</span></span>
-<span id="cb7-32"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-32" tabindex="-1"></a>out_lv <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> state, <span class="at">times =</span> time, <span class="at">func =</span> glv_model, <span class="at">parms =</span> <span class="fu">list</span>(<span class="at">r =</span> r, <span class="at">A =</span> A))</span>
-<span id="cb7-33"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-33" tabindex="-1"></a>out_lv <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out_lv)</span>
-<span id="cb7-34"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-34" tabindex="-1"></a></span>
-<span id="cb7-35"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-35" tabindex="-1"></a><span class="co"># Solución del modelo basado en juegos</span></span>
-<span id="cb7-36"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-36" tabindex="-1"></a>out_gt <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> state, <span class="at">times =</span> time, <span class="at">func =</span> game_theory_model, <span class="at">parms =</span> <span class="fu">list</span>(<span class="at">r =</span> r, <span class="at">A =</span> A))</span>
-<span id="cb7-37"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-37" tabindex="-1"></a>out_gt <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out_gt)</span>
-<span id="cb7-38"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-38" tabindex="-1"></a></span>
-<span id="cb7-39"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-39" tabindex="-1"></a><span class="co"># Visualización de resultados</span></span>
-<span id="cb7-40"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-40" tabindex="-1"></a>out_lv_long <span class="ot">&lt;-</span> out_lv <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>time, <span class="at">names_to =</span> <span class="st">&quot;Modelo&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Abundancia&quot;</span>)</span>
-<span id="cb7-41"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-41" tabindex="-1"></a>out_lv_long<span class="sc">$</span>Tipo <span class="ot">&lt;-</span> <span class="st">&quot;Lotka-Volterra&quot;</span></span>
-<span id="cb7-42"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-42" tabindex="-1"></a>out_gt_long <span class="ot">&lt;-</span> out_gt <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>time, <span class="at">names_to =</span> <span class="st">&quot;Modelo&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Abundancia&quot;</span>)</span>
-<span id="cb7-43"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-43" tabindex="-1"></a>out_gt_long<span class="sc">$</span>Tipo <span class="ot">&lt;-</span> <span class="st">&quot;Teoría de Juegos&quot;</span></span>
-<span id="cb7-44"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-44" tabindex="-1"></a></span>
-<span id="cb7-45"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-45" tabindex="-1"></a>out_combined <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(out_lv_long, out_gt_long)</span>
-<span id="cb7-46"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-46" tabindex="-1"></a></span>
-<span id="cb7-47"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-47" tabindex="-1"></a><span class="fu">ggplot</span>(out_combined, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Abundancia, <span class="at">color =</span> Modelo, <span class="at">linetype =</span> Tipo)) <span class="sc">+</span></span>
-<span id="cb7-48"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-48" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb7-49"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-49" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Comparación entre modelos&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Tiempo&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Abundancia&quot;</span>) <span class="sc">+</span></span>
-<span id="cb7-50"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb7-50" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-1" tabindex="-1"></a><span class="co"># Parámetros comunes</span></span>
+<span id="cb36-2"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-2" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>) <span class="co"># Tasa intrínseca de crecimiento</span></span>
+<span id="cb36-3"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-3" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.3</span>,</span>
+<span id="cb36-4"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-4" tabindex="-1"></a>              <span class="fl">0.4</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.2</span>,</span>
+<span id="cb36-5"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-5" tabindex="-1"></a>              <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="sc">-</span><span class="dv">1</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>) <span class="co"># Matriz de interacción</span></span>
+<span id="cb36-6"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-6" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-7" tabindex="-1"></a><span class="co"># Modelo basado en Lotka-Volterra</span></span>
+<span id="cb36-8"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-8" tabindex="-1"></a>glv_model <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parameters) {</span>
+<span id="cb36-9"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-9" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(state, parameters)), {</span>
+<span id="cb36-10"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-10" tabindex="-1"></a>    dx1 <span class="ot">&lt;-</span> x1 <span class="sc">*</span> (r[<span class="dv">1</span>] <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">1</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
+<span id="cb36-11"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-11" tabindex="-1"></a>    dx2 <span class="ot">&lt;-</span> x2 <span class="sc">*</span> (r[<span class="dv">2</span>] <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">2</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
+<span id="cb36-12"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-12" tabindex="-1"></a>    dx3 <span class="ot">&lt;-</span> x3 <span class="sc">*</span> (r[<span class="dv">3</span>] <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">1</span>] <span class="sc">*</span> x1 <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">2</span>] <span class="sc">*</span> x2 <span class="sc">+</span> A[<span class="dv">3</span>,<span class="dv">3</span>] <span class="sc">*</span> x3)</span>
+<span id="cb36-13"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-13" tabindex="-1"></a>    <span class="fu">list</span>(<span class="fu">c</span>(dx1, dx2, dx3))</span>
+<span id="cb36-14"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-14" tabindex="-1"></a>  })</span>
+<span id="cb36-15"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-15" tabindex="-1"></a>}</span>
+<span id="cb36-16"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-16" tabindex="-1"></a></span>
+<span id="cb36-17"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-17" tabindex="-1"></a><span class="co"># Modelo basado en teoría de juegos</span></span>
+<span id="cb36-18"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-18" tabindex="-1"></a>game_theory_model <span class="ot">&lt;-</span> <span class="cf">function</span>(t, state, parameters) {</span>
+<span id="cb36-19"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-19" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">as.list</span>(<span class="fu">c</span>(state, parameters)), {</span>
+<span id="cb36-20"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-20" tabindex="-1"></a>    dx1 <span class="ot">&lt;-</span> x1 <span class="sc">*</span> (r[<span class="dv">1</span>] <span class="sc">-</span> <span class="fu">sum</span>(A[<span class="dv">1</span>,] <span class="sc">*</span> x1 <span class="sc">/</span> (x1 <span class="sc">+</span> x2 <span class="sc">+</span> x3)))</span>
+<span id="cb36-21"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-21" tabindex="-1"></a>    dx2 <span class="ot">&lt;-</span> x2 <span class="sc">*</span> (r[<span class="dv">2</span>] <span class="sc">-</span> <span class="fu">sum</span>(A[<span class="dv">2</span>,] <span class="sc">*</span> x2 <span class="sc">/</span> (x1 <span class="sc">+</span> x2 <span class="sc">+</span> x3)))</span>
+<span id="cb36-22"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-22" tabindex="-1"></a>    dx3 <span class="ot">&lt;-</span> x3 <span class="sc">*</span> (r[<span class="dv">3</span>] <span class="sc">-</span> <span class="fu">sum</span>(A[<span class="dv">3</span>,] <span class="sc">*</span> x3 <span class="sc">/</span> (x1 <span class="sc">+</span> x2 <span class="sc">+</span> x3)))</span>
+<span id="cb36-23"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-23" tabindex="-1"></a>    <span class="fu">list</span>(<span class="fu">c</span>(dx1, dx2, dx3))</span>
+<span id="cb36-24"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-24" tabindex="-1"></a>  })</span>
+<span id="cb36-25"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-25" tabindex="-1"></a>}</span>
+<span id="cb36-26"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-26" tabindex="-1"></a></span>
+<span id="cb36-27"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-27" tabindex="-1"></a><span class="co"># Condiciones iniciales</span></span>
+<span id="cb36-28"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-28" tabindex="-1"></a>state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x1 =</span> <span class="dv">10</span>, <span class="at">x2 =</span> <span class="dv">5</span>, <span class="at">x3 =</span> <span class="dv">15</span>)</span>
+<span id="cb36-29"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-29" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">50</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
+<span id="cb36-30"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-30" tabindex="-1"></a></span>
+<span id="cb36-31"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-31" tabindex="-1"></a><span class="co"># Solución de Lotka-Volterra</span></span>
+<span id="cb36-32"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-32" tabindex="-1"></a>out_lv <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> state, <span class="at">times =</span> time, <span class="at">func =</span> glv_model, <span class="at">parms =</span> <span class="fu">list</span>(<span class="at">r =</span> r, <span class="at">A =</span> A))</span>
+<span id="cb36-33"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-33" tabindex="-1"></a>out_lv <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out_lv)</span>
+<span id="cb36-34"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-34" tabindex="-1"></a></span>
+<span id="cb36-35"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-35" tabindex="-1"></a><span class="co"># Solución del modelo basado en juegos</span></span>
+<span id="cb36-36"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-36" tabindex="-1"></a>out_gt <span class="ot">&lt;-</span> <span class="fu">ode</span>(<span class="at">y =</span> state, <span class="at">times =</span> time, <span class="at">func =</span> game_theory_model, <span class="at">parms =</span> <span class="fu">list</span>(<span class="at">r =</span> r, <span class="at">A =</span> A))</span>
+<span id="cb36-37"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-37" tabindex="-1"></a>out_gt <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(out_gt)</span>
+<span id="cb36-38"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-38" tabindex="-1"></a></span>
+<span id="cb36-39"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-39" tabindex="-1"></a><span class="co"># Visualización de resultados</span></span>
+<span id="cb36-40"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-40" tabindex="-1"></a>out_lv_long <span class="ot">&lt;-</span> out_lv <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>time, <span class="at">names_to =</span> <span class="st">&quot;Modelo&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Abundancia&quot;</span>)</span>
+<span id="cb36-41"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-41" tabindex="-1"></a>out_lv_long<span class="sc">$</span>Tipo <span class="ot">&lt;-</span> <span class="st">&quot;Lotka-Volterra&quot;</span></span>
+<span id="cb36-42"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-42" tabindex="-1"></a>out_gt_long <span class="ot">&lt;-</span> out_gt <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>time, <span class="at">names_to =</span> <span class="st">&quot;Modelo&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Abundancia&quot;</span>)</span>
+<span id="cb36-43"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-43" tabindex="-1"></a>out_gt_long<span class="sc">$</span>Tipo <span class="ot">&lt;-</span> <span class="st">&quot;Teoría de Juegos&quot;</span></span>
+<span id="cb36-44"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-44" tabindex="-1"></a></span>
+<span id="cb36-45"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-45" tabindex="-1"></a>out_combined <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(out_lv_long, out_gt_long)</span>
+<span id="cb36-46"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-46" tabindex="-1"></a></span>
+<span id="cb36-47"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-47" tabindex="-1"></a><span class="fu">ggplot</span>(out_combined, <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> Abundancia, <span class="at">color =</span> Modelo, <span class="at">linetype =</span> Tipo)) <span class="sc">+</span></span>
+<span id="cb36-48"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-48" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb36-49"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-49" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Comparación entre modelos&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Tiempo&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Abundancia&quot;</span>) <span class="sc">+</span></span>
+<span id="cb36-50"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb36-50" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="teoria_juegos_ecologia_files/figure-html/comparacion_modelos-1.png" width="672" /></p>
 </div>
-<div id="ejemplo-real-diversidad-de-aves-en-paisajes-fragmentados" class="section level2 hasAnchor" number="8.6">
-<h2><span class="header-section-number">8.6</span> Ejemplo real: Diversidad de aves en paisajes fragmentados<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#ejemplo-real-diversidad-de-aves-en-paisajes-fragmentados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ejemplo-real-diversidad-de-aves-en-paisajes-fragmentados" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Ejemplo real: Diversidad de aves en paisajes fragmentados<a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#ejemplo-real-diversidad-de-aves-en-paisajes-fragmentados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Para este ejemplo, usamos datos simulados representando fragmentación de hábitats:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-1" tabindex="-1"></a><span class="co"># Simulación de fragmentación</span></span>
-<span id="cb8-2"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb8-3"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-3" tabindex="-1"></a>habitats <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb8-4"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-4" tabindex="-1"></a>  <span class="at">fragmento =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
-<span id="cb8-5"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-5" tabindex="-1"></a>  tamaño <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">10</span>, <span class="dv">1</span>, <span class="dv">10</span>),</span>
-<span id="cb8-6"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-6" tabindex="-1"></a>  <span class="at">aislamiento =</span> <span class="fu">runif</span>(<span class="dv">10</span>, <span class="fl">0.1</span>, <span class="dv">1</span>),</span>
-<span id="cb8-7"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-7" tabindex="-1"></a>  <span class="at">riqueza =</span> tamaño <span class="sc">-</span> <span class="fl">0.5</span> <span class="sc">*</span> aislamiento <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="fl">0.5</span>)</span>
-<span id="cb8-8"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-8" tabindex="-1"></a>)</span>
-<span id="cb8-9"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-9" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-10" tabindex="-1"></a><span class="co"># Visualización</span></span>
-<span id="cb8-11"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-11" tabindex="-1"></a>habitats <span class="sc">%&gt;%</span></span>
-<span id="cb8-12"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-12" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> tamaño, <span class="at">y =</span> riqueza, <span class="at">size =</span> aislamiento, <span class="at">color =</span> aislamiento)) <span class="sc">+</span></span>
-<span id="cb8-13"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-13" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb8-14"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-14" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relación entre fragmentación y riqueza de aves&quot;</span>,</span>
-<span id="cb8-15"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-15" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Tamaño del fragmento&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Riqueza de especies&quot;</span>) <span class="sc">+</span></span>
-<span id="cb8-16"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb8-16" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-1" tabindex="-1"></a><span class="co"># Simulación de fragmentación</span></span>
+<span id="cb37-2"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb37-3"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-3" tabindex="-1"></a>habitats <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb37-4"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-4" tabindex="-1"></a>  <span class="at">fragmento =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb37-5"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-5" tabindex="-1"></a>  tamaño <span class="ot">=</span> <span class="fu">runif</span>(<span class="dv">10</span>, <span class="dv">1</span>, <span class="dv">10</span>),</span>
+<span id="cb37-6"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-6" tabindex="-1"></a>  <span class="at">aislamiento =</span> <span class="fu">runif</span>(<span class="dv">10</span>, <span class="fl">0.1</span>, <span class="dv">1</span>),</span>
+<span id="cb37-7"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-7" tabindex="-1"></a>  <span class="at">riqueza =</span> tamaño <span class="sc">-</span> <span class="fl">0.5</span> <span class="sc">*</span> aislamiento <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="fl">0.5</span>)</span>
+<span id="cb37-8"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-8" tabindex="-1"></a>)</span>
+<span id="cb37-9"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-9" tabindex="-1"></a></span>
+<span id="cb37-10"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-10" tabindex="-1"></a><span class="co"># Visualización</span></span>
+<span id="cb37-11"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-11" tabindex="-1"></a>habitats <span class="sc">%&gt;%</span></span>
+<span id="cb37-12"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-12" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> tamaño, <span class="at">y =</span> riqueza, <span class="at">size =</span> aislamiento, <span class="at">color =</span> aislamiento)) <span class="sc">+</span></span>
+<span id="cb37-13"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-13" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb37-14"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-14" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relación entre fragmentación y riqueza de aves&quot;</span>,</span>
+<span id="cb37-15"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-15" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Tamaño del fragmento&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Riqueza de especies&quot;</span>) <span class="sc">+</span></span>
+<span id="cb37-16"><a href="capítulo-7-diversidad-en-comunidades-ecológicas.html#cb37-16" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="teoria_juegos_ecologia_files/figure-html/fragmentacion-1.png" width="672" /></p>
 
 </div>
